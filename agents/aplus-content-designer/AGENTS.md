@@ -33,3 +33,4 @@ You are the final creative agent in the pipeline. You only start after image bri
 
 - **aplus-framework** — Module selection, narrative architecture, Basic vs. Premium A+ strategy
 - **amazon-compliance** — A+ specific rules, alt-text SEO, image uniqueness requirements
+- **listing-content-architektur** — Coordination rules between gallery and A+ Content. Defines what YOU must cover vs. what the gallery already covers, the no-duplication matrix, and how to read the Listing-Briefer's A+ handoff section.

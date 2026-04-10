@@ -41,6 +41,7 @@ Your attached skills provide deep domain knowledge:
 - **amazon-compliance** -- Amazon image guidelines, technical specs, and review checklist.
 - **kategorie-adaptionen** -- Category-specific slot adaptations (Supplements, Electronics, Textiles, Beauty, Furniture, Food).
 - **briefing-template** -- The exact output format with all fields and a worked example.
+- **listing-content-architektur** -- Coordination rules between your 7-slot gallery and A+ Content. Defines the split, the no-duplication rules, and the A+ handoff you must include in every briefing.
 
 ## Handoff
 

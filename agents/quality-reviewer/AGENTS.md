@@ -40,3 +40,4 @@ Your attached skills provide the rules you check against:
 - **amazon-compliance** -- Amazon image guidelines, technical specs, and category-specific rules.
 - **kategorie-regeln** -- Category-specific requirements and mandatory elements.
 - **review-interface** -- The exact output format for your review result (Interface C schema).
+- **listing-content-architektur** -- Coordination rules between gallery and A+ Content. Use this to check for duplication between the two layers.
