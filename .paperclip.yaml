@@ -36,3 +36,7 @@ agents:
   aplus-content-designer:
     inputs:
       env: {}
+
+  clickup-manager:
+    inputs:
+      env: {}

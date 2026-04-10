@@ -1,6 +1,6 @@
 ---
 name: NetzSicht
-description: Amazon Marketing Agency mit 9 spezialisierten AI Agents. Full-Service Listing-Optimierung — von Produktanalyse ueber Bild-Briefings und Listing-Texte bis zu PPC-Kampagnen und A+ Content.
+description: Amazon Marketing Agency mit 10 spezialisierten AI Agents. Full-Service Listing-Optimierung — von Produktanalyse ueber Bild-Briefings und Listing-Texte bis zu PPC-Kampagnen und A+ Content.
 slug: netzsicht
 schema: agentcompanies/v1
 version: 2.0.0
@@ -36,11 +36,11 @@ Full-Service Amazon Listing-Optimierung mit 9 spezialisierten AI Agents, orchest
                                |
            ┌───────────┬───────┼────────┬──────────┐
            |           |       |        |          |
-     Bild-Pipeline  Text-Pipe  Ads   Research    A+ Content
-      ┌────┼────┐      |       |     ┌──┼──┐       |
-      |    |    |      |       |     |     |       |
-    Prod. List. Qual. Cont.  PPC   Keyw. Rev.   A+Cont.
-    Anal. Brief Rev.  Mast.  Spec. Res.  Anal.  Des.
+     Bild-Pipeline  Text-Pipe  Ads   Research    A+ Content  Ops
+      ┌────┼────┐      |       |     ┌──┼──┐       |          |
+      |    |    |      |       |     |     |       |          |
+    Prod. List. Qual. Cont.  PPC   Keyw. Rev.   A+Cont.   ClickUp
+    Anal. Brief Rev.  Mast.  Spec. Res.  Anal.  Des.      Mgr.
 ```
 
 ## Agents
@@ -56,6 +56,7 @@ Full-Service Amazon Listing-Optimierung mit 9 spezialisierten AI Agents, orchest
 | `keyword-researcher` | Keyword Researcher | CEO | Research | Sonnet 4.6 |
 | `review-analyst` | Review-Analyst | CEO | Research | Sonnet 4.6 |
 | `aplus-content-designer` | A+ Content Designer | CEO | A+ Content | Opus 4.6 |
+| `clickup-manager` | PM — ClickUp Task Manager | CEO | Operations | Sonnet 4.6 |
 
 ## Teams
 
@@ -66,3 +67,4 @@ Full-Service Amazon Listing-Optimierung mit 9 spezialisierten AI Agents, orchest
 | `ads-pipeline` | 1 | PPC Kampagnen (SP, SB, SD) |
 | `research` | 2 | Keyword-Strategien + Review-Intelligence |
 | `aplus-content` | 1 | A+ Content und Brand Story Briefings |
+| `operations` | 1 | ClickUp Task Management, Pipeline Tracking |
