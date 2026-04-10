@@ -71,36 +71,60 @@ netzsicht/
 ├── COMPANY.md
 ├── README.md
 │
-├── agents/
-│   ├── ceo/                    (AGENTS, SOUL, HEARTBEAT, TOOLS)
-│   ├── produkt-analyst/        (+ skills/)
-│   ├── listing-briefer/        (+ skills/)
-│   ├── quality-reviewer/       (+ skills/)
-│   ├── content-master/         (+ skills/)
-│   ├── ppc-specialist/         (+ skills/)
-│   ├── keyword-researcher/     (+ skills/)
-│   ├── review-analyst/         (+ skills/)
-│   └── aplus-content-designer/ (+ skills/)
+├── agents/                            Instruction Files (4 pro Agent)
+│   ├── ceo/                           AGENTS.md, SOUL.md, HEARTBEAT.md, TOOLS.md
+│   ├── produkt-analyst/
+│   ├── listing-briefer/
+│   ├── quality-reviewer/
+│   ├── content-master/
+│   ├── ppc-specialist/
+│   ├── keyword-researcher/
+│   ├── review-analyst/
+│   ├── aplus-content-designer/
+│   └── clickup-manager/
+│
+├── skills/                            Company-Level Skills (SKILL.md pro Skill)
+│   ├── 7-slot-framework/              Conversion-Daten, Neuromarketing, AIDA
+│   ├── amazon-compliance/             Amazon Bild-Richtlinien & Checkliste
+│   ├── amazon-kategorien/             Kategorie-spezifische Analyseschwerpunkte
+│   ├── briefing-template/             Output-Format + Beispiel
+│   ├── kategorie-adaptionen/          Slot-Anpassungen pro Kategorie
+│   ├── kategorie-regeln/              Kategorie-Anforderungen (Review-Basis)
+│   ├── produkt-analyse-interface/     Output-Schema Interface A
+│   └── review-interface/              Output-Schema Interface C
 │
 ├── teams/
-│   ├── listing-pipeline/       Bild-Pipeline (3 agents)
-│   ├── text-pipeline/          Text-Pipeline (1 agent)
-│   ├── ads-pipeline/           Ads-Pipeline (1 agent)
-│   ├── research/               Research (2 agents)
-│   └── aplus-content/          A+ Content (1 agent)
+│   ├── listing-pipeline/              Bild-Pipeline (3 agents)
+│   ├── text-pipeline/                 Text-Pipeline (1 agent)
+│   ├── ads-pipeline/                  Ads-Pipeline (1 agent)
+│   ├── research/                      Research (2 agents)
+│   └── aplus-content/                 A+ Content (1 agent)
 │
 ├── pipeline/
-│   ├── agents.yaml             Agent-Konfigurationen
-│   └── interfaces.md           Datenvertraege zwischen Agents
+│   ├── agents.yaml                    Agent-Konfigurationen
+│   └── interfaces.md                  Datenvertraege zwischen Agents
 │
-├── content/                    Deep Research Reports (Wissensbasis)
-└── workspace/                  Laufzeit-Outputs pro Task
+├── content/                           Deep Research Reports (Wissensbasis)
+└── workspace/                         Laufzeit-Outputs pro Task
 ```
 
 ## Setup (paperclip.ing)
 
-1. **Agents anlegen** — 9 Agents mit den Slugs aus der Tabelle oben
-2. **Instruction Files** — Pro Agent: AGENTS.md (ENTRY), SOUL.md, HEARTBEAT.md, TOOLS.md
-3. **Skills anhaengen** — `skills/*.md` ueber den Skills-Tab zuweisen
-4. **Modelle zuweisen** — Kreative Agents (Briefer, Content Master, A+ Designer): Opus 4.6 / Rest: Sonnet 4.6
+1. **Agents anlegen** — 10 Agents mit den Slugs aus der Tabelle oben
+2. **Instruction Files** — Pro Agent: AGENTS.md (ENTRY), SOUL.md, HEARTBEAT.md, TOOLS.md hochladen
+3. **Skills importieren** — Die `skills/*/SKILL.md` Dateien werden als Company Skills geladen. Jeder Agent waehlt per Checkbox welche Skills er nutzt:
+
+| Agent | Skills (per Checkbox aktivieren) |
+|---|---|
+| `produkt-analyst` | produkt-analyse-interface, amazon-kategorien |
+| `listing-briefer` | 7-slot-framework, amazon-compliance, kategorie-adaptionen, briefing-template |
+| `quality-reviewer` | amazon-compliance, kategorie-regeln, review-interface |
+| `content-master` | (eigene Skills folgen) |
+| `ppc-specialist` | (eigene Skills folgen) |
+| `keyword-researcher` | (eigene Skills folgen) |
+| `review-analyst` | (eigene Skills folgen) |
+| `aplus-content-designer` | (eigene Skills folgen) |
+| `clickup-manager` | ClickUp Automation (extern) |
+
+4. **Modelle zuweisen** — Kreative Agents (CEO, Briefer, Content Master, A+ Designer): Opus 4.6 / Rest: Sonnet 4.6
 5. **Erster Task** — Issue an CEO mit Client-Brief oder ASIN
