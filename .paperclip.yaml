@@ -7,7 +7,10 @@ agents:
 
   produkt-analyst:
     inputs:
-      env: {}
+      env:
+        RAINFOREST_API_KEY:
+          kind: secret
+          requirement: required
 
   listing-briefer:
     inputs:
@@ -23,15 +26,24 @@ agents:
 
   ppc-specialist:
     inputs:
-      env: {}
+      env:
+        RAINFOREST_API_KEY:
+          kind: secret
+          requirement: optional
 
   keyword-researcher:
     inputs:
-      env: {}
+      env:
+        RAINFOREST_API_KEY:
+          kind: secret
+          requirement: required
 
   review-analyst:
     inputs:
-      env: {}
+      env:
+        RAINFOREST_API_KEY:
+          kind: secret
+          requirement: required
 
   aplus-content-designer:
     inputs:

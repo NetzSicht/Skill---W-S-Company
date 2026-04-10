@@ -32,3 +32,4 @@ You receive product data and deliver keyword strategies that feed into both the 
 
 - **keyword-research-framework** — Research methodology, keyword tiers, search volume analysis
 - **amazon-search-algorithmus** — A10 ranking factors, Rufus/COSMO intent matching, index rules
+- **rainforest-api** — Amazon data API. Use endpoints: `search`, `autocomplete`, `bestsellers` for keyword discovery and ranking data.

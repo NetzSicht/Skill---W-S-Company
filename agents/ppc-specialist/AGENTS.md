@@ -32,3 +32,4 @@ You receive keyword strategies and product data. You produce campaign structures
 
 - **ppc-kampagnen-framework** — Campaign structure, bid strategies, match types, budget allocation
 - **amazon-advertising** — Sponsored Products/Brands/Display best practices, ACoS/ROAS benchmarks
+- **rainforest-api** — Amazon data API. Use endpoints: `search`, `bestsellers`, `stock_estimation` for competitor positions and category trends.

@@ -32,3 +32,4 @@ You are an upstream agent — your insights improve everything downstream.
 ## Skills
 
 - **review-analyse-framework** — Sentiment analysis, objection mining, language extraction methodology
+- **rainforest-api** — Amazon data API. Use endpoints: `reviews`, `questions` for review text and Q&A extraction.

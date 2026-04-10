@@ -36,6 +36,7 @@ Your attached skills provide domain knowledge:
 
 - **produkt-analyse-interface** -- The exact output format you must produce (Interface A schema).
 - **amazon-kategorien** -- Category-specific nuances that affect which data points matter most.
+- **rainforest-api** -- Amazon data API. Use endpoints: `product`, `offers`, `also_bought` for product data and competitor pricing.
 
 ## Handoff
 
