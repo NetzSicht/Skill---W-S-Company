@@ -1,6 +1,10 @@
 schema: paperclip/v1
 
 agents:
+  ceo:
+    inputs:
+      env: {}
+
   produkt-analyst:
     inputs:
       env: {}
@@ -10,5 +14,25 @@ agents:
       env: {}
 
   quality-reviewer:
+    inputs:
+      env: {}
+
+  content-master:
+    inputs:
+      env: {}
+
+  ppc-specialist:
+    inputs:
+      env: {}
+
+  keyword-researcher:
+    inputs:
+      env: {}
+
+  review-analyst:
+    inputs:
+      env: {}
+
+  aplus-content-designer:
     inputs:
       env: {}

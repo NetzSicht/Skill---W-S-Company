@@ -1,7 +1,7 @@
 ---
-name: Listing Pipeline
-description: End-to-end Pipeline fuer Amazon Listing Bild-Briefings. Vom Rohdaten-Input bis zum approved Designer-Briefing.
-slug: listing-pipeline
+name: Bild-Pipeline
+description: End-to-end Pipeline fuer Amazon Listing Bild-Briefings. Produktanalyse, Slot-Strategie, Designer-Briefing und Quality Review.
+slug: bild-pipeline
 manager: ../../agents/listing-briefer/AGENTS.md
 includes:
   - ../../agents/produkt-analyst/AGENTS.md
@@ -11,9 +11,7 @@ tags:
   - amazon
   - listing-optimization
   - creative
-  - briefing
+  - images
 ---
 
-Die Listing Pipeline verwandelt Amazon-Produktdaten in umsetzungsfertige Bild-Briefings. Drei spezialisierte Agents arbeiten sequentiell: Der Produkt-Analyst liefert strukturierte Daten, der Listing-Briefer erstellt daraus psychologisch optimierte Slot-fuer-Slot Briefings, und der Quality-Reviewer stellt Compliance und Qualitaet sicher.
-
-Der Listing-Briefer ist der zentrale Agent — er traegt die kreative und strategische Verantwortung fuer das Endergebnis.
+Die Bild-Pipeline verwandelt Amazon-Produktdaten in umsetzungsfertige Bild-Briefings. Drei spezialisierte Agents arbeiten sequentiell: Produkt-Analyst liefert Daten, Listing-Briefer erstellt Slot-fuer-Slot Briefings, Quality-Reviewer stellt Compliance und Qualitaet sicher.

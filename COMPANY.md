@@ -1,49 +1,68 @@
 ---
-name: NetzSicht Listing Pipeline
-description: 3-Agent-Pipeline fuer Amazon-Produktlisting Bild-Briefings. Analysiert Produkte, erstellt Slot-fuer-Slot Designer-Briefings und prueft gegen Amazon-Compliance. Output sind umsetzungsfertige Briefing-Dokumente fuer Grafiker und KI-Bilder-Experten.
-slug: netzsicht-listing-pipeline
+name: NetzSicht
+description: Amazon Marketing Agency mit 9 spezialisierten AI Agents. Full-Service Listing-Optimierung — von Produktanalyse ueber Bild-Briefings und Listing-Texte bis zu PPC-Kampagnen und A+ Content.
+slug: netzsicht
 schema: agentcompanies/v1
-version: 1.0.0
+version: 2.0.0
 license: MIT
 authors:
   - name: NetzSicht (Moritz)
 goals:
-  - Konsistente, datengestuetzte Bild-Briefings fuer Amazon-Listings erstellen
-  - Conversion-Rate durch psychologisch optimierte Bildstrategie maximieren
-  - Amazon-Compliance in jedem Briefing sicherstellen
-  - Briefing-Erstellung von Stunden auf Minuten reduzieren
+  - Full-Service Amazon Listing-Optimierung mit konsistenter Qualitaet liefern
+  - Conversion-Rate durch datengestuetzte Bild- und Text-Strategien maximieren
+  - Amazon-Compliance in jedem Deliverable sicherstellen
+  - Durchlaufzeit von Listing-Projekten von Tagen auf Stunden reduzieren
+  - Skalierbar arbeiten — 9 spezialisierte Agents statt 1 Generalist
 ---
 
-# NetzSicht Listing Pipeline
+# NetzSicht — Amazon Marketing Agency
 
-Eine spezialisierte 3-Agent-Pipeline die Amazon-Produktdaten in umsetzungsfertige Bild-Briefings verwandelt.
+Full-Service Amazon Listing-Optimierung mit 9 spezialisierten AI Agents, orchestriert ueber paperclip.ing.
 
 ## How It Works
 
-1. Ein neuer Task wird mit einer ASIN oder Produktbeschreibung erstellt
-2. Der **Produkt-Analyst** sammelt und strukturiert alle relevanten Daten
-3. Der **Listing-Briefer** erstellt daraus ein Slot-fuer-Slot Bild-Briefing
-4. Der **Quality-Reviewer** prueft gegen 7 Qualitaets-Dimensionen
-5. Bei APPROVED geht das Briefing an den Designer — bei REVISION zurueck in die Pipeline
+1. CEO empfaengt Client-Brief und erstellt Tasks fuer die richtigen Agents
+2. **Phase 1 (parallel):** Produkt-Analyst + Keyword Researcher + Review-Analyst sammeln Daten
+3. **Phase 2 (parallel):** Listing-Briefer erstellt Bild-Briefing, Content Master schreibt Texte
+4. **Phase 3:** Quality-Reviewer prueft alles
+5. **Phase 4:** A+ Content Designer erstellt Enhanced Content
+6. **Phase 5:** PPC Specialist baut Kampagnen
+7. CEO liefert das Gesamtpaket an den Client
 
-## Pipeline
+## Organization
 
-| Agent | Title | Reports To | Model |
-|---|---|---|---|
-| `produkt-analyst` | Product Research Analyst | — | Sonnet 4.6 |
-| `listing-briefer` | Creative Strategist | — | Opus 4.6 |
-| `quality-reviewer` | Quality Assurance | — | Sonnet 4.6 |
+```
+                              CEO
+                               |
+           ┌───────────┬───────┼────────┬──────────┐
+           |           |       |        |          |
+     Bild-Pipeline  Text-Pipe  Ads   Research    A+ Content
+      ┌────┼────┐      |       |     ┌──┼──┐       |
+      |    |    |      |       |     |     |       |
+    Prod. List. Qual. Cont.  PPC   Keyw. Rev.   A+Cont.
+    Anal. Brief Rev.  Mast.  Spec. Res.  Anal.  Des.
+```
 
-## Team
+## Agents
+
+| Slug | Title | Reports To | Team | Model |
+|---|---|---|---|---|
+| `ceo` | CEO | — | — | Opus 4.6 |
+| `produkt-analyst` | Product Research Analyst | CEO | Bild-Pipeline | Sonnet 4.6 |
+| `listing-briefer` | Creative Strategist | CEO | Bild-Pipeline | Opus 4.6 |
+| `quality-reviewer` | Quality Assurance | CEO | Bild-Pipeline | Sonnet 4.6 |
+| `content-master` | Content Master — Copywriting | CEO | Text-Pipeline | Opus 4.6 |
+| `ppc-specialist` | PPC Specialist | CEO | Ads-Pipeline | Sonnet 4.6 |
+| `keyword-researcher` | Keyword Researcher | CEO | Research | Sonnet 4.6 |
+| `review-analyst` | Review-Analyst | CEO | Research | Sonnet 4.6 |
+| `aplus-content-designer` | A+ Content Designer | CEO | A+ Content | Opus 4.6 |
+
+## Teams
 
 | Team | Agents | Purpose |
 |---|---|---|
-| `listing-pipeline` | 3 | End-to-end Bild-Briefing Erstellung |
-
-## Wissensbasis
-
-Das Framework basiert auf drei unabhaengigen Deep Research Reports (ChatGPT, Claude, Gemini) und konsolidiert:
-- Amazon Bild-Richtlinien & Compliance (Stand 2026)
-- 7-Slot-Framework mit Conversion-Daten und Neuromarketing-Prinzipien
-- Kategorie-spezifische Adaptionen (Supplements, Elektronik, Textil, Beauty, Moebel, Food)
-- A/B-Testing Methodik und KPI-Benchmarks
+| `bild-pipeline` | 3 | Produktanalyse → Bild-Briefing → Quality Review |
+| `text-pipeline` | 1 | Amazon Listing-Texte (Titel, Bullets, Description, Backend) |
+| `ads-pipeline` | 1 | PPC Kampagnen (SP, SB, SD) |
+| `research` | 2 | Keyword-Strategien + Review-Intelligence |
+| `aplus-content` | 1 | A+ Content und Brand Story Briefings |
