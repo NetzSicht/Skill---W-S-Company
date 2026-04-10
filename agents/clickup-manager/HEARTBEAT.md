@@ -1,90 +1,63 @@
 # Heartbeat — ClickUp Manager
 
+Run this checklist every heartbeat.
+
 ## 1. Check for Work
 
-- New assignments from CEO that need ClickUp tasks
-- Status updates from agents (task completions, blockers)
-- Overdue tasks to escalate
-
-## 2. Create Tasks (from CEO briefs)
-
-When the CEO assigns a new project:
-
-### Full Listing Optimization
-
-Create a ClickUp folder or list for the project, then tasks:
-
 ```
-Project: [Client] — [Product Name]
-│
-├── Phase 1 (parallel)
-│   ├── Task: Produktanalyse          → Assign: Produkt-Analyst
-│   ├── Task: Keyword Research        → Assign: Keyword Researcher
-│   └── Task: Review-Analyse          → Assign: Review-Analyst
-│
-├── Phase 2 (depends on Phase 1)
-│   ├── Task: Bild-Briefing           → Assign: Listing-Briefer
-│   └── Task: Listing-Texte           → Assign: Content Master
-│
-├── Phase 3 (depends on Phase 2)
-│   └── Task: Quality Review          → Assign: Quality-Reviewer
-│
-├── Phase 4 (depends on Phase 3)
-│   ├── Task: A+ Content Briefing     → Assign: A+ Content Designer
-│   └── Task: PPC Kampagne            → Assign: PPC Specialist
-│
-└── Phase 5
-    └── Task: Client Delivery         → Assign: CEO
+GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_progress,blocked
 ```
 
-Set task dependencies so agents can't start before their inputs are ready.
+Typical tasks from CEO:
+- "Mirror new project to ClickUp"
+- "Update client project status"
+- "Create time entry for [project]"
 
-### Single Tasks
-
-Create individual tasks with:
-- Clear title (Verb + Object + Context)
-- Description with all relevant context
-- Assignee
-- Due date
-- Priority (Urgent / High / Normal / Low)
-- Dependencies (if any)
-
-## 3. Monitor Pipeline Status
-
-Check all active tasks:
-
-| Status | Action |
-|---|---|
-| Overdue | Flag to CEO, ping assignee |
-| Blocked | Identify blocker, create resolution task or escalate |
-| In Review | Ensure reviewer is aware |
-| Done | Route output to next pipeline step, update dependencies |
-
-## 4. Status Report
-
-Prepare a brief status summary when requested or on schedule:
+## 2. Checkout Task
 
 ```
-## Pipeline Status: [Date]
-
-### Active Projects
-- [Project 1]: Phase 2 — Briefer und Content Master arbeiten parallel
-- [Project 2]: Phase 3 — Quality Review laeuft
-
-### Blocked
-- [Task]: Warte auf [was] von [wem] seit [wann]
-
-### Completed Today
-- [Task 1] ✓
-- [Task 2] ✓
-
-### Upcoming Deadlines
-- [Task]: faellig [Datum]
+POST /api/issues/{issueId}/checkout
 ```
 
-## 5. Workspace Hygiene
+## 3. Mirror Project Status
 
-- Archive completed projects
-- Clean up stale tasks (>7 days without activity)
-- Ensure all tasks have assignees and due dates
-- Update task descriptions when scope changes
+When asked to update client visibility:
+
+1. Read the parent issue and all child issues in paperclip.ing
+2. Map internal status to client-friendly ClickUp status:
+
+| paperclip.ing Status | ClickUp Status | Client-Friendly Label |
+|---|---|---|
+| Phase 1 complete | In Progress | "Datenanalyse abgeschlossen" |
+| Phase 2 in progress | In Progress | "Briefings werden erstellt" |
+| Phase 3 (Review) | In Review | "Quality Check laeuft" |
+| APPROVED | Ready | "Briefings freigegeben — bereit fuer Design" |
+| REVISION_NOETIG | In Progress | "Ueberarbeitung laeuft" |
+| All phases done | Complete | "Projekt abgeschlossen" |
+
+3. Update ClickUp task with status + brief summary
+4. Add time entries if tracked
+
+## 4. New Project Setup
+
+When CEO creates a new project:
+
+1. Create ClickUp folder/list for the client project
+2. Create high-level tasks (client-visible milestones, not internal agent tasks):
+   - "Produktanalyse & Research"
+   - "Bild-Briefing & Listing-Texte"
+   - "Quality Review"
+   - "A+ Content & PPC"
+   - "Finale Lieferung"
+3. Set due dates from CEO's brief
+4. Assign to NetzSicht team in ClickUp (not to individual agents)
+
+## 5. Complete Task
+
+```
+PATCH /api/issues/{issueId}
+{
+  "status": "done",
+  "comment": "ClickUp aktualisiert. [Was gemacht wurde]."
+}
+```

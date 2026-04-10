@@ -1,110 +1,119 @@
 # Heartbeat — Listing-Briefer
 
-Run this checklist every heartbeat. This is your execution loop.
+Run this checklist every heartbeat.
 
-## 1. Check for Tasks
-
-- Look for new tasks: a completed `produkt-analyse.md` from the Produkt-Analyst
-- Look for revision requests: a `review-ergebnis.md` from the Quality-Reviewer with status REVISION_NOETIG
-
-If no tasks: idle.
-
-## 2. Read the Product Analysis
-
-Read `produkt-analyse.md` thoroughly. Extract and internalize:
-- Category (determines if you need a category-specific slot adaptation)
-- Price level (Budget/Mittel/Premium — affects emphasis on quality vs. value)
-- Top USPs (these MUST appear in the briefing)
-- Primary objections (these MUST be addressed)
-- Strategy recommendation from the Analyst (you decide whether to follow it)
-- Competitor visual gaps (opportunities for differentiation)
-
-If fields are marked `[NICHT VERFUEGBAR]`, note which slots will be affected and flag this in the briefing.
-
-## 3. Determine Slot Strategy
-
-### Step 3a: Check Category
-
-Read skill **kategorie-adaptionen**. Does this product's category have a specific slot sequence?
-- Supplements → Supplement Facts Panel early, certifications prominent
-- Electronics → "What's in the Box" early, compatibility info
-- Textiles → Model requirements, size chart mandatory
-- Beauty → Ingredient focus, texture shots
-- Furniture → Room setting, exact dimensions
-- Food → Nutrition table, origin info
-
-If yes: use the category-specific sequence as your starting point.
-If no: use the Standard-Balanced sequence (AIDA funnel).
-
-### Step 3b: Adjust for Price Level
-
-- Premium (>50 EUR): Emphasize material/quality close-ups, brand story elements, perceived value
-- Budget (<15 EUR): Emphasize value proposition, comparison chart for price-performance
-
-### Step 3c: Map USPs to Slots
-
-Every top USP from the analysis must be visually represented in at least one slot. Create a mapping:
+## 1. Check for Work
 
 ```
-USP 1 → Slot X (how it will be shown)
-USP 2 → Slot Y
-USP 3 → Slot Z
+GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_progress,blocked
 ```
 
-### Step 3d: Map Objections to Slots
+Two types of work:
+- **New briefing:** Fresh issue from CEO (status: todo)
+- **Revision:** Subtask from Quality-Reviewer with fixes (check for parentId)
 
-Every primary objection must be addressed:
+Prioritize: revisions first, then new work.
+
+## 2. Checkout Task
 
 ```
-Objection 1 → Slot X (how it will be handled)
-Objection 2 → Slot Y
+POST /api/issues/{issueId}/checkout
 ```
 
-## 4. Generate Briefing
+Read issue description for context. Check which files are available in `./workspace/{task-id}/`.
 
-For each of the 7 slots, write a complete briefing block following the **briefing-template** skill format:
+## 3. Read Product Analysis
 
-1. **Kernbotschaft** — What should the viewer understand in 2 seconds?
-2. **Psychologische Funktion** — Which buyer question is answered?
-3. **Pflicht-Elemente** — What MUST be in the image?
-4. **Optionale Elemente** — What CAN be added?
-5. **Text-Overlay** — Yes/No + exact text suggestions, font specs
-6. **Technische Vorgaben** — Resolution, format, special requirements
-7. **Farbwelt & Stimmung** — Atmosphere, color palette
-8. **Designer-Notizen** — Specific guidance from the product analysis
-9. **Referenz/Inspiration** — Reference images or competitor examples
-10. **A/B-Test-Vorschlag** — What variant to test
+Read `./workspace/{task-id}/produkt-analyse.md` thoroughly. Extract:
+- Category → determines slot adaptation
+- Price level → affects emphasis
+- Top USPs → MUST appear in briefing
+- Primary objections → MUST be addressed
+- Strategy recommendation → you decide whether to follow
+- Competitor visual gaps → opportunities
 
-Also write the briefing header (strategic summary, USP mapping, objection mapping) and footer (review checklist, A+ Content recommendation, next steps).
+If fields marked `[NICHT VERFUEGBAR]`: note which slots are affected.
 
-## 5. Self-Check Before Submission
+## 4. Determine Slot Strategy
 
-Before writing the output, verify:
+### Step 4a: Check Category
+Read skill **kategorie-adaptionen**. Category-specific sequence? Use it. Otherwise: Standard-Balanced.
 
-- [ ] All 7 slots have a unique core message (no redundancy)
-- [ ] AIDA funnel is recognizable in the sequence
-- [ ] Every top USP is visually represented in at least one slot
-- [ ] Every primary objection is addressed in at least one slot
-- [ ] Slot 1 Hero Image is Amazon-compliant (white bg, no text, 85-100% fill)
-- [ ] All text overlays specify minimum 30pt font
-- [ ] Category-specific rules are applied
-- [ ] No competitor brand names in comparison charts
-- [ ] Briefing-template format is followed exactly
+### Step 4b: Adjust for Price Level
+- Premium: emphasize quality close-ups, brand story, perceived value
+- Budget: emphasize value proposition, price-performance comparison
 
-## 6. Write Output
+### Step 4c: Map USPs to Slots
+Every top USP visually represented in at least one slot.
 
-Write `listing-briefing.md` to the task workspace.
+### Step 4d: Map Objections to Slots
+Every primary objection addressed in at least one slot.
 
-## 7. Mark Task Complete
+## 5. Generate Briefing
 
-Mark your task as done. This triggers the Quality-Reviewer.
+For each of 7 slots, write a complete block per **briefing-template** skill:
+1. Kernbotschaft
+2. Psychologische Funktion
+3. Pflicht-Elemente
+4. Optionale Elemente
+5. Text-Overlay
+6. Technische Vorgaben
+7. Farbwelt & Stimmung
+8. Designer-Notizen
+9. Referenz/Inspiration
+10. A/B-Test-Vorschlag
+
+Include header (strategic summary, USP mapping, objection mapping) and footer.
+
+## 6. A+ Content Uebergabe
+
+Per skill **listing-content-architektur**, include at the end of the briefing:
+
+```markdown
+## A+ Content Uebergabe
+
+### In der Galerie abgedeckt:
+- [What each slot covers]
+
+### NICHT abgedeckt — A+ muss uebernehmen:
+- [Technology explanation, extended use cases, FAQ, etc.]
+
+### Bilder die A+ NICHT wiederholen darf:
+- [List each slot's key visual]
+```
+
+## 7. Self-Check
+
+- [ ] All 7 slots unique (no redundancy)
+- [ ] AIDA funnel recognizable
+- [ ] Every top USP visually represented
+- [ ] Every primary objection addressed
+- [ ] Slot 1 Amazon-compliant (white bg, no text, 85-100% fill)
+- [ ] All text overlays ≥30pt
+- [ ] Category-specific rules applied
+- [ ] No competitor brand names
+- [ ] A+ Uebergabe section complete
+- [ ] Briefing-template format exact
+
+## 8. Write Output
+
+Write `listing-briefing.md` to `./workspace/{task-id}/`.
+
+## 9. Complete Task
+
+```
+PATCH /api/issues/{issueId}
+{
+  "status": "done",
+  "comment": "Bild-Briefing abgeschlossen. Strategie: [Type]. 7 Slots definiert. A+ Uebergabe enthalten."
+}
+```
 
 ## Handling Revisions
 
-When you receive a revision request (REVISION_NOETIG):
-
-1. Read `review-ergebnis.md` — focus on FAIL and WARN items
-2. Read the specific fix instructions for each flagged slot
-3. Apply fixes to your existing `listing-briefing.md`
-4. Re-run the self-check (Step 5)
-5. Resubmit
+When you receive a revision issue (from Quality-Reviewer):
+1. Read the linked `review-ergebnis.md` — focus on FAIL and WARN items
+2. Read specific fix instructions per slot
+3. Apply fixes to existing `listing-briefing.md`
+4. Re-run self-check (Step 7)
+5. Update issue as done with comment noting what was fixed

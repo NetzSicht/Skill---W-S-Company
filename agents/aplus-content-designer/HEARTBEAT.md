@@ -1,66 +1,80 @@
 # Heartbeat — A+ Content Designer
 
-## 1. Check for Tasks
+Run this checklist every heartbeat.
 
-- New A+ Content assignments from CEO
-- Only start when image briefing AND listing texts are approved
+## 1. Check for Work
 
-## 2. Read Input Documents
+```
+GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_progress,blocked
+```
 
-- `listing-briefing.md` — To know what the gallery already shows (no duplication)
-- `listing-texte.md` — To know what the bullets/description cover
-- `review-insights.md` — Customer questions and objections not yet addressed
-- `produkt-analyse.md` — Product data, brand info, competitor analysis
+Only start when image briefing AND listing texts are approved.
 
-## 3. Determine A+ Format
+## 2. Checkout Task
+
+```
+POST /api/issues/{issueId}/checkout
+```
+
+## 3. Read Input Documents
+
+- `listing-briefing.md` — Gallery content (to avoid duplication). Read the **A+ Uebergabe** section first.
+- `listing-texte.md` — Bullet/description content (to avoid duplication)
+- `review-insights.md` — Unanswered questions, objections
+- `produkt-analyse.md` — Product data, brand info
+
+## 4. Determine A+ Format
 
 | Condition | Format |
 |---|---|
-| Brand Registry active, no Premium access | **Basic A+** (max 5 modules, 970px width) |
+| Brand Registry active, no Premium | **Basic A+** (max 5 modules, 970px) |
 | Premium A+ eligible | **Premium A+** (max 7 modules, full-width, interactive) |
-| No Brand Registry | **No A+** — focus on product description instead |
+| No Brand Registry | **No A+** — focus on product description |
 
-## 4. Build Module Plan
+## 5. Build Module Plan
 
-### Brand Story (always first, if Brand Registry)
-- Brand origin and mission
-- Cross-selling carousel to other products
-- Prerequisite for Premium A+ eligibility
+Per skill **listing-content-architektur**: A+ extends the gallery story, never repeats it.
 
-### Recommended Module Sequence
+### Recommended Sequence
 
 | Module | Purpose | Content |
 |---|---|---|
-| **1. Hero Banner** | Emotional anchor | Full-width lifestyle image + value proposition headline |
-| **2. Feature Breakdown** | Deep education | Aspects NOT covered in gallery (e.g., internal technology, process) |
-| **3. Use Case Scenarios** | Expand target audience | Show product in 2-3 different usage contexts |
-| **4. Comparison Matrix** | Defensive retention | Own product variants compared (not competitor brands!) |
-| **5. FAQ / Trust** | Remove final barriers | Top customer questions + certifications + guarantee |
+| Brand Story | Trust + Cross-Sell | Brand origin, mission, product carousel |
+| Hero Banner | Emotional anchor | Full-width lifestyle + value proposition |
+| Feature Breakdown | Deep education | Aspects NOT covered in gallery |
+| Use Case Scenarios | Expand audience | 2-3 different usage contexts |
+| Comparison Matrix | Defensive retention | Own product VARIANTS (not competitors!) |
+| FAQ / Trust | Remove barriers | Top customer questions + certifications |
 
-### For Premium A+, add:
-- Interactive hotspot modules (clickable product details)
-- Auto-play video loops
-- Full-width immersive imagery
+## 6. Brief Each Module
 
-## 5. Brief Each Module
-
-Per module, define:
-- Module type (Standard Image + Text, Full-width, Comparison Table, etc.)
-- Image requirements (what to show, what NOT to show)
+Per module:
+- Module type (Standard Image+Text, Full-width, Comparison, etc.)
+- Image requirements (what to show, what NOT to repeat from gallery)
 - Text content (headlines, body, alt-text for SEO)
-- How it complements (not duplicates) the gallery and bullets
-
-## 6. Write Output
-
-Write `aplus-briefing.md` to the task workspace.
+- How it complements the gallery
 
 ## 7. Self-Check
 
-- [ ] No image duplicates from the gallery
+- [ ] No image duplicates from gallery
 - [ ] No text duplicates from bullets/description
-- [ ] Brand Story module included (if Brand Registry)
+- [ ] Brand Story included (if Brand Registry)
 - [ ] Comparison chart uses own variants, not competitor names
-- [ ] 70/30 visual-to-text ratio maintained
+- [ ] 70/30 visual-to-text ratio
 - [ ] Alt-texts include relevant keywords
-- [ ] Module sequence creates a narrative arc
-- [ ] Customer questions from Review-Analyst are addressed
+- [ ] Narrative arc: gallery → brand story → A+ is coherent
+- [ ] Customer questions from Review-Analyst addressed
+
+## 8. Write Output
+
+Write `aplus-briefing.md` to `./workspace/{task-id}/`.
+
+## 9. Complete Task
+
+```
+PATCH /api/issues/{issueId}
+{
+  "status": "done",
+  "comment": "A+ Briefing abgeschlossen. Format: [Basic/Premium]. [X] Module definiert. Keine Galerie-Duplikate."
+}
+```

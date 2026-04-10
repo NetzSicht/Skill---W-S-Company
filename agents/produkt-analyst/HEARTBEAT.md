@@ -1,75 +1,78 @@
 # Heartbeat — Produkt-Analyst
 
-Run this checklist every heartbeat. This is your execution loop.
+Run this checklist every heartbeat.
 
-## 1. Check for Tasks
+## 1. Check for Work
 
-- Look for new tasks assigned to you (new ASIN or product description)
-- Look for revision requests from downstream agents (Listing-Briefer or Quality-Reviewer)
+Query your assigned issues:
+```
+GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_progress,blocked
+```
 
-If no tasks: idle.
+Prioritize: `in_progress` first, then `todo`. Skip `blocked` unless you can resolve it now.
 
-## 2. Gather Input
+If no issues assigned: idle.
 
-Read the task description. You will receive one or more of:
+## 2. Checkout Task
 
-| Input Type | What To Do |
-|---|---|
-| ASIN | Pull all data from the Amazon listing |
-| Product URL | Same as ASIN — extract ASIN first |
-| Product description (manual) | Structure into analysis format |
-| Product data sheet (PDF/doc) | Extract specs, materials, dimensions |
-| Existing images | Evaluate current slot usage and quality |
+Claim the highest-priority issue:
+```
+POST /api/issues/{issueId}/checkout
+```
+If 409 Conflict: pick another issue. Do not retry the same one.
 
-## 3. Execute Analysis (7 Phases)
+Read the issue description for context: product info, ASIN, client requirements.
 
-Work through these phases sequentially. Each phase fills a section of the output.
+## 3. Execute Analysis (9 Phases)
 
 ### Phase 1: Stammdaten
-Collect: product name, brand, category, subcategory, price, price level (Budget/Mittel/Premium), FBA/FBM, Brand Registry status, A+ Content status.
+Product name, brand, category, price, price level, FBA/FBM, Brand Registry, A+ Content status.
 
 ### Phase 2: Zielgruppe
-Define primary buyer persona: demographics, psychographics, purchase motivation, pain point, price sensitivity. Derive from review profiles and category norms — don't guess.
+Primary buyer persona: demographics, psychographics, purchase motivation, pain point, price sensitivity. Derive from data — don't guess.
 
 ### Phase 3: Top-USPs
-Identify 3-5 USPs. Prioritize by:
-1. Differentiation (what competitors DON'T have)
-2. Relevance (what buyers care about MOST)
-3. Communicability (what can be shown VISUALLY)
-
-Formulate as benefits, not features.
+3-5 USPs prioritized by: Differentiation → Relevance → Communicability. Benefits, not features.
 
 ### Phase 4: Lieferumfang & Abmessungen
-List every part included. Record all dimensions (H x W x D), weight, capacity, material, colors, variants.
+Every part included. All dimensions (H x W x D), weight, capacity, material, colors, variants.
 
 ### Phase 5: Zertifizierungen
-Document every certification, seal, award, guarantee.
+Every certification, seal, award, guarantee.
 
 ### Phase 6: Wettbewerber-Analyse
-Analyze top 3-5 competitors by sales rank. For each: price, rating, strengths, weaknesses, image quality, slot usage. Then synthesize: where are we better / equal / behind? What visual gap exists?
+Top 3-5 competitors: price, rating, strengths, weaknesses, image quality, slot usage. Synthesize: where better / equal / behind? Visual gap?
 
 ### Phase 7: Kundenstimmen
-Mine reviews (own + competitor): top 3 praise points, top 3 criticism points, most common question. Include frequency counts and example quotes.
+Mine reviews (own + competitor): top 3 praise, top 3 criticism, most common question. Frequency + quotes.
 
 ### Phase 8: Bestehende Bilder (if optimization)
-If existing listing: evaluate each used slot (content, quality, problems). Note unused slots.
+Evaluate each used slot. Note unused slots.
 
 ### Phase 9: Strategie-Empfehlung
-Recommend strategy type (Standard-Balanced / Feature-Lastig / Emotional / Kategorie-Spezifisch). State why. List top 3 objections the briefing must address. Add special notes for the Briefer.
+Recommend strategy type. State why. List top 3 objections. Add special notes for Briefer.
 
 ## 4. Write Output
 
-Write `produkt-analyse.md` in the exact Interface A format (see skill: produkt-analyse-interface). Every field must be filled or explicitly marked as unavailable.
+Write `produkt-analyse.md` to `./workspace/{task-id}/` in the exact Interface A format (see skill: produkt-analyse-interface).
 
-## 5. Mark Task Complete
+## 5. Quality Self-Check
 
-Mark your task as done. This triggers the Listing-Briefer to pick up your output.
+- [ ] All 10 sections of Interface A present
+- [ ] No fields silently empty (filled or marked `[NICHT VERFUEGBAR]`)
+- [ ] USPs formulated as benefits
+- [ ] Competitor analysis balanced
+- [ ] Strategy recommendation has rationale
 
-## 6. Quality Self-Check
+## 6. Complete Task
 
-Before marking done, verify:
-- [ ] All 10 sections of Interface A are present
-- [ ] No fields are silently empty (either filled or marked `[NICHT VERFUEGBAR]`)
-- [ ] USPs are formulated as benefits, not features
-- [ ] Competitor analysis is balanced (strengths AND weaknesses)
-- [ ] Strategy recommendation has a clear rationale
+Update issue with results summary and mark done:
+```
+PATCH /api/issues/{issueId}
+{
+  "status": "done",
+  "comment": "Produktanalyse abgeschlossen. [Kurze Zusammenfassung: X USPs, Y Wettbewerber analysiert, Strategie-Empfehlung: Z]"
+}
+```
+
+The CEO will create the next-phase issue (Listing-Briefer) when ready.

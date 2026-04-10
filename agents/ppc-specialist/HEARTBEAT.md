@@ -1,53 +1,68 @@
 # Heartbeat — PPC Specialist
 
-## 1. Check for Tasks
+Run this checklist every heartbeat.
 
-- New campaign setup requests from CEO
-- Optimization reviews for running campaigns
-- Keyword strategies from Keyword Researcher
-- Performance alerts or budget changes
+## 1. Check for Work
 
-## 2. Campaign Setup (New Product)
+```
+GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_progress,blocked
+```
 
-1. Read `produkt-analyse.md` — understand product, margins, competition
-2. Read `keyword-strategie.md` — get keyword tiers and search volumes
-3. Calculate break-even ACoS: (margin / price) × 100
+Two types: new campaign setup, optimization review.
+
+## 2. Checkout Task
+
+```
+POST /api/issues/{issueId}/checkout
+```
+
+## 3. Campaign Setup (New Product)
+
+1. Read `produkt-analyse.md` — product, margins, competition
+2. Read `keyword-strategie.md` — keyword tiers, search volumes
+3. Calculate break-even ACoS: (margin / price) x 100
 4. Create campaign structure:
 
 ```
-Campaign Structure:
-├── SP — Exact (Top keywords, aggressive bids)
-├── SP — Phrase (Mid-tier keywords)
-├── SP — Broad/Auto (Discovery, lower bids)
-├── SP — Branded (Defensive, own brand terms)
-├── SP — Competitor (Offensive, competitor brand terms)
-├── SB — Headline Search (Brand awareness, top-of-search)
-└── SD — Retargeting (Product targeting, audience targeting)
+├── SP — Exact (top keywords, aggressive bids)
+├── SP — Phrase (mid-tier)
+├── SP — Broad/Auto (discovery, lower bids)
+├── SP — Branded (defensive)
+├── SP — Competitor (offensive)
+├── SB — Headline Search (brand awareness)
+└── SD — Retargeting (product + audience targeting)
 ```
 
-5. Set initial bids based on category benchmarks
-6. Define budget allocation (60% exact/phrase, 25% broad/auto, 15% SB/SD)
+5. Set initial bids per category benchmarks
+6. Budget allocation: 60% exact/phrase, 25% broad/auto, 15% SB/SD
 
-## 3. Optimization Review (Running Campaigns)
+## 4. Optimization Review (Running Campaigns)
 
 1. Pull performance data (impressions, clicks, CTR, CPC, ACoS, ROAS)
-2. Search term analysis:
-   - Converting terms → promote to exact match
-   - Wasting terms → add as negative keywords
-   - High-impression/low-click → listing problem (flag for Listing-Briefer)
+2. Search term analysis: converting → exact, wasting → negative, high-impression/low-click → flag listing
 3. Bid adjustments based on ACoS vs. target
-4. Budget reallocation from underperformers to winners
-5. Placement analysis (top-of-search vs. rest-of-search vs. product pages)
-
-## 4. Write Output
-
-Write `ppc-strategie.md` (setup) or `ppc-optimierung.md` (review) to task workspace.
+4. Budget reallocation
+5. Placement analysis
 
 ## 5. Self-Check
 
 - [ ] Break-even ACoS calculated
-- [ ] Campaign structure follows standard architecture
-- [ ] All keyword tiers mapped to campaigns
+- [ ] Campaign structure follows architecture
+- [ ] All keyword tiers mapped
 - [ ] Negative keywords defined
-- [ ] Budget allocation justified by data
-- [ ] Recommendations are specific (not "increase bids" but "increase bid on [keyword] from 0.45 to 0.62 EUR")
+- [ ] Budget allocation justified
+- [ ] Recommendations specific (not "increase bids" but "keyword X: 0.45 → 0.62 EUR")
+
+## 6. Write Output
+
+Write `ppc-strategie.md` or `ppc-optimierung.md` to `./workspace/{task-id}/`.
+
+## 7. Complete Task
+
+```
+PATCH /api/issues/{issueId}
+{
+  "status": "done",
+  "comment": "PPC-Strategie abgeschlossen. [X] Kampagnen, Break-even ACoS: [X]%, Budget: [X] EUR/Tag."
+}
+```

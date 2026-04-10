@@ -1,64 +1,63 @@
 # Heartbeat — Review-Analyst
 
-## 1. Check for Tasks
+Run this checklist every heartbeat.
 
-- New review analysis requests from CEO
-- Product analyses that need review intelligence
+## 1. Check for Work
 
-## 2. Read Input
+```
+GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_progress,blocked
+```
 
-- `produkt-analyse.md` — Product info, competitors, existing review summary (if available)
-- Access to product and competitor reviews on Amazon
+## 2. Checkout Task
 
-## 3. Analysis Process
+```
+POST /api/issues/{issueId}/checkout
+```
 
-### Step 3a: Own Product Reviews (if existing listing)
+## 3. Read Input
 
-Analyze last 100-200 reviews:
+- `produkt-analyse.md` — Product info, competitor ASINs
+- Access product and competitor reviews on Amazon
 
-| Category | What to Extract |
-|---|---|
-| **Top Praise** (top 5) | Feature mentioned, frequency, exact customer quotes |
-| **Top Criticism** (top 5) | Issue mentioned, frequency, exact quotes, severity |
-| **Surprise Moments** | What positively surprised buyers? (= hidden USPs) |
-| **Expectation Gaps** | Where did reality not match listing? (= image/text problem) |
-| **Buyer Personas** | Who is buying? (extract from review context) |
+## 4. Analysis Process
 
-### Step 3b: Competitor Reviews
+### Step 4a: Own Product Reviews (if existing listing)
+Analyze last 100-200 reviews: top 5 praise, top 5 criticism, surprise moments, expectation gaps, buyer personas.
 
-For each top competitor (from produkt-analyse):
-- What do their customers love? (our minimum standard)
-- What do their customers hate? (our opportunity)
-- What features do they wish existed? (our differentiator)
+### Step 4b: Competitor Reviews
+For each top competitor: what customers love (our minimum), what they hate (our opportunity), what they wish existed (our differentiator).
 
-### Step 3c: Q&A Analysis
+### Step 4c: Q&A Analysis
+Unanswered questions = listing content gaps. Map each to: slot, bullet, or A+ module.
 
-- Unanswered or poorly answered questions (= listing content gaps)
-- Most common question themes
-- Map each question to: which slot/bullet/A+ module should answer it?
+### Step 4d: Language Extraction
+Positive phrases, pain point descriptions, feature language — real customer vocabulary for the Content Master.
 
-### Step 3d: Language Extraction
+### Step 4e: Objection Map
 
-Build a vocabulary bank:
-- **Positive phrases** customers use (for Content Master)
-- **Pain point descriptions** (for Listing-Briefer — what to show in contrast images)
-- **Feature language** — how customers describe features vs. how the brand does
-
-### Step 3e: Objection Map
-
-| Objection | Frequency | Source | Should Be Addressed In |
+| Objection | Frequency | Source | Addressable In |
 |---|---|---|---|
-| [e.g. "too small"] | [x reviews] | [own/competitor] | [Slot 4 / BP2 / A+ Module] |
-
-## 4. Write Output
-
-Write `review-insights.md` to the task workspace.
+| [Issue] | [x reviews] | [own/competitor] | [Slot/BP/A+ Module] |
 
 ## 5. Self-Check
 
 - [ ] Top 5 praise + criticism with frequency and quotes
-- [ ] Competitor review analysis completed (at least 3 competitors)
-- [ ] Q&A gaps identified and mapped to listing elements
-- [ ] Customer vocabulary bank extracted (min. 10 phrases)
-- [ ] Objection map with frequency and placement recommendation
-- [ ] Buyer persona segments identified
+- [ ] ≥3 competitor review analyses
+- [ ] Q&A gaps identified and mapped
+- [ ] Customer vocabulary bank (≥10 phrases)
+- [ ] Objection map with placement recommendations
+- [ ] Buyer personas segmented
+
+## 6. Write Output
+
+Write `review-insights.md` to `./workspace/{task-id}/`.
+
+## 7. Complete Task
+
+```
+PATCH /api/issues/{issueId}
+{
+  "status": "done",
+  "comment": "Review-Analyse abgeschlossen. [X] Praise, [X] Kritik, [X] Einwaende identifiziert. Vokabular-Bank mit [X] Phrasen."
+}
+```

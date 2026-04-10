@@ -1,70 +1,75 @@
 # Heartbeat — Content Master
 
-## 1. Check for Tasks
+Run this checklist every heartbeat.
 
-- New listing text assignments from CEO
-- Revision requests from Quality-Reviewer
-- Updated keyword data or review insights
+## 1. Check for Work
 
-If no tasks: idle.
+```
+GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_progress,blocked
+```
 
-## 2. Read Input Documents
+## 2. Checkout Task
 
-Collect from the task workspace:
+```
+POST /api/issues/{issueId}/checkout
+```
+
+Read issue description. Check available files in `./workspace/{task-id}/`.
+
+## 3. Read Input Documents
+
 - `produkt-analyse.md` — Product data, USPs, target audience
-- `keyword-strategie.md` — Primary keywords, long-tails, search volume (from Keyword Researcher)
-- `review-insights.md` — Customer language, praise, criticism (from Review-Analyst)
-- `listing-briefing.md` — Image briefing (if available, for synergy alignment)
+- `keyword-strategie.md` — Primary keywords, long-tails, placement plan
+- `review-insights.md` — Customer language, praise, criticism
+- `listing-briefing.md` — Image briefing (if available, for text-image synergy)
 
-## 3. Create Listing Title
+## 4. Create Listing Title
 
 Formula: **Brand + Top Intent Phrase + Feature Group + Use Case + Specs**
 
 - 150-180 characters total
-- First 70 characters must contain brand + primary keyword (mobile visibility)
-- Natural language — no keyword stuffing (Rufus/COSMO penalty)
-- Must match what the buyer sees in the Hero Image
+- First 70 characters: brand + primary keyword (mobile visibility)
+- Natural language — no keyword stuffing
+- Must match what buyer sees in Hero Image
 
-## 4. Create Bullet Points (5x)
+## 5. Create Bullet Points (5x)
 
 | Bullet | Focus | Synergy With |
 |---|---|---|
-| BP1 | Primary USP — transformative benefit | Slot 2 (Lifestyle) + Slot 3 (Infographic) |
-| BP2 | Technical superiority — material/quality | Slot 4 (Dimensions) + Slot 5 (Detail) |
-| BP3 | Secondary technical benefit | Slot 5 (Detail) |
-| BP4 | Preemptive objection handling | Review-Analyst insights |
-| BP5 | Risk reversal — guarantee, service, delivery contents | Slot 6 (Package) + Slot 7 (Trust) |
+| BP1 | Primary USP — transformative benefit | Slot 2 + 3 |
+| BP2 | Technical superiority | Slot 4 + 5 |
+| BP3 | Secondary technical benefit | Slot 5 |
+| BP4 | Preemptive objection handling | Review insights |
+| BP5 | Risk reversal — guarantee, service, contents | Slot 6 + 7 |
 
-Per bullet point:
-- CAPS anchor (2-3 words) + colon + benefit statement
-- Feature → Function → Outcome → Emotional feeling
-- Max. 200 characters per bullet (mobile readability)
-- Include 1-2 keywords naturally per bullet
-
-## 5. Create Product Description (if applicable)
-
-- Extended narrative for below-the-fold
-- Supports A+ Content (or replaces it if no Brand Registry)
-- Include remaining keywords not covered in title/bullets
-- Natural, readable prose — not keyword lists
+Per bullet: CAPS anchor + benefit statement. Max 200 chars. 1-2 keywords naturally.
 
 ## 6. Backend Keywords
 
-- Max. 250 bytes
-- No duplicates of title/bullet keywords
-- Include: misspellings, synonyms, Spanish/English equivalents, long-tail variations
-- No brand names, no ASINs, no subjective claims
+- Max 250 bytes
+- No duplicates from title/bullets
+- Include: misspellings, synonyms, long-tail variations
+- No brand names, ASINs, subjective claims
 
 ## 7. Self-Check
 
 - [ ] Title: 150-180 chars, primary keyword in first 70
-- [ ] All 5 bullet points follow the hierarchy
+- [ ] 5 bullet points follow hierarchy
 - [ ] Bullet-image synergy verified (if briefing available)
-- [ ] Customer language from reviews used (at least 3 phrases)
-- [ ] All primary keywords placed (title + bullets)
-- [ ] Backend keywords: no duplicates, within 250 bytes
-- [ ] No forbidden claims (health, "best", "cheapest", etc.)
+- [ ] Customer language from reviews used (≥3 phrases)
+- [ ] All primary keywords placed
+- [ ] Backend keywords: no duplicates, ≤250 bytes
 
 ## 8. Write Output
 
-Write `listing-texte.md` to the task workspace.
+Write `listing-texte.md` to `./workspace/{task-id}/`.
+
+## 9. Complete Task
+
+```
+PATCH /api/issues/{issueId}
+{
+  "status": "done",
+  "comment": "Listing-Texte abgeschlossen. Titel: [X] Zeichen. 5 Bullets. Backend: [X] Bytes."
+}
+```
