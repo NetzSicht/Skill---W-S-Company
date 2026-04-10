@@ -1,0 +1,185 @@
+# NetzSicht Listing-Briefing Pipeline
+# paperclip.ing Agent-Konfigurationen
+#
+# 3-Agent-Pipeline: Produkt-Analyst -> Listing-Briefer -> Quality-Reviewer
+# Jeder Agent hat eine klar definierte Rolle und kommuniziert ueber
+# strukturierte Markdown-Dokumente (siehe pipeline/interfaces.md)
+
+# =============================================================================
+# Agent 1: Produkt-Analyst
+# =============================================================================
+# Sammelt und strukturiert Produktdaten. Erster Agent in der Pipeline.
+# Wird getriggert durch: Neuen Task mit ASIN oder Produktbeschreibung.
+# Output: produkt-analyse.md
+
+produkt-analyst:
+  name: Produkt-Analyst
+  title: Senior Product Research Analyst
+
+  adapter:
+    type: local-cli
+    config:
+      working_directory: "./workspace"
+      prompt_template: |
+        Du bist der Produkt-Analyst. Lies deine Skill-Definition:
+        {{skill_path}}/agents/produkt-analyst/SKILL.md
+
+        Dein Task: {{task_description}}
+
+        Erstelle eine vollstaendige produkt-analyse.md im Interface-A-Format
+        (siehe pipeline/interfaces.md).
+
+        Schreibe das Ergebnis nach: ./workspace/{{task_id}}/produkt-analyse.md
+
+  model: claude-sonnet-4-6
+
+  system_prompt: |
+    Du bist ein erfahrener Amazon-Produkt-Analyst bei der Agentur NetzSicht.
+    Deine Aufgabe ist es, alle relevanten Produktdaten zu sammeln und so aufzubereiten,
+    dass ein Listing-Briefer daraus optimale Bild-Briefings erstellen kann.
+
+    Du bist gruendlich, datengetrieben und objektiv. Du raetst nicht — du belegst.
+    Wenn Daten fehlen, markierst du das klar als [NICHT VERFUEGBAR].
+
+    Dein Output-Format ist strikt definiert in pipeline/interfaces.md (Interface A).
+    Weiche nie davon ab.
+
+  heartbeat:
+    interval: "on_demand"
+    cooldown: "5 minutes"
+    max_concurrent_runs: 3
+    wake_triggers:
+      - new_task
+      - revision_request
+
+  budget:
+    monthly_tokens: 2000000
+    warning_threshold: 80
+
+# =============================================================================
+# Agent 2: Listing-Briefer
+# =============================================================================
+# Erstellt Slot-fuer-Slot Bild-Briefings. Kernagent der Pipeline.
+# Wird getriggert durch: Fertige produkt-analyse.md von Agent 1.
+# Output: listing-briefing.md
+
+listing-briefer:
+  name: Listing-Briefer
+  title: Creative Strategist — Listing Optimization
+
+  adapter:
+    type: local-cli
+    config:
+      working_directory: "./workspace"
+      prompt_template: |
+        Du bist der Listing-Briefer. Lies deine Skill-Definition:
+        {{skill_path}}/agents/listing-briefer/SKILL.md
+
+        Lies die Produkt-Analyse:
+        ./workspace/{{task_id}}/produkt-analyse.md
+
+        Erstelle ein vollstaendiges listing-briefing.md im Template-Format
+        (siehe agents/listing-briefer/references/briefing-template.md).
+
+        Schreibe das Ergebnis nach: ./workspace/{{task_id}}/listing-briefing.md
+
+  model: claude-opus-4-6
+
+  system_prompt: |
+    Du bist ein erfahrener Creative Strategist bei NetzSicht, spezialisiert auf
+    Amazon-Listing-Optimierung. Du verstehst Verkaufspsychologie, Neuromarketing
+    und Amazon-Compliance in der Tiefe.
+
+    Du erstellst praezise, umsetzbare Bild-Briefings fuer Grafiker und KI-Bilder-Experten.
+    Jeder Slot hat eine klare Aufgabe im Conversion-Funnel. Du denkst in Kaeufer-Fragen
+    und psychologischen Triggern, nicht in huebschen Bildern.
+
+    Dein Output-Format ist strikt definiert in references/briefing-template.md.
+    Deine Wissensbasis liegt in references/slot-framework.md und references/kategorie-adaptionen.md.
+
+  heartbeat:
+    interval: "on_demand"
+    cooldown: "5 minutes"
+    max_concurrent_runs: 2
+    wake_triggers:
+      - produkt_analyse_complete
+      - revision_request
+
+  budget:
+    monthly_tokens: 3000000
+    warning_threshold: 80
+
+# =============================================================================
+# Agent 3: Quality-Reviewer
+# =============================================================================
+# Prueft Briefings gegen Compliance, Konsistenz und Vollstaendigkeit.
+# Wird getriggert durch: Fertiges listing-briefing.md von Agent 2.
+# Output: review-ergebnis.md
+
+quality-reviewer:
+  name: Quality-Reviewer
+  title: Quality Assurance — Compliance & Standards
+
+  adapter:
+    type: local-cli
+    config:
+      working_directory: "./workspace"
+      prompt_template: |
+        Du bist der Quality-Reviewer. Lies deine Skill-Definition:
+        {{skill_path}}/agents/quality-reviewer/SKILL.md
+
+        Pruefe dieses Briefing:
+        ./workspace/{{task_id}}/listing-briefing.md
+
+        Gegen diese Produkt-Analyse:
+        ./workspace/{{task_id}}/produkt-analyse.md
+
+        Erstelle ein review-ergebnis.md im Interface-C-Format
+        (siehe pipeline/interfaces.md).
+
+        Schreibe das Ergebnis nach: ./workspace/{{task_id}}/review-ergebnis.md
+
+  model: claude-sonnet-4-6
+
+  system_prompt: |
+    Du bist der Quality-Reviewer bei NetzSicht. Du bist das letzte Gate
+    bevor ein Briefing an den Designer geht.
+
+    Du bist kritisch aber konstruktiv. Jeder Fehler den du findest, braucht
+    einen konkreten Fix-Vorschlag. Du sagst nicht nur was falsch ist —
+    du sagst was stattdessen gemacht werden muss.
+
+    Du pruefst gegen 7 Dimensionen: Amazon-Compliance, Mobile-Lesbarkeit,
+    Narrativ-Konsistenz, USP-Abdeckung, Einwand-Behandlung, Redundanz,
+    Kategorie-Regeln.
+
+    Dein Output hat genau drei moegliche Ergebnisse:
+    APPROVED, REVISION_NOETIG, ABGELEHNT.
+
+  heartbeat:
+    interval: "on_demand"
+    cooldown: "5 minutes"
+    max_concurrent_runs: 3
+    wake_triggers:
+      - briefing_complete
+
+  budget:
+    monthly_tokens: 1000000
+    warning_threshold: 80
+
+# =============================================================================
+# Pipeline-Orchestrierung
+# =============================================================================
+# Die Pipeline wird durch Tasks gesteuert. Jeder Agent checkt seinen
+# naechsten Task aus, arbeitet ihn ab und triggert den naechsten Agent.
+#
+# Flow:
+#   1. Neuer Task mit ASIN/Produktinfo wird erstellt
+#   2. Produkt-Analyst checkt Task aus, erstellt produkt-analyse.md
+#   3. Produkt-Analyst markiert als "done" -> triggert Listing-Briefer
+#   4. Listing-Briefer checkt aus, erstellt listing-briefing.md
+#   5. Listing-Briefer markiert als "done" -> triggert Quality-Reviewer
+#   6. Quality-Reviewer checkt aus, erstellt review-ergebnis.md
+#   7a. APPROVED -> Task als "done" markieren, Briefing geht an Designer
+#   7b. REVISION_NOETIG -> Subtask fuer Listing-Briefer mit Fixes
+#   7c. ABGELEHNT -> Subtask fuer Produkt-Analyst (mehr Daten noetig)

@@ -1,0 +1,14 @@
+schema: paperclip/v1
+
+agents:
+  produkt-analyst:
+    inputs:
+      env: {}
+
+  listing-briefer:
+    inputs:
+      env: {}
+
+  quality-reviewer:
+    inputs:
+      env: {}
