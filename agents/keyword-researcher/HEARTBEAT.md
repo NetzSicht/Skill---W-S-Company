@@ -14,6 +14,14 @@ GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_prog
 POST /api/issues/{issueId}/checkout
 ```
 
+## 2b. Load Category Skill
+
+Read the product category from `produkt-analyse.md`. If a category-specific skill is attached (e.g., `kategorie-textil-socken`), read your agent section BEFORE researching keywords. The category skill provides:
+- Category-specific keyword architecture with tier examples
+- Seasonal keyword shifts for this product type
+- Intent scoring adapted to category buying behavior
+- PAN-EU keyword lists per marketplace language
+
 ## 3. Read Input
 
 - `produkt-analyse.md` — Product category, USPs, target audience, competitors

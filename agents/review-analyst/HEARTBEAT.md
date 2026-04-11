@@ -14,6 +14,14 @@ GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_prog
 POST /api/issues/{issueId}/checkout
 ```
 
+## 2b. Load Category Skill
+
+Read the product category from `produkt-analyse.md`. If a category-specific skill is attached (e.g., `kategorie-textil-socken`), read your agent section BEFORE analyzing reviews. The category skill provides:
+- Category-specific review search patterns (exact terms to search for)
+- Frequency thresholds for this product type
+- Language extraction templates with minimum phrase counts
+- Common objection clusters specific to this category
+
 ## 3. Read Input
 
 - `produkt-analyse.md` — Product info, competitor ASINs

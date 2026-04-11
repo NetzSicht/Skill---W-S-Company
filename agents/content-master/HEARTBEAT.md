@@ -16,6 +16,14 @@ POST /api/issues/{issueId}/checkout
 
 Read issue description. Check available files in `./workspace/{task-id}/`.
 
+## 2b. Load Category Skill
+
+Read the product category from `produkt-analyse.md`. If a category-specific skill is attached (e.g., `kategorie-textil-socken`), read your agent section BEFORE writing copy. The category skill provides:
+- Category-specific title formula with examples
+- Bullet point hierarchy adapted to this product type
+- Mandatory keywords and keyword patterns
+- PAN-EU keyword lists per marketplace
+
 ## 3. Read Input Documents
 
 - `produkt-analyse.md` — Product data, USPs, target audience

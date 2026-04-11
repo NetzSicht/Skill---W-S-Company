@@ -23,6 +23,16 @@ If 409 Conflict: pick another issue. Do not retry the same one.
 
 Read the issue description for context: product info, ASIN, client requirements.
 
+## 2b. Load Category Skill
+
+Identify the product category from the issue description or ASIN lookup. If a category-specific skill is attached (e.g., `kategorie-textil-socken`), read your agent section in that skill BEFORE starting analysis. The category skill overrides and extends generic instructions with:
+- Additional mandatory data points for this category
+- USP evaluation matrix specific to this product type
+- Competitor analysis depth rules
+- Category-specific review patterns to search for
+
+If no category skill is attached: proceed with generic instructions.
+
 ## 3. Execute Analysis (9 Phases)
 
 ### Phase 1: Stammdaten

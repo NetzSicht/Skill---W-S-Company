@@ -22,6 +22,16 @@ POST /api/issues/{issueId}/checkout
 
 Read issue description for context. Check which files are available in `./workspace/{task-id}/`.
 
+## 2b. Load Category Skill
+
+Read the product category from `produkt-analyse.md` (Section 1: Kategorie). If a category-specific skill is attached (e.g., `kategorie-textil-socken`), read your agent section BEFORE creating the briefing. The category skill provides:
+- Category-specific slot sequence (overrides Standard-Balanced)
+- Slot-by-slot depth rules and callout templates
+- Subtype-specific adaptations
+- Common visual mistakes to avoid in this category
+
+If no category skill is attached: use standard slot sequence from `kategorie-adaptionen` skill.
+
 ## 3. Read Product Analysis
 
 Read `./workspace/{task-id}/produkt-analyse.md` thoroughly. Extract:

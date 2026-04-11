@@ -16,6 +16,13 @@ Only start when image briefing AND listing texts are approved.
 POST /api/issues/{issueId}/checkout
 ```
 
+## 2b. Load Category Skill
+
+Read the product category from `produkt-analyse.md`. If a category-specific skill is attached (e.g., `kategorie-textil-socken`), read your agent section BEFORE building A+ modules. The category skill provides:
+- Category-specific A+ module recommendations
+- What the gallery typically covers vs. what A+ must extend
+- Anti-duplication examples for this product type
+
 ## 3. Read Input Documents
 
 - `listing-briefing.md` — Gallery content (to avoid duplication). Read the **A+ Uebergabe** section first.

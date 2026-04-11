@@ -18,6 +18,13 @@ POST /api/issues/{issueId}/checkout
 
 Read issue description. Identify which files to review in `./workspace/{task-id}/`.
 
+## 2b. Load Category Skill
+
+Read the product category from `produkt-analyse.md`. If a category-specific skill is attached (e.g., `kategorie-textil-socken`), read your agent section BEFORE reviewing. The category skill provides:
+- Category-specific quality checks (additional to the 7 dimensions)
+- Mandatory elements for this product type (FAIL if missing)
+- Common category mistakes to watch for
+
 ## 3. Read Both Documents
 
 1. Read `produkt-analyse.md` — understand product, USPs, target audience, objections
