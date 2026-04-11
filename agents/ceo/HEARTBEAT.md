@@ -20,6 +20,11 @@ For each new request, create issues via the Issues API and assign to the right a
 
 ### Full Listing Optimization
 
+**Zuerst pruefen: Gibt es einen Kategorie-Skill fuer dieses Produkt?**
+
+Wenn NEIN → Zuerst Kategorie-Research starten (siehe unten), DANN Listing-Projekt.
+Wenn JA → Direkt zum Listing-Projekt.
+
 Create a parent issue, then child issues with dependencies:
 
 ```
@@ -50,6 +55,45 @@ Phase 5:
 Each issue needs: title, description with full context, assigneeAgentId, priority, parentId.
 
 Assigning an agent triggers their heartbeat automatically.
+
+### Kategorie-Research (einmalig pro neue Kategorie)
+
+Wird gestartet wenn ein Produkt in einer Kategorie kommt fuer die es noch keinen tiefen Kategorie-Skill gibt. Das Research fuettert den Kategorie-Skill mit echten Daten aus der Kategorie.
+
+```
+Parent: "Kategorie-Research: [Kategorie-Name] — [Marktplatz]"
+
+Phase R1 (parallel — alle drei gleichzeitig):
+  ├── "Kategorie-Scan: Top 15 Listings"    → assigneeAgentId: produkt-analyst
+  │     Description: "RESEARCH MODE. Nutze Rainforest API um die Top 15 
+  │     organischen Listings fuer [Hauptkeyword] auf [amazon.de] zu analysieren.
+  │     Ziehe Produktdaten, Bilder, Titel, Bullets, Preise. Schreibe Ergebnis
+  │     in kategorie-research.md Sektionen 1.1 bis 1.6.
+  │     Skill: kategorie-research-template"
+  │
+  ├── "Kategorie-Reviews: Kundenstimmen Top 15"  → assigneeAgentId: review-analyst
+  │     Description: "RESEARCH MODE. Nutze Rainforest API um positive und
+  │     kritische Reviews + Q&A der Top 15 ASINs zu analysieren. Extrahiere
+  │     Lob, Kritik, Einwaende, Vokabular, Personas. Schreibe in 
+  │     kategorie-research.md Sektionen 2.1 bis 2.7.
+  │     Skill: kategorie-research-template"
+  │
+  └── "Kategorie-Keywords: Suchlandschaft"  → assigneeAgentId: keyword-researcher
+        Description: "RESEARCH MODE. Nutze Rainforest API Autocomplete + 
+        Search + Bestsellers um die Keyword-Landschaft der Kategorie zu 
+        kartieren. Schreibe in kategorie-research.md Sektionen 3.1 bis 3.6.
+        Skill: kategorie-research-template"
+
+Phase R2 (nach Phase R1):
+  └── "Kategorie-Synthese"  → assigneeAgentId: ceo (self)
+        Alle drei Sektionen zusammenfuehren, Synthese (Sektion 4) schreiben,
+        Erkenntnisse in den dauerhaften Kategorie-Skill einpflegen.
+```
+
+**Credit-Budget pro Kategorie-Research: ~95 Rainforest API Requests**
+- Produkt-Analyst: ~35 (1 Search + 15 Products + 15 Offers + Buffer)
+- Review-Analyst: ~45 (15x positive Reviews + 15x critical Reviews + 15x Q&A)
+- Keyword Researcher: ~15 (10 Autocomplete + Bestsellers + Buffer)
 
 ### Single Tasks
 

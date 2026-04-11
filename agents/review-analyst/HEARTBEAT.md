@@ -27,6 +27,53 @@ Read the product category from `produkt-analyse.md`. If a category-specific skil
 - `produkt-analyse.md` — Product info, competitor ASINs
 - Access product and competitor reviews on Amazon
 
+## 3b. Check: Research Mode?
+
+If issue description contains **"RESEARCH MODE"**: you are doing a Kategorie-Research across the Top 15 Listings, NOT a single-product analysis.
+
+### Research Mode — Kategorie-Reviews
+
+1. Read the ASIN-Liste from `kategorie-research.md` Section 1.1 (written by Produkt-Analyst). If not yet available, use the ASINs from the issue description.
+
+2. For each of the Top 15 ASINs, pull reviews via Rainforest API:
+   ```
+   # Positive Reviews
+   GET /request?api_key={KEY}&type=reviews&asin={ASIN}&amazon_domain=amazon.de&star_rating=positive&sort_by=most_helpful
+   
+   # Critical Reviews
+   GET /request?api_key={KEY}&type=reviews&asin={ASIN}&amazon_domain=amazon.de&star_rating=critical&sort_by=most_helpful
+   
+   # Q&A
+   GET /request?api_key={KEY}&type=questions&asin={ASIN}&amazon_domain=amazon.de
+   ```
+
+3. Write Sektionen 2.1 - 2.7 of `kategorie-research.md` per template (skill: `kategorie-research-template`):
+   - **2.1 Aggregierte Review-Analyse** — Gesamt-Reviews analysiert, Durchschnittsbewertung
+   - **2.2 Top-Lob (10x)** — Thema, Haeufigkeit, exaktes Zitat, Slot/BP-Empfehlung
+   - **2.3 Top-Kritik (10x)** — Thema, Haeufigkeit, exaktes Zitat, wie adressieren
+   - **2.4 Einwand-Cluster** — Zusammenhaengende Einwaende gruppieren mit Kritikalitaet
+   - **2.5 Kunden-Vokabular-Bank** — Mindestens 20 exakte Kunden-Zitate, 3+ pro Sentiment-Kategorie
+   - **2.6 Q&A-Luecken** — Haeufigste unbeantwortete Fragen
+   - **2.7 Kaeufer-Personas** — Wer kauft diese Kategorie? (aus Review-Profilen ableiten)
+
+**Tiefenregel Vokabular (2.5):**
+- EXAKTE Kunden-Worte, nicht deine Zusammenfassung
+- FALSCH: "Kunden loben die Passform" 
+- RICHTIG: "sitzen wie angegossen" (14x), "kein Verrutschen" (9x), "perfekter Halt in Sportschuhen" (7x)
+- Minimum 20 Phrasen, mindestens 3 pro Kategorie (Passform, Material, Haltbarkeit, Preis, Kauf-Trigger)
+
+**Tiefenregel Einwand-Cluster (2.4):**
+- Einzelne Einwaende zu Clustern zusammenfassen
+- "rutscht", "verrutscht", "haelt nicht" = Cluster "Passform/Halt"
+- Pro Cluster: Gesamt-Haeufigkeit berechnen und Kritikalitaet bestimmen
+- ≥15%: Hoch (MUSS in Listing adressiert werden)
+- 8-15%: Mittel (SOLLTE adressiert werden)
+- <8%: Niedrig (KANN adressiert werden)
+
+After writing your sections: mark issue as done.
+
+---
+
 ## 4. Analysis Process
 
 ### Step 4a: Own Product Reviews (if existing listing)

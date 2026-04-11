@@ -26,6 +26,55 @@ Read the product category from `produkt-analyse.md`. If a category-specific skil
 
 - `produkt-analyse.md` — Product category, USPs, target audience, competitors
 
+## 3b. Check: Research Mode?
+
+If issue description contains **"RESEARCH MODE"**: you are doing a Kategorie-Research for the entire category, NOT a single-product keyword strategy.
+
+### Research Mode — Kategorie-Keywords
+
+1. Identify the top 10 seed keywords for this category (from issue description or common sense).
+
+2. For each seed keyword, run Autocomplete:
+   ```
+   GET /request?api_key={KEY}&type=autocomplete&search_term={SEED}&amazon_domain=amazon.de
+   ```
+
+3. Run Bestsellers for the category:
+   ```
+   GET /request?api_key={KEY}&type=bestsellers&amazon_domain=amazon.de&category_id={CAT_ID}
+   ```
+
+4. For PAN-EU: Repeat Autocomplete for the same seeds in FR, IT, ES, UK:
+   ```
+   GET /request?api_key={KEY}&type=autocomplete&search_term={SEED_TRANSLATED}&amazon_domain=amazon.fr
+   ```
+
+5. Write Sektionen 3.1 - 3.6 of `kategorie-research.md` per template:
+   - **3.1 Primaere Suchbegriffe (20)** — Keyword, geschaetztes Volumen, Intent, Wettbewerb
+   - **3.2 Long-Tail Goldgruben (20)** — Niedrige Konkurrenz, hoher Intent
+   - **3.3 Autocomplete-Analyse** — Seed → Top 5 Vorschlaege
+   - **3.4 Saisonale Muster** — Welche Keywords steigen/fallen pro Saison
+   - **3.5 PAN-EU Keywords** — Top 5 pro Marktplatz mit Besonderheiten
+   - **3.6 Backend-Empfehlungen** — Synonyme, Schreibfehler, fremdsprachig
+
+**Tiefenregel Intent-Scoring (3.1):**
+- NICHT raten. Intent aus der Keyword-Struktur ableiten:
+  - Generisch ("socken") = Informational (2/10)
+  - Kategorie+Gender ("sportsocken herren") = Navigational (5/10)
+  - Kategorie+Gender+Feature ("sportsocken herren gepolstert") = Transactional (8/10)
+  - Kategorie+Gender+Feature+Groesse ("sportsocken herren 43-46 gepolstert") = Transactional (10/10)
+  - Problem-basiert ("socken gegen schweissfuesse") = Solution-seeking (8/10)
+
+**Tiefenregel PAN-EU (3.5):**
+- NICHT einfach uebersetzen! Jeder Markt hat eigene Suchgewohnheiten
+- FR: "chaussettes" ist Standard, aber "bas" wird auch genutzt
+- IT: "calzini" (umgangssprache) vs. "calze" (formeller)
+- ES: "calcetines" — aber regionale Varianten beachten
+
+After writing your sections: mark issue as done.
+
+---
+
 ## 4. Research Process
 
 ### Step 4a: Seed Keywords

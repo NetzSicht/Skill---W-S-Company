@@ -33,6 +33,48 @@ Identify the product category from the issue description or ASIN lookup. If a ca
 
 If no category skill is attached: proceed with generic instructions.
 
+## 2c. Check: Research Mode?
+
+Read the issue description. If it contains **"RESEARCH MODE"**: you are doing a Kategorie-Research, NOT a single-product analysis. Switch to the research workflow:
+
+### Research Mode — Kategorie-Scan
+
+1. Use Rainforest API `search` to find Top 15 organic listings:
+   ```
+   GET /request?api_key={KEY}&type=search&search_term={HAUPTKEYWORD}&amazon_domain=amazon.de&sort_by=relevance&number_of_results=15&exclude_sponsored=true
+   ```
+
+2. For each of the 15 ASINs, pull product data:
+   ```
+   GET /request?api_key={KEY}&type=product&asin={ASIN}&amazon_domain=amazon.de
+   ```
+
+3. For each ASIN, pull offers:
+   ```
+   GET /request?api_key={KEY}&type=offers&asin={ASIN}&amazon_domain=amazon.de
+   ```
+
+4. Analyze and write Sektionen 1.1 - 1.6 of `kategorie-research.md` per template (skill: `kategorie-research-template`):
+   - **1.1 Top 15 Stammdaten-Tabelle** — ASIN, Titel, Marke, Preis, Bewertung, Reviews, BSR, FBA
+   - **1.2 Preis-Analyse** — Budget/Mid/Premium Segmente, Sweet Spot, Preisschwelle
+   - **1.3 Bild-Analyse** — Fuer JEDE ASIN: Welcher Bildtyp in welchem Slot? Dominante Muster? Visuelle Luecken? Haeufigste Fehler?
+   - **1.4 Titel-Analyse** — Gemeinsame Formel der Top-Performer, was differenziert
+   - **1.5 Bullet-Point-Analyse** — Haeufigste Themen pro BP, gemeinsame Schwaechen
+   - **1.6 A+ Content Analyse** — Wer hat A+, welche Module, was fehlt
+
+**Tiefenregel Bild-Analyse (1.3):**
+- Fuer JEDE der 15 ASINs JEDES Bild kategorisieren: H=Hero, L=Lifestyle, I=Infografik, D=Dimension, M=Material, P=Pack, V=Vergleich, G=Groessentabelle, T=Trust
+- Dann zaehlen: "X von 15 zeigen Lifestyle in Slot 2", "X von 15 haben Groessentabelle"
+- Luecken identifizieren: "Was zeigt KEINES der 15 Listings?"
+
+**Tiefenregel Preis-Analyse (1.2):**
+- Stueckpreis berechnen bei Multipacks!
+- "6er Pack fuer 14.99 = 2.50/Paar" — nicht nur den Pack-Preis nennen
+
+After writing your sections: mark issue as done. Skip to Step 6 (Complete Task).
+
+---
+
 ## 3. Execute Analysis (9 Phases)
 
 ### Phase 1: Stammdaten
