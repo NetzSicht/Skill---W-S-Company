@@ -16,9 +16,12 @@ ceo:
   model: claude-opus-4-6
 
   heartbeat:
-    interval: "30 minutes"
-    cooldown: "10 minutes"
+    interval: "5 minutes"
+    cooldown: "2 minutes"
     max_concurrent_runs: 1
+    wake_triggers:
+      - mention
+      - new_task
 
   budget:
     monthly_tokens: 5000000

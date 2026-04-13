@@ -96,6 +96,6 @@ Write `aplus-briefing.md` to `./workspace/{task-id}/`.
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "A+ Briefing abgeschlossen. Format: [Basic/Premium]. [X] Module definiert. Keine Galerie-Duplikate."
+  "comment": "@ceo A+ Briefing abgeschlossen. Format: [Basic/Premium]. [X] Module definiert. Keine Galerie-Duplikate. Output: aplus-briefing.md im Workspace."
 }
 ```

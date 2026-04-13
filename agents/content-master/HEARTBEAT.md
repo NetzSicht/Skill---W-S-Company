@@ -98,6 +98,6 @@ Write `listing-texte.md` to `./workspace/{task-id}/`.
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "Listing-Texte abgeschlossen. Titel: [X] Zeichen. 5 Bullets. Backend: [X] Bytes."
+  "comment": "@ceo Listing-Texte abgeschlossen. Titel: [X] Zeichen. 5 Bullets. Backend: [X] Bytes. Output: listing-texte.md im Workspace."
 }
 ```

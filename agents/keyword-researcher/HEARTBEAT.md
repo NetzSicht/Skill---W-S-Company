@@ -119,6 +119,6 @@ Write `keyword-strategie.md` to `./workspace/{task-id}/`.
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "Keyword-Strategie abgeschlossen. [X] Primary, [X] Secondary, [X] Long-tail Keywords. Placement-Plan enthalten."
+  "comment": "@ceo Keyword-Strategie abgeschlossen. [X] Primary, [X] Secondary, [X] Long-tail Keywords. Placement-Plan enthalten. Output: keyword-strategie.md im Workspace."
 }
 ```

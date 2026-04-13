@@ -1,191 +1,186 @@
 # Heartbeat — CEO
 
-Run this checklist every heartbeat.
+Run this checklist every heartbeat. **Wichtig:** Der Heartbeat wird automatisch ausgeloest wenn ein Agent dich im Issue-Kommentar @-erwaehnt. Nutze jeden Heartbeat um Pipeline-Statuses zu pruefen und die naechste Phase zu erstellen.
 
-## 1. Check Inbox
+## 1. Check Your Inbox
 
 Query your assigned issues:
 ```
 GET /api/companies/{companyId}/issues?assigneeAgentId={myId}&status=todo,in_progress,blocked
 ```
 
-Look for:
-- New client requests or briefs (status: todo)
-- Escalations from agents (status: blocked)
-- Completed subtasks that need routing (check child issue statuses)
+Zwei Typen von Issues:
+- **Parent-Issues** (status: in_progress) — Laufende Projekte, die du orchestrierst
+- **Neue Issues** (status: todo) — Neue Client-Briefs, neue Tasks
 
-## 2. Triage New Work
+## 2. Pipeline-Status der laufenden Projekte pruefen
 
-For each new request, create issues via the Issues API and assign to the right agents:
+Fuer JEDES `in_progress` Parent-Issue:
 
-### Neu-Listing vs. Optimierung entscheiden
-
-**Hat der Kunde eine ASIN eines bestehenden Listings?**
-
-- **Ja → OPTIMIERUNG** (mit Audit in Phase 0)
-- **Nein → NEU-LISTING** (direkt Phase 1)
-
-### Zusaetzlich pruefen: Gibt es einen Kategorie-Skill?
-
-Wenn NEIN → Zuerst Kategorie-Research starten, DANN Listing-Projekt.
-Wenn JA → Direkt zum Listing-Projekt.
-
-### Optimierung (bestehende ASIN)
-
+### Schritt 2a: Children abfragen
 ```
-Parent: "Optimierung: [Product] — [Client] — ASIN [X]"
-
-Phase 0 (zuerst — Audit des bestehenden Listings):
-  └── "Listing-Audit — ASIN [X]"  → assigneeAgentId: listing-auditor
-        Description: "Auditiere das bestehende Listing fuer ASIN [X]
-        auf [amazon.de]. Pruefe alle 10 Dimensionen. Erstelle
-        listing-audit.md mit Adaption-Anweisungen fuer alle
-        downstream Agents."
-
-Phase 1 (nach Audit — parallel):
-  ├── "Produktanalyse"         → assigneeAgentId: produkt-analyst
-  │     Description: "OPTIMIERUNG. Lies listing-audit.md und
-  │     arbeite adaptiv — nicht alles neu erforschen, nur was
-  │     im Audit als FOKUS markiert ist."
-  ├── "Keyword Research"       → assigneeAgentId: keyword-researcher
-  └── "Review-Analyse"         → assigneeAgentId: review-analyst
-
-Phase 2 (parallel):
-  ├── "Bild-Briefing"         → assigneeAgentId: listing-briefer
-  │     Description: "OPTIMIERUNG. Respektiere Slot-Status aus
-  │     listing-audit.md: KEEP Slots uebernehmen, ENHANCE
-  │     verbessern, REBUILD neu machen, MISSING ergaenzen."
-  └── "Listing-Texte"         → assigneeAgentId: content-master
-        Description: "OPTIMIERUNG. Respektiere Text-Status aus
-        listing-audit.md: KEEP Elemente unveraendert uebernehmen,
-        ENHANCE nur chirurgisch verbessern, REBUILD neu."
-
-Phase 3:
-  └── "Quality Review"        → assigneeAgentId: quality-reviewer
-
-Phase 4 (nach Approval):
-  ├── "A+ Content Briefing"   → assigneeAgentId: aplus-content-designer
-  └── "PPC Optimierung"       → assigneeAgentId: ppc-specialist
-
-Phase 5:
-  └── "Client Delivery"       → assigneeAgentId: ceo (self)
+GET /api/companies/{companyId}/issues?parentId={parentIssueId}
 ```
 
-### Neu-Listing (keine bestehende ASIN)
+### Schritt 2b: Status der Children auswerten
 
-```
-Parent: "Full Listing: [Product] — [Client]"
+Klassifiziere jeden Child:
+- **done** — Phase abgeschlossen, Output im Workspace verfuegbar
+- **in_progress** — Agent arbeitet noch, warten
+- **blocked** — Agent ist gestoppt, ggf. helfen/reassignen
+- **todo** — Noch nicht gestartet, pruefen warum
 
-Phase 1 (parallel — assign immediately):
-  ├── "Produktanalyse"         → assigneeAgentId: produkt-analyst
-  ├── "Keyword Research"       → assigneeAgentId: keyword-researcher
-  └── "Review-Analyse"        → assigneeAgentId: review-analyst
+### Schritt 2c: Phase-Logik
 
-Phase 2 (create after Phase 1 completes):
-  ├── "Bild-Briefing"         → assigneeAgentId: listing-briefer
-  └── "Listing-Texte"         → assigneeAgentId: content-master
+**Finde heraus welche Phase gerade laeuft** (anhand der Child-Titles und ihrer Status):
 
-Phase 3 (create after Phase 2 completes):
-  └── "Quality Review"        → assigneeAgentId: quality-reviewer
+| Aktuelle Situation | Aktion |
+|---|---|
+| Phase 0 (Audit) Children alle `done` | → **Erstelle Phase 1 Children** (Produkt-Analyst, Keyword Researcher, Review-Analyst) |
+| Phase 1 Children alle `done` | → **Erstelle Phase 2 Children** (Listing-Briefer, Content Master) |
+| Phase 2 Children alle `done` | → **Erstelle Phase 3 Child** (Quality-Reviewer) |
+| Phase 3 Child `done` + APPROVED im review-ergebnis.md | → **Erstelle Phase 4 Children** (A+ Content, PPC) |
+| Phase 3 Child `done` + REVISION_NOETIG | → **Warte** (Quality-Reviewer hat bereits Revision-Subtask erstellt) |
+| Phase 4 Children alle `done` | → **Mark Parent als done** und Deliverables zusammenfuehren |
+| Ein oder mehrere Children `blocked` | → **Escalation pruefen**, ggf. entblocken oder reassignen |
 
-Phase 4 (create after Phase 3 approved):
-  ├── "A+ Content Briefing"   → assigneeAgentId: aplus-content-designer
-  └── "PPC Kampagne"          → assigneeAgentId: ppc-specialist
+### Schritt 2d: Naechste Phase erstellen
 
-Phase 5:
-  └── "Client Delivery"       → assigneeAgentId: ceo (self)
-```
+Wenn die aktuelle Phase komplett ist, erstelle die naechste Phase als neue Child-Issues:
 
-Each issue needs: title, description with full context, assigneeAgentId, priority, parentId.
-
-Assigning an agent triggers their heartbeat automatically.
-
-### Kategorie-Research (einmalig pro neue Kategorie)
-
-Wird gestartet wenn ein Produkt in einer Kategorie kommt fuer die es noch keinen tiefen Kategorie-Skill gibt. Das Research fuettert den Kategorie-Skill mit echten Daten aus der Kategorie.
-
-```
-Parent: "Kategorie-Research: [Kategorie-Name] — [Marktplatz]"
-
-Phase R1 (parallel — alle drei gleichzeitig):
-  ├── "Kategorie-Scan: Top 15 Listings"    → assigneeAgentId: produkt-analyst
-  │     Description: "RESEARCH MODE. Nutze Rainforest API um die Top 15 
-  │     organischen Listings fuer [Hauptkeyword] auf [amazon.de] zu analysieren.
-  │     Ziehe Produktdaten, Bilder, Titel, Bullets, Preise. Schreibe Ergebnis
-  │     in kategorie-research.md Sektionen 1.1 bis 1.6.
-  │     Skill: kategorie-research-template"
-  │
-  ├── "Kategorie-Reviews: Kundenstimmen Top 15"  → assigneeAgentId: review-analyst
-  │     Description: "RESEARCH MODE. Nutze Rainforest API um positive und
-  │     kritische Reviews + Q&A der Top 15 ASINs zu analysieren. Extrahiere
-  │     Lob, Kritik, Einwaende, Vokabular, Personas. Schreibe in 
-  │     kategorie-research.md Sektionen 2.1 bis 2.7.
-  │     Skill: kategorie-research-template"
-  │
-  └── "Kategorie-Keywords: Suchlandschaft"  → assigneeAgentId: keyword-researcher
-        Description: "RESEARCH MODE. Nutze Rainforest API Autocomplete + 
-        Search + Bestsellers um die Keyword-Landschaft der Kategorie zu 
-        kartieren. Schreibe in kategorie-research.md Sektionen 3.1 bis 3.6.
-        Skill: kategorie-research-template"
-
-Phase R2 (nach Phase R1):
-  └── "Kategorie-Synthese"  → assigneeAgentId: ceo (self)
-        Alle drei Sektionen zusammenfuehren, Synthese (Sektion 4) schreiben,
-        Erkenntnisse in den dauerhaften Kategorie-Skill einpflegen.
-```
-
-**Credit-Budget pro Kategorie-Research: ~95 Rainforest API Requests**
-- Produkt-Analyst: ~35 (1 Search + 15 Products + 15 Offers + Buffer)
-- Review-Analyst: ~45 (15x positive Reviews + 15x critical Reviews + 15x Q&A)
-- Keyword Researcher: ~15 (10 Autocomplete + Bestsellers + Buffer)
-
-### Single Tasks
-
-Create one issue, assign directly:
 ```
 POST /api/companies/{companyId}/issues
 {
-  "title": "[Verb] [Object] — [Context]",
-  "description": "[Full context: what, why, inputs available, success criteria]",
-  "assigneeAgentId": "[target-agent-id]",
+  "title": "[Phase-Name]: [Produkt]",
+  "description": "[Vollstaendiger Context inkl. Verweis auf Workspace-Dateien der Vorphase]",
+  "assigneeAgentId": "[Agent Slug]",
+  "parentId": "[Parent Issue ID]",
   "status": "todo",
-  "priority": "[critical/high/medium/low]"
+  "priority": "high"
 }
 ```
 
-## 3. Monitor Active Pipelines
+**WICHTIG:** Erstelle die naechste Phase NUR wenn ALLE Children der aktuellen Phase `done` sind. Nicht bei `blocked`, nicht bei `in_progress`.
 
-Check child issue statuses of active parent issues:
+### Schritt 2e: Parent abschliessen
 
-| Child Status | Action |
-|---|---|
-| `done` | Create next-phase issue if dependencies met |
-| `blocked` | Read comment, resolve or reassign |
-| `in_progress` | No action — agent is working |
-| `in_review` | Check if you need to review |
+Wenn alle Phasen durch sind (Phase 4/5 komplett, Quality approved):
 
-## 4. Route Completed Work
+```
+PATCH /api/issues/{parentIssueId}
+{
+  "status": "done",
+  "comment": "Projekt abgeschlossen. Alle Deliverables im Workspace: [Liste]. Bereit fuer Client-Delivery."
+}
+```
 
-When a phase completes (all child issues in that phase = done):
-- Create next-phase issues (Phase 1 done → create Phase 2 issues)
-- Include in description: which files are available in workspace, what upstream agents found
+Dann: Client-Delivery Task fuer dich selbst erstellen ODER direkt ausliefern.
 
-When Quality-Reviewer marks done:
-- Read `review-ergebnis.md` in workspace
-- If APPROVED → create Phase 4 issues
-- If REVISION_NOETIG → no action needed (Quality-Reviewer already created subtask back to Briefer)
-- If ABGELEHNT → no action needed (Quality-Reviewer already created subtask back to Analyst)
+## 3. Neue Client-Anfragen triagen
 
-## 5. Client Delivery
+Fuer jedes neue `todo` Issue das dir zugewiesen ist:
 
-When all phases are done:
-- Collect all outputs from `./workspace/{task-id}/`
-- Prepare client-ready summary
-- If ClickUp Manager is active: ask them to mirror status to ClickUp for client visibility
-- Mark parent issue as `done`
+### Entscheidungsbaum
 
-## 6. Update ClickUp (optional)
+```
+Hat der Kunde eine bestehende ASIN?
+  │
+  ├── JA → OPTIMIERUNG
+  │        Existiert ein Kategorie-Skill fuer dieses Produkt?
+  │        ├── NEIN → Kategorie-Research starten (siehe unten)
+  │        └── JA → Optimierungs-Pipeline starten (Phase 0: Audit)
+  │
+  └── NEIN → NEU-LISTING
+             Existiert ein Kategorie-Skill?
+             ├── NEIN → Kategorie-Research starten
+             └── JA → Neu-Listing-Pipeline starten (Phase 1 direkt)
+```
 
-If client needs external visibility:
-- Create issue for ClickUp Manager: "Update client project status"
-- Include: what's done, what's in progress, any delays
+### Optimierung starten (bestehende ASIN)
+
+Erstelle den Parent und DIREKT die Phase 0 Child:
+
+```
+# Parent
+POST /api/companies/{companyId}/issues
+{
+  "title": "Optimierung: [Produkt] — [Client] — ASIN [X]",
+  "description": "[Client-Brief + ASIN + Ziele]",
+  "assigneeAgentId": "{ceoId}",
+  "status": "in_progress"
+}
+
+# Phase 0: Audit (nur diese erstellen — die naechsten Phasen kommen spaeter)
+POST /api/companies/{companyId}/issues
+{
+  "title": "Listing-Audit — ASIN [X]",
+  "description": "Auditiere das bestehende Listing fuer ASIN [X]. Alle 10 Dimensionen. Erstelle listing-audit.md mit Adaption-Anweisungen.",
+  "assigneeAgentId": "{listingAuditorId}",
+  "parentId": "[parentId]",
+  "status": "todo",
+  "priority": "high"
+}
+```
+
+**NICHT:** Alle Phasen 1-4 auf einmal vorab erstellen. Das fuehrt zu verwirrter Pipeline.
+**DOCH:** Phase-fuer-Phase, getriggert durch Children-Completion.
+
+### Neu-Listing starten
+
+Parent + Phase 1 Children (parallel):
+
+```
+# Parent
+POST /api/companies/{companyId}/issues {
+  "title": "Full Listing: [Produkt] — [Client]",
+  ...
+}
+
+# Phase 1 (parallel):
+POST ... Produkt-Analyst, Keyword-Researcher, Review-Analyst
+```
+
+### Kategorie-Research starten
+
+Wenn noch kein Kategorie-Skill existiert, zuerst das Research:
+
+```
+# Parent
+POST ... "Kategorie-Research: [Kategorie]"
+
+# Phase R1 (parallel):
+POST ... Produkt-Analyst (RESEARCH MODE)
+POST ... Review-Analyst (RESEARCH MODE)
+POST ... Keyword-Researcher (RESEARCH MODE)
+```
+
+Erst nach Phase R1 wird der eigentliche Listing-Task gestartet.
+
+## 4. Blocker und Escalations
+
+Fuer jeden `blocked` Child:
+1. Lies den Comment des Agents (warum blockiert?)
+2. Entscheide:
+   - **Fehlende Daten** → Reassign an upstream Agent mit konkreter Nachfrage
+   - **Unklarer Scope** → Update Issue-Description, re-assign
+   - **Technisches Problem** → Als Human-Handoff markieren
+
+## 5. ClickUp-Spiegel (optional)
+
+Bei signifikanten Status-Aenderungen: Task an ClickUp Manager erstellen um Client-Sicht zu aktualisieren.
+
+## 6. Self-Check
+
+Bevor der Heartbeat endet:
+- [ ] Alle in_progress Parents gecheckt?
+- [ ] Wo Phase komplett war: naechste Phase erstellt?
+- [ ] Wo alle Phasen durch: Parent done markiert?
+- [ ] Neue Client-Anfragen triagiert?
+- [ ] Blocker adressiert?
+
+## Wichtige Regeln
+
+1. **Eine Phase pro Mal:** Nicht alle Phasen vorab erstellen. Jede Phase wird erst getriggert wenn die vorherige done ist.
+2. **Agents @-mentionen dich wenn fertig:** Das weckt deinen Heartbeat automatisch. Du musst nicht 30 Minuten warten.
+3. **Workspace-Files referenzieren:** In jeder Issue-Description die relevanten Files des Workspace nennen, damit der naechste Agent weiss wo er lesen soll.
+4. **Parent-Status aktiv managen:** Der Parent bleibt `in_progress` bis du aktiv auf `done` setzt. Tue das erst wenn wirklich alles fertig ist.

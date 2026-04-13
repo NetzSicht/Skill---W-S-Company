@@ -63,6 +63,6 @@ Write `ppc-strategie.md` or `ppc-optimierung.md` to `./workspace/{task-id}/`.
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "PPC-Strategie abgeschlossen. [X] Kampagnen, Break-even ACoS: [X]%, Budget: [X] EUR/Tag."
+  "comment": "@ceo PPC-Strategie abgeschlossen. [X] Kampagnen, Break-even ACoS: [X]%, Budget: [X] EUR/Tag. Output: ppc-strategie.md im Workspace."
 }
 ```

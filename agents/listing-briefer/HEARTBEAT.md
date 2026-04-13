@@ -140,7 +140,7 @@ Write `listing-briefing.md` to `./workspace/{task-id}/`.
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "Bild-Briefing abgeschlossen. Strategie: [Type]. 7 Slots definiert. A+ Uebergabe enthalten."
+  "comment": "@ceo Bild-Briefing abgeschlossen. Strategie: [Type]. 7 Slots definiert. A+ Uebergabe enthalten. Output: listing-briefing.md im Workspace."
 }
 ```
 

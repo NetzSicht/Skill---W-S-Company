@@ -74,7 +74,7 @@ Write `review-ergebnis.md` to `./workspace/{task-id}/` in Interface C format (se
 ### APPROVED
 ```
 PATCH /api/issues/{issueId}
-{ "status": "done", "comment": "APPROVED. Briefing ist freigegeben fuer den Designer." }
+{ "status": "done", "comment": "@ceo APPROVED. Briefing ist freigegeben fuer den Designer. Review-Ergebnis im Workspace." }
 ```
 
 ### REVISION_NOETIG
@@ -93,7 +93,7 @@ POST /api/companies/{companyId}/issues
 Then mark own issue as done:
 ```
 PATCH /api/issues/{issueId}
-{ "status": "done", "comment": "REVISION_NOETIG. Subtask fuer Listing-Briefer erstellt." }
+{ "status": "done", "comment": "@ceo REVISION_NOETIG. Subtask fuer Listing-Briefer erstellt. Review-Ergebnis im Workspace." }
 ```
 
 ### ABGELEHNT

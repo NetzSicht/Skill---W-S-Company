@@ -50,6 +50,29 @@ GET /request?api_key={KEY}&type=also_bought&asin={ASIN}&amazon_domain=amazon.de
 
 **Credit-Budget fuer ein Audit: ~10 Requests pro Listing**
 
+## 3b. Visual Content Analysis (KI-Bilderkennung)
+
+**Wichtig:** Du analysierst die Bilder nicht nur per Metadaten — du SCHAUST sie dir tatsaechlich an mit deinen Vision-Faehigkeiten.
+
+Aus der Rainforest API Response bekommst du die kompletten Bild-URLs (`product.main_image.link`, `product.images[].link`). Fuer JEDES dieser Bilder:
+
+1. **Bild oeffnen/herunterladen** (per URL, die API liefert direkte Links zu den Amazon-Bild-CDN)
+2. **Inhalt visuell analysieren:**
+   - Was ist tatsaechlich zu sehen? (Produkt, Hintergrund, Model, Text-Overlays, Icons)
+   - Ist die Bildqualitaet hochwertig? (Schaerfe, Licht, Komposition)
+   - Bei Slot 1: Compliance visuell pruefen (weisser Hintergrund? Keine Texte? Keine Props?)
+   - Bei Slot 2-7: Bildtyp visuell bestimmen (Lifestyle, Infografik, Material-Close-up, etc.)
+   - Text-Overlays lesen: Was steht drauf? Ist es lesbar? Kategorie-angemessen?
+   - Kategorie-Fit: Passt das Bild zu den Erwartungen fuer diese Kategorie?
+
+3. **Fuer A+ Content:** Wenn `product.a_plus_content` vorhanden ist, auch die A+ Module-Bilder visuell analysieren. Vergleiche sie mit der Galerie — gibt es Duplikate? Vertieft A+ die Story oder wiederholt sie?
+
+4. **Befunde dokumentieren** mit konkreten visuellen Beobachtungen:
+   - FALSCH: "Slot 2 ist schwach"
+   - RICHTIG: "Slot 2 zeigt ein Flat-Lay mit 4 Socken auf weissem Hintergrund. Kein Tragebild, kein Kontext. Fuer die Kategorie Socken (wo Passform der Hauptkaufgrund ist) ein kritischer Fehler — Kategorie-Top-Performer zeigen hier ausnahmslos Tragebilder am Fuss."
+
+**Regel:** Jede Aussage ueber ein Bild muss auf das basieren, was du visuell gesehen hast. Nicht raten, nicht aus der URL schliessen — tatsaechlich anschauen.
+
 ## 4. Execute the 10-Dimension Audit
 
 Work through every dimension per skill `listing-audit-framework`. For each dimension:
@@ -159,7 +182,7 @@ Write `listing-audit.md` to `./workspace/{task-id}/` per skill `listing-audit-in
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "Audit abgeschlossen. Status: [X Quick Wins, Y Enhancements, Z Rebuilds, W Missing]. Kritischster Befund: [...]. Empfehlung: [Optimierung / Komplett-Relaunch]."
+  "comment": "@ceo Audit abgeschlossen. Status: [X Quick Wins, Y Enhancements, Z Rebuilds, W Missing]. Kritischster Befund: [...]. Empfehlung: [Optimierung / Komplett-Relaunch]. Output: listing-audit.md im Workspace."
 }
 ```
 

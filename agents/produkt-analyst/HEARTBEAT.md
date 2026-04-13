@@ -142,7 +142,7 @@ Update issue with results summary and mark done:
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "Produktanalyse abgeschlossen. [Kurze Zusammenfassung: X USPs, Y Wettbewerber analysiert, Strategie-Empfehlung: Z]"
+  "comment": "@ceo Produktanalyse abgeschlossen. [Kurze Zusammenfassung: X USPs, Y Wettbewerber analysiert, Strategie-Empfehlung: Z]. Output: produkt-analyse.md im Workspace."
 }
 ```
 

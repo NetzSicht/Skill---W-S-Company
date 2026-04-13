@@ -113,6 +113,6 @@ Write `review-insights.md` to `./workspace/{task-id}/`.
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "Review-Analyse abgeschlossen. [X] Praise, [X] Kritik, [X] Einwaende identifiziert. Vokabular-Bank mit [X] Phrasen."
+  "comment": "@ceo Review-Analyse abgeschlossen. [X] Praise, [X] Kritik, [X] Einwaende identifiziert. Vokabular-Bank mit [X] Phrasen. Output: review-insights.md im Workspace."
 }
 ```
