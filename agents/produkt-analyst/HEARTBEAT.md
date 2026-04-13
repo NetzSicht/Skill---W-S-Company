@@ -114,6 +114,22 @@ Every certification, seal, award, guarantee.
 ### Phase 6: Wettbewerber-Analyse
 Top 3-5 competitors: price, rating, strengths, weaknesses, image quality, slot usage. Synthesize: where better / equal / behind? Visual gap?
 
+**Pflicht: Exploitation-Matrix erstellen.** Jede Wettbewerber-Schwaeche wird zu einem konkreten Move fuer unser Listing. Nicht nur sammeln — **ausnutzen**.
+
+Format der Matrix:
+
+| Wettbewerber | Schwaeche | Evidenz | Unser Move | Wo im Listing |
+|---|---|---|---|---|
+| [Wettb. 1] | [z.B. "Keine Groessentabelle"] | [Slot-Analyse / Review-Zitat] | [Slot 4 prominent: EU + UK + US Tabelle] | Slot 4 |
+| [Wettb. 1] | [z.B. "Nutzt nur 4 von 7 Slots"] | [Beobachtung] | [Wir fuellen alle 7 Slots — das macht uns premium] | Slots 5, 6, 7 |
+| [Wettb. 2] | [z.B. "23% Reviews beschweren sich ueber Naht"] | [Review-Haeufigkeit] | [Nahtfrei als USP in BP4] | BP4 + Slot 5 |
+| [Wettb. 2] | [z.B. "Hero zeigt nur 1 Socke trotz 3er Pack"] | [Visuelle Pruefung] | [Alle Teile im Hero, Knolling-Layout] | Slot 1 |
+| [Wettb. 3] | [z.B. "Kein A+ trotz grosser Marke"] | [Listing-Check] | [Wir bauen Premium A+ als Differenzierung] | A+ Content |
+
+**Minimum:** 5 Exploitation-Moves aus der Wettbewerber-Analyse. Jeder mit Evidenz und klarem "Wo im Listing" Target.
+
+**Regel:** Wenn du keinen konkreten Move aus einer Wettbewerber-Schwaeche ableiten kannst, ist die Schwaeche nicht relevant — streich sie. Nur Schwaechen die wir konkret nutzen koennen zaehlen.
+
 ### Phase 7: Kundenstimmen
 Mine reviews (own + competitor): top 3 praise, top 3 criticism, most common question. Frequency + quotes.
 

@@ -84,6 +84,18 @@ Every top USP visually represented in at least one slot.
 ### Step 4d: Map Objections to Slots
 Every primary objection addressed in at least one slot.
 
+### Step 4d2: Exploit Competitor Weaknesses
+
+Lies die **Exploitation-Matrix** aus `produkt-analyse.md` Sektion 7. Jeder "Unser Move" MUSS im Briefing umgesetzt werden — im Slot/BP das der Produkt-Analyst markiert hat.
+
+Beispiele:
+- "Wettbewerber hat keine Groessentabelle" → Slot 4 wird **prominent** mit EU+UK+US Tabelle
+- "Wettbewerber nutzt nur 4 Slots" → Wir fuellen alle 7 Slots (Slot 5-7 als Differenzierung)
+- "Wettbewerber zeigt nur 1 Socke im Hero trotz 3er Pack" → Unser Slot 1 zeigt **explizit** alle 3 Socken im Knolling-Layout
+- "Wettbewerber hat 23% Naht-Beschwerden" → Unser BP4/Slot 5 adressiert Nahtfrei-Konstruktion prominent
+
+Pro Exploitation-Move im Briefing markieren: `[EXPLOITS: Wettbewerber X Schwaeche Y]`. Der Quality-Reviewer prueft ob alle Moves umgesetzt sind.
+
 ### Step 4e: Map Search-Painpoints to Slots (KRITISCH)
 
 **Der wichtigste Schritt.** Aus `review-insights.md` die Search-Painpoints lesen (Was hat den Kunden ueberhaupt zur Suche getrieben?). Bei aktivem Kategorie-Skill zusaetzlich die dort hinterlegte Such-Painpoint-Map konsultieren.
@@ -134,6 +146,25 @@ For each of 7 slots, write a complete block per **briefing-template** skill. **E
 12. A/B-Test-Vorschlag
 
 Include header (strategic summary, USP mapping, objection mapping, **painpoint mapping**) and footer.
+
+## 5b. Video-Slot pruefen (wenn Brand Registry)
+
+Lies `produkt-analyse.md` Sektion 1: Ist Brand Registry aktiv?
+
+**Wenn JA:** Erstelle zusaetzlich zu den 7 Bild-Slots ein **Video-Briefing** (siehe Skill `video-briefing-framework`). Das Video-Briefing folgt der 30-Sekunden-Formel (Hook → Problem+Produkt → Demo → Trust → Close).
+
+**Wenn NEIN:** Ueberspringe Video-Slot. Notiere im Briefing: "Video-Slot nicht verfuegbar — Brand Registry fehlt. Empfehlung: Brand Registry beantragen fuer +9-15% Conversion."
+
+## 5c. Mobile-First Validation
+
+Nach Erstellung des Briefings fuer JEDEN Slot: Mobile-First Validation durchfuehren (siehe Skill `mobile-first-validation`). Pro Slot im Briefing ergaenzen:
+
+```markdown
+**Mobile-Check:** [PASS / WARN / FAIL]
+**Mobile-Anpassung:** [Was der Designer fuer Mobile beachten muss]
+```
+
+Bei FAIL: Slot ueberarbeiten, bevor das Briefing rausgeht.
 
 ## 6. A+ Content Uebergabe
 

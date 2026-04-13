@@ -86,6 +86,10 @@ Per module:
 - [ ] Narrative arc: gallery → brand story → A+ is coherent
 - [ ] Customer questions from Review-Analyst addressed
 
+## 7b. Mobile-First Validation
+
+Nach Erstellung des A+ Briefings: Mobile-First Validation (siehe Skill `mobile-first-validation` — besonders Test 6 "A+ Content Mobile-Check"). Pruefe jedes Modul gegen die Mobile-Regeln. Alt-Texte MUESSEN gefuellt sein (Rufus-SEO + Mobile Screen Reader).
+
 ## 8. Write Output
 
 Write `aplus-briefing.md` to `./workspace/{task-id}/`.

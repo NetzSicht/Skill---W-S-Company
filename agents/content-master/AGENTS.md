@@ -4,6 +4,7 @@ title: Content Master — Copywriting
 slug: content-master
 reportsTo: ceo
 skills:
+  - mobile-first-validation
   - kategorie-textil-socken
 ---
 

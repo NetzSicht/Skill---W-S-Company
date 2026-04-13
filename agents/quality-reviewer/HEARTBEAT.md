@@ -53,8 +53,29 @@ Each slot unique? No duplicated messages?
 ### Dimension 7: Kategorie-Regeln (PASS / FAIL)
 Correct category sequence? Mandatory elements present? Per skill **kategorie-regeln**.
 
+### Dimension 8: Mobile-First Compliance (PASS / WARN / FAIL)
+Pro skill **mobile-first-validation** pruefen:
+- Thumbnail-Test Slot 1 (erkennbar bei 150x150px)
+- Titel-Synergie (erste 70 Zeichen aussagekraeftig)
+- Bullet-Lesbarkeit (max. 200 chars, CAPS-Anker)
+- Text-Overlays in Slots (min. 30pt)
+- Content-Density (max. 5 Elemente pro Bild)
+- A+ Content mobile-skalierbar
+
+Bei einem FAIL: REVISION_NOETIG.
+
+### Dimension 9: Exploitation-Matrix Umsetzung (PASS / WARN / FAIL)
+Lies die Exploitation-Matrix aus `produkt-analyse.md`. Pruefe ob jeder Move im Briefing/Text umgesetzt wurde. Markiert als `[EXPLOITS: ...]`?
+
+- 5+ Moves umgesetzt: PASS
+- 3-4 Moves umgesetzt: WARN
+- <3 Moves umgesetzt: FAIL
+
 ### Bonus: Galerie-A+ Abstimmung
 If A+ briefing also present: check per skill **listing-content-architektur**. No duplicated images, no repeated messages, A+ Uebergabe section complete.
+
+### Bonus: Video-Briefing (wenn Brand Registry aktiv)
+If video brief present: check per skill **video-briefing-framework**. 30-Sekunden-Formel eingehalten? Untertitel geplant? Compliance-konform?
 
 ## 5. Determine Verdict
 

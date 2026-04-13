@@ -105,6 +105,20 @@ Dateiname: `produkt-analyse.md`
 | Wo wir aufholen muessen | [Konkret] |
 | Visuelle Luecke | [Was zeigt KEIN Wettbewerber?] |
 
+### Exploitation-Matrix (PFLICHT — min. 5 Moves)
+
+Jede Wettbewerber-Schwaeche wird zu einem konkreten Move fuer unser Listing:
+
+| Wettbewerber | Schwaeche | Evidenz | Unser Move | Wo im Listing |
+|---|---|---|---|---|
+| [Wettb. 1] | [Konkrete Schwaeche] | [Slot-Analyse / Review-Zitat / Visueller Check] | [Konkreter Move] | [Slot X / BP Y / A+ Module] |
+| [Wettb. 1] | | | | |
+| [Wettb. 2] | | | | |
+| [Wettb. 2] | | | | |
+| [Wettb. 3] | | | | |
+
+**Regel:** Nur Schwaechen die wir konkret nutzen koennen. Rest weglassen.
+
 ## 8. Kundenstimmen-Analyse
 
 ### Aus eigenen Bewertungen (falls vorhanden)

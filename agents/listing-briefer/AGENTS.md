@@ -9,6 +9,8 @@ skills:
   - kategorie-adaptionen
   - briefing-template
   - listing-content-architektur
+  - mobile-first-validation
+  - video-briefing-framework
   - kategorie-textil-socken
 ---
 

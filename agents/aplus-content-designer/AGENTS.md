@@ -6,6 +6,7 @@ reportsTo: ceo
 skills:
   - amazon-compliance
   - listing-content-architektur
+  - mobile-first-validation
   - kategorie-textil-socken
 ---
 

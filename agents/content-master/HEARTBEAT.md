@@ -60,6 +60,18 @@ Formula: **Brand + Top Intent Phrase + Feature Group + Use Case + Specs**
 - Natural language — no keyword stuffing
 - Must match what buyer sees in Hero Image
 
+## 4b. Exploit Competitor Weaknesses
+
+Lies die Exploitation-Matrix aus `produkt-analyse.md` Sektion 7. Wenn ein Move auf Titel, Bullets oder Backend zielt, setze ihn explizit um.
+
+Beispiele:
+- "Wettbewerber erwaehnt Groesse nicht im Titel" → Unser Titel enthaelt Groessenangabe prominent
+- "Wettbewerber-Bullets listen nur Features" → Unsere Bullets sind alle Benefit-basiert
+- "Wettbewerber hat keine PAN-EU Backend-Keywords" → Wir haben FR/IT/ES/NL Keywords
+- "Wettbewerber-Titel hat Keyword-Stuffing" → Unser Titel liest sich natuerlich (Rufus-Vorteil)
+
+Pro umgesetztem Move: `[EXPLOITS: Wettbewerber X]` Kommentar im Output.
+
 ## 5. Create Bullet Points (5x) — Painpoint-driven
 
 **Jeder Bullet Point MUSS einen konkreten Painpoint adressieren.** Lies aus `review-insights.md` die Search-Painpoints (5+ mit Frequenz). Lies aus `keyword-strategie.md` die Painpoint-klassifizierten Keywords. Bei aktivem Kategorie-Skill (z.B. `kategorie-textil-socken`): nutze die Pain-Point-Map.
@@ -104,6 +116,27 @@ Per bullet: CAPS anchor + Painpoint-Loesung + konkrete Szene. Max 200 chars. 1-2
 - No duplicates from title/bullets
 - Include: misspellings, synonyms, long-tail variations
 - No brand names, ASINs, subjective claims
+
+## 6b. Mobile-First Validation
+
+Nach Erstellung von Titel und Bullets: Mobile-First Validation (siehe Skill `mobile-first-validation`).
+
+Pflicht-Checks:
+- [ ] Titel: Ersten 70 Zeichen enthalten Kernbotschaft (iPhone-Vorschau)
+- [ ] Alle Bullets <200 Zeichen (sonst Abschnitt auf Mobile)
+- [ ] CAPS-Anker in ersten 2-3 Woertern (scanbar auf 320px)
+- [ ] Wichtigste Info in den ersten 50 Zeichen jedes Bullets
+
+Ergaenze im Output:
+```markdown
+## Mobile-First Check
+- Titel (erste 70 Zeichen): "[Auszug]" — [PASS/WARN]
+- BP1: [X chars] — [PASS/WARN]
+- BP2: [X chars] — [PASS/WARN]
+- BP3: [X chars] — [PASS/WARN]
+- BP4: [X chars] — [PASS/WARN]
+- BP5: [X chars] — [PASS/WARN]
+```
 
 ## 7. Self-Check
 

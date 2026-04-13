@@ -8,6 +8,8 @@ skills:
   - kategorie-regeln
   - review-interface
   - listing-content-architektur
+  - mobile-first-validation
+  - video-briefing-framework
   - kategorie-textil-socken
 ---
 

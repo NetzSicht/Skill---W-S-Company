@@ -83,6 +83,27 @@ Dieser Skill wird aktiviert wenn das Listing-Projekt **Socken** betrifft. Er ent
 
 ---
 
+## Typische Wettbewerber-Schwaechen bei Socken-Listings
+
+Der Produkt-Analyst sollte gezielt nach diesen haeufigen Schwaechen in der Wettbewerber-Analyse suchen. Jede davon ist eine Exploitation-Chance.
+
+| Schwaeche | Wie haeufig | Wie erkennen | Unser Move |
+|---|---|---|---|
+| **Flat-Lay statt Tragebild in Slot 2** | 60-70% der Listings | Bild-Check | Wir zeigen Fuss im passenden Schuh + Kontext |
+| **Keine Groessentabelle oder nur EU** | 40-50% | Slot 4 Check | EU + UK + US + Fusslaenge in cm |
+| **Nur 1 Socke im Hero trotz Multipack** | 30-40% | Slot 1 Check | Alle Socken sichtbar, Knolling-Layout |
+| **Keine Material-Nahaufnahme** | 50-60% | Slot 5 Check | Makroaufnahme Strickstruktur + Bundetail |
+| **Keine PAN-EU Keywords** | 70%+ | Titel/Backend | Titel pro Marktplatz, Backend in jeder Sprache |
+| **"Baumwolle" ohne Prozentangabe** | 60% | Titel/Bullets | Exakte Material-% (80% Merino, 20% Polyamid) |
+| **Keine Hoehe-Angabe (Quarter/Crew/Knie)** | 35% | Titel | Hoehe im Titel und Slot 1 sichtbar |
+| **Nicht adressierte Naht-Beschwerden** | 25% | Review-Analyse | Nahtfrei als BP4 + Slot 5 Detail |
+| **Kein A+ Content** | 50-60% | Listing-Check | Premium A+ mit Brand Story |
+| **Generischer Titel ohne Benefit** | 50% | Titel-Analyse | Titel mit konkretem Benefit |
+| **Keine Vergleichstabelle** | 70%+ | Slot 7 Check | Material-Vergleich Merino vs. Polyester |
+| **Kein Oeko-Tex Badge prominent** | 40% | Slot-Check | Prominent in Slot 6 oder 7 |
+
+**Regel fuer den Analyst:** Pruefe bei jedem Wettbewerber systematisch diese 12 Punkte. Jeder gefundene Punkt wird zu einem Eintrag in der Exploitation-Matrix.
+
 ## Painpoint → Slot/BP Zuordnungs-Regel
 
 **Der Listing-Briefer und Content Master MUESSEN jeder Slot und jedem Bullet Point einen expliziten Painpoint zuordnen.** Ein Slot ohne adressierten Painpoint ist verschwendet.
