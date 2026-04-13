@@ -60,17 +60,43 @@ Formula: **Brand + Top Intent Phrase + Feature Group + Use Case + Specs**
 - Natural language — no keyword stuffing
 - Must match what buyer sees in Hero Image
 
-## 5. Create Bullet Points (5x)
+## 5. Create Bullet Points (5x) — Painpoint-driven
 
-| Bullet | Focus | Synergy With |
-|---|---|---|
-| BP1 | Primary USP — transformative benefit | Slot 2 + 3 |
-| BP2 | Technical superiority | Slot 4 + 5 |
-| BP3 | Secondary technical benefit | Slot 5 |
-| BP4 | Preemptive objection handling | Review insights |
-| BP5 | Risk reversal — guarantee, service, contents | Slot 6 + 7 |
+**Jeder Bullet Point MUSS einen konkreten Painpoint adressieren.** Lies aus `review-insights.md` die Search-Painpoints (5+ mit Frequenz). Lies aus `keyword-strategie.md` die Painpoint-klassifizierten Keywords. Bei aktivem Kategorie-Skill (z.B. `kategorie-textil-socken`): nutze die Pain-Point-Map.
 
-Per bullet: CAPS anchor + benefit statement. Max 200 chars. 1-2 keywords naturally.
+| Bullet | Focus | Painpoint-Typ | Synergy |
+|---|---|---|---|
+| BP1 | Transformativer Benefit fuer den **groessten Search-Painpoint** | Top-Painpoint aus Reviews/Keywords | Slot 2 (Lifestyle) |
+| BP2 | Zweitgroesster Painpoint — technische Loesung | #2 Painpoint | Slot 3 + 4 |
+| BP3 | Dritter Painpoint — Detail/Material | #3 Painpoint | Slot 5 |
+| BP4 | Preemptives Einwand-Behandlung | Haeufigster Review-Einwand | Review-Painpoint (Einwand) |
+| BP5 | Risk reversal — Garantie, Service, Lieferumfang | — | Slot 6 + 7 |
+
+**Painpoint-Bullet-Formel:**
+
+```
+[CAPS ANKER — SCHMERZ ENDLICH GELOEST] — [Mechanismus]. [Konkrete Alltagsszene]. [Emotional payoff]
+```
+
+**Beispiel Wandersocken:**
+
+FALSCH (Feature-Liste):
+> MERINOWOLLE — 80% Merino, 20% Polyamid, temperaturregulierend, antibakteriell
+
+RICHTIG (Painpoint-Bullet):
+> **SCHLUSS MIT NASSEN FUESSEN** — 80% Merinowolle reguliert Temperatur natuerlich. Nach 8 Stunden Wandern bei 25°C fuehlen sich deine Fuesse immer noch trocken an. Kein Wechsel-Sockenpaar mehr noetig.
+
+Pro Bullet MUSS am Anfang (als Kommentar im Output):
+```markdown
+BP1:
+  Painpoint: [Welchen Pain loest dieser Bullet?]
+  Quelle: [Reviews X%, Keyword Y, Kategorie-Map]
+  Text: [Der tatsaechliche Bullet Point]
+```
+
+Per bullet: CAPS anchor + Painpoint-Loesung + konkrete Szene. Max 200 chars. 1-2 keywords naturally.
+
+**Regel:** Wenn du keinen Painpoint fuer einen Bullet benennen kannst — der Bullet ist schwach und muss umgeschrieben werden.
 
 ## 6. Backend Keywords
 

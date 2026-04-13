@@ -84,21 +84,56 @@ Every top USP visually represented in at least one slot.
 ### Step 4d: Map Objections to Slots
 Every primary objection addressed in at least one slot.
 
+### Step 4e: Map Search-Painpoints to Slots (KRITISCH)
+
+**Der wichtigste Schritt.** Aus `review-insights.md` die Search-Painpoints lesen (Was hat den Kunden ueberhaupt zur Suche getrieben?). Bei aktivem Kategorie-Skill zusaetzlich die dort hinterlegte Such-Painpoint-Map konsultieren.
+
+**Regel:** Jeder der 7 Slots MUSS mindestens einen Search-Painpoint adressieren. Ein Slot ohne adressierten Painpoint ist verschwendet und wird vom Quality-Reviewer zurueckgewiesen.
+
+**Painpoint-Slot-Mapping Tabelle erstellen:**
+
+```markdown
+| Slot | Primaerer Painpoint | Sekundaerer Painpoint | Emotionaler Trigger |
+|---|---|---|---|
+| 1 | [Kategorie-Schmerz] | — | Der Kunde erkennt sofort: "Das ist was ich gesucht habe" |
+| 2 | [Top-Painpoint] | [Optional] | Spiegelneuronen: Der Kunde sieht sich selbst mit dem Problem geloest |
+| 3 | [Top 3 Painpoints] | — | Rationale Rechtfertigung der Loesung |
+| 4 | [Groessen-/Passform-Pain] | — | Unsicherheit eliminieren |
+| 5 | [Qualitaets-/Material-Pain] | — | Taktile Bestaetigung der Qualitaet |
+| 6 | [Wert-Pain] | — | "Das bekomme ich alles dafuer" |
+| 7 | [Vergleichs-Pain] | — | Differenzierung vom Wettbewerb |
+```
+
+**Beispiel fuer Wandersocken:**
+
+| Slot | Painpoint | Trigger |
+|---|---|---|
+| 1 | "Ich will Wandersocken die funktionieren" | Hero zeigt sofort Produkt + Hoehe + Menge |
+| 2 | "Ich hatte schon Blasen beim Wandern" | Wanderszene — Fuss im Stiefel, nach Stunden noch komfortabel |
+| 3 | "Schwitzen, Druckstellen, Geruch" | Infografik: Merino + Polsterzonen + Antibakteriell |
+| 4 | "Passt die Groesse? Kaufe ich die falsche?" | Groessentabelle EU/UK/US + Fusslaenge |
+| 5 | "Ist das wirklich hochwertig oder billiger Nachbau?" | Nahaufnahme Merino-Strick + handgekettelte Spitze |
+| 6 | "Lohnt sich der Preis fuer was ich bekomme?" | 3er Pack arrangiert, Oeko-Tex sichtbar |
+| 7 | "Warum diese und nicht die guenstigen bei Decathlon?" | Material-Vergleich 80% Merino vs. 60% Polyester |
+
 ## 5. Generate Briefing
 
-For each of 7 slots, write a complete block per **briefing-template** skill:
-1. Kernbotschaft
-2. Psychologische Funktion
-3. Pflicht-Elemente
-4. Optionale Elemente
-5. Text-Overlay
-6. Technische Vorgaben
-7. Farbwelt & Stimmung
-8. Designer-Notizen
-9. Referenz/Inspiration
-10. A/B-Test-Vorschlag
+For each of 7 slots, write a complete block per **briefing-template** skill. **Ergaenze ein Pflichtfeld:**
 
-Include header (strategic summary, USP mapping, objection mapping) and footer.
+1. **Adressierter Painpoint** ← NEU PFLICHT
+2. **Emotionaler Trigger** ← NEU PFLICHT
+3. Kernbotschaft
+4. Psychologische Funktion
+5. Pflicht-Elemente
+6. Optionale Elemente
+7. Text-Overlay
+8. Technische Vorgaben
+9. Farbwelt & Stimmung
+10. Designer-Notizen
+11. Referenz/Inspiration
+12. A/B-Test-Vorschlag
+
+Include header (strategic summary, USP mapping, objection mapping, **painpoint mapping**) and footer.
 
 ## 6. A+ Content Uebergabe
 

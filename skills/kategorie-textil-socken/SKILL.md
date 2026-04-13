@@ -12,6 +12,113 @@ Dieser Skill wird aktiviert wenn das Listing-Projekt **Socken** betrifft. Er ent
 
 ---
 
+## Such-Painpoint-Map: Warum der Kunde ueberhaupt sucht
+
+**Wichtig:** Das sind die Probleme die den Kunden ZUR SUCHE treiben — nicht die Probleme die ein Produkt nach dem Kauf hat. Jeder Slot/Bullet sollte mindestens einen dieser Painpoints adressieren.
+
+### Wandersocken
+
+| Painpoint (Alltag) | Emotionaler Trigger | Such-Keywords | Adressieren in |
+|---|---|---|---|
+| **Blasen beim Wandern** | "Meine Wanderung war ruiniert wegen Blasen" | "wandersocken blasenfrei", "anti blasen wandersocken", "wandersocken ohne reiben" | Slot 2 (Lifestyle: Wanderszene), BP1 (Blasenfrei-Versprechen), Slot 5 (Verstaerkte Zonen) |
+| **Schwitzende Fuesse** | "Nach 2h im Schuh sind meine Socken nass" | "wandersocken atmungsaktiv", "merinowolle wandersocken", "feuchtigkeitstransport" | Slot 3 (Infografik Material), BP1 (Merino-Temperaturregulation) |
+| **Kalte Fuesse im Winter** | "Ich friere bei Winterwanderungen" | "thermo wandersocken", "warme wandersocken", "wandersocken winter" | Slot 2 (Winterszene), BP2 (Waermeleistung) |
+| **Geruch nach langer Tour** | "Meine Fuesse stinken nach 8h" | "wandersocken geruchshemmend", "antibakterielle wandersocken" | BP3 (Antibakteriell) |
+| **Druckstellen am Schienbein** | "Die Socken schneiden ein" | "wandersocken kompressionsfrei", "weicher bund wandersocken" | BP4 (Komfortbund-Einwand) |
+
+### Sportsocken (Lauf/Fitness)
+
+| Painpoint | Emotionaler Trigger | Such-Keywords | Adressieren in |
+|---|---|---|---|
+| **Rutschen in Laufschuhen** | "Nach 5km sind die Socken unten im Schuh" | "laufsocken rutschfest", "sportsocken anti rutsch" | Slot 2 (Lauf-Szene), Slot 5 (Passform-Detail) |
+| **Blasen beim Marathon** | "Bei langen Laeufen bekomme ich Blasen" | "marathonsocken", "laufsocken blasenfrei", "anti blister" | BP1, Slot 3 (Polsterzonen) |
+| **Schweiss-Rueckstau** | "Meine Fuesse werden komplett nass" | "laufsocken atmungsaktiv", "sport socken mesh" | Slot 3 (Mesh-Zonen) |
+| **Unterpolsterung an Ferse** | "Ich spuere jeden Schritt auf hartem Asphalt" | "gepolsterte laufsocken", "daempfende sportsocken" | Slot 5 (Polster-Querschnitt) |
+
+### Businesssocken
+
+| Painpoint | Emotionaler Trigger | Such-Keywords | Adressieren in |
+|---|---|---|---|
+| **Gummibund schneidet ein** | "Abdruck nach 8h im Buero" | "businesssocken weicher bund", "socken ohne gummi" | BP4, Slot 5 (Bund-Detail) |
+| **Rutschen im Anzugschuh** | "Meine Socke verschwindet im Schuh" | "businesssocken rutschfest", "halten hoch herren socken" | Slot 2, BP2 |
+| **Geruch nach Meeting-Marathon** | "Nach dem Tag riecht es" | "businesssocken geruchshemmend" | BP3 |
+| **Sichtbar durch helle Hose** | "Helle Hose, dunkle Socken durchscheinend" | "blickdichte businesssocken", "feine anzugssocken" | Slot 5 (Feinheit) |
+| **Farbe verblasst** | "Nach 10 Waeschen grau statt schwarz" | "farbechte businesssocken", "socken schwarz bleibend" | BP3 (Haltbarkeit) |
+
+### Sneakersocken / Invisible
+
+| Painpoint | Emotionaler Trigger | Such-Keywords | Adressieren in |
+|---|---|---|---|
+| **Sichtbar ueber dem Schuhrand** | "Meine Socke guckt raus — sieht bloed aus" | "wirklich unsichtbare sneakersocken", "low cut unsichtbar" | Slot 2 (Unsichtbarkeits-Beweis) |
+| **Rutschen in den Schuh** | "Die Socke ist in Sekunden unter der Ferse" | "sneakersocken rutschfest", "anti rutsch silikon" | Slot 5 (Silikonpad-Detail) |
+| **Blasen am Rist** | "Reibung am Schuhrand" | "sneakersocken ohne scheuern", "gepolsterte sneakersocken" | BP1 |
+| **Schwitzen ohne Belueftung** | "Sneaker + duenne Socken = nasse Fuesse" | "atmungsaktive sneakersocken" | Slot 3 |
+
+### Kompressionssocken
+
+| Painpoint | Emotionaler Trigger | Such-Keywords | Adressieren in |
+|---|---|---|---|
+| **Geschwollene Beine bei Flug** | "Nach Langstreckenflug sind meine Beine dick" | "reise kompressionsstruempfe", "flug socken", "thrombose reise" | Slot 2 (Reise-Szene), Titel |
+| **Muede Beine im Stehberuf** | "Nach 8h Stehen tun mir die Beine weh" | "kompressionsstruempfe stehberuf", "pfleger socken" | BP1 (Entlastung-Versprechen) |
+| **Schwere Beine am Abend** | "Meine Beine fuehlen sich wie Blei an" | "kompressionsstruempfe leichte beine" | BP2 |
+| **Schwer anzuziehen** | "Ich kriege die Dinger nicht an" | "kompressionsstruempfe einfach anziehen", "weite manschette" | BP4 (Einwand) |
+| **Unsicherheit zur Groesse** | "Ich weiss nicht welche mmHg ich brauche" | "kompressionsklasse 1 2", "welche kompressionsstaerke" | Slot 4 (Groessentabelle mit mmHg Erklaerung) |
+
+### Thermosocken (Winter)
+
+| Painpoint | Emotionaler Trigger | Such-Keywords | Adressieren in |
+|---|---|---|---|
+| **Kalte Fuesse im Winter** | "Meine Zehen sind immer eisig" | "warme thermosocken", "dickste wollsocken" | Slot 2 (Winterszene), BP1 |
+| **Passen nicht in normale Schuhe** | "Thermo-Socken sind zu dick fuer meine Schuhe" | "duenne thermosocken", "warme socken normale schuhe" | BP4 (Einwand) |
+| **Jucken von Wolle** | "Wolle kratzt mich" | "wollsocken ohne kratzen", "merino thermosocken" | BP3 (Merino vs. Schaf) |
+
+### Kindersocken
+
+| Painpoint | Emotionaler Trigger | Such-Keywords | Adressieren in |
+|---|---|---|---|
+| **Rutschen auf Parkett** | "Mein Kind rutscht in den Socken" | "kindersocken abs noppen", "anti rutsch kindersocken" | Slot 5 (ABS-Detail) |
+| **Schadstoffe fuer Kind** | "Ich mache mir Sorgen was auf der Haut ist" | "oeko tex kindersocken", "bio kindersocken" | BP4 + Slot 7 (Zertifikat) |
+| **Loecher nach kurzer Zeit** | "Kindersocken halten 2 Wochen" | "robuste kindersocken", "strapazierfaehig kinder" | BP3 (Haltbarkeit) |
+| **Groesse stimmt nicht zum Alter** | "Ich weiss nicht welche Groesse" | "kindersocken groesse alter", "socken groesse 2 jahre" | Slot 4 (Groessentabelle mit Alter + Fusslaenge) |
+
+---
+
+## Painpoint → Slot/BP Zuordnungs-Regel
+
+**Der Listing-Briefer und Content Master MUESSEN jeder Slot und jedem Bullet Point einen expliziten Painpoint zuordnen.** Ein Slot ohne adressierten Painpoint ist verschwendet.
+
+### Regel fuer den Listing-Briefer
+
+Im Briefing MUSS pro Slot stehen:
+```markdown
+## Slot [X]: [Typ]
+**Adressierter Painpoint:** [Painpoint aus der Map oben]
+**Emotionaler Trigger:** [Warum der Kunde das Problem hat]
+**Visuelle Loesung:** [Wie das Bild den Pain loest]
+```
+
+### Regel fuer den Content Master
+
+Jeder Bullet Point MUSS einen Painpoint adressieren:
+- **BP1** = groesster Painpoint der Zielgruppe (transformativer Benefit)
+- **BP2** = zweitgroesster Painpoint (technische Loesung)
+- **BP3** = dritter Painpoint (Detail-Loesung)
+- **BP4** = haeufiger Einwand (preemptiv entkraeften)
+- **BP5** = Risk Reversal + Garantie
+
+### Beispiel: Wandersocken
+
+**FALSCH (ohne Painpoint-Mapping):**
+> BP1: MERINOWOLLE — 80% Merino, temperaturregulierend
+
+**RICHTIG (mit Painpoint):**
+> Painpoint adressiert: "Schwitzende Fuesse auf langen Touren"
+> BP1: SCHLUSS MIT SCHWITZENDEN FUESSEN — 80% Merinowolle reguliert die Temperatur natuerlich. Nach 8 Stunden Wandern fuehlen sich deine Fuesse immer noch trocken an — auch bei 25°C Bergsommer.
+
+Der zweite Bullet Point adressiert ein konkretes Problem das den Kaeufer zur Suche getrieben hat. Der erste ist eine Feature-Liste ohne Hook.
+
+---
+
 ## Socken-Taxonomie: Subtypen und ihre Besonderheiten
 
 Jeder Subtyp hat eigene Kauftreiber, Einwaende und visuelle Anforderungen. Der Produkt-Analyst muss den Subtyp in Phase 1 identifizieren — alle nachfolgenden Agents passen ihre Arbeit darauf an.

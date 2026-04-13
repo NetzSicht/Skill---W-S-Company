@@ -94,6 +94,45 @@ Positive phrases, pain point descriptions, feature language — real customer vo
 |---|---|---|---|
 | [Issue] | [x reviews] | [own/competitor] | [Slot/BP/A+ Module] |
 
+### Step 4f: Search-Painpoint-Extraktion (Solution-Statements)
+
+**Dies ist der wichtigste Schritt — oft uebersehen.**
+
+Such-Painpoints sind die Probleme die den Kunden dazu gebracht haben das Produkt ueberhaupt zu suchen. Du findest sie indem du Reviews liest die **beschreiben was das Produkt GELOEST hat**.
+
+Suche in positiven Reviews nach diesen Phrasen:
+
+| Phrase-Muster | Bedeutung | Beispiel |
+|---|---|---|
+| "endlich keine... mehr" | Zeigt Pain den das Produkt geloest hat | "endlich keine Blasen mehr beim Wandern" → Pain war Blasen |
+| "nie wieder..." | Gleiche Logik | "nie wieder nasse Fuesse" → Pain war Schwitzen |
+| "ich habe lange gesucht..." | Zeigt den Suchgrund | "ich habe lange gesucht nach Socken die nicht rutschen" → Pain war Rutschen |
+| "genau was ich brauchte fuer..." | Zeigt Verwendungszweck | "genau fuer lange Flugreisen" → Pain war Reise-Schwellungen |
+| "viel besser als..." | Zeigt was vorher nicht ging | "viel besser als die duennen Sneakersocken vorher" → Pain war Sichtbarkeit/Passform |
+| "nach dem Kauf habe ich gemerkt..." | Positive Ueberraschung = verstecktes Bedürfnis | "dass meine Fuesse nicht mehr stinken" → Pain war Geruch |
+
+**Dann reverse-engineeren:**
+
+Fuer jede Solution-Statement:
+1. Was war der zugrunde liegende Pain?
+2. In welcher Situation hat der Kunde das Problem erlebt?
+3. Wonach hat er gesucht (vermuteter Suchbegriff)?
+
+**Ausgabe:** Tabelle mit Such-Painpoints:
+
+```markdown
+## Search-Painpoints (was Kaeufer zur Suche gebracht hat)
+
+| Painpoint | Haeufigkeit | Solution-Statement (Zitat) | Vermuteter Such-Kontext | Adressieren in |
+|---|---|---|---|---|
+| [z.B. "Blasen beim Wandern"] | [X von Y Reviews] | "[exaktes Zitat aus Review]" | [z.B. "Wanderer mit Blasenproblem sucht blasenfreie Alternative"] | Slot 2 (Wanderszene), BP1 (Blasenfrei-Versprechen) |
+| ... | ... | ... | ... | ... |
+```
+
+**Minimum:** 5 Such-Painpoints pro Analyse, mit Frequenz und Zitat.
+
+**Regel:** Wenn ein Kategorie-Skill aktiv ist (z.B. `kategorie-textil-socken`) → gleiche deine extrahierten Painpoints mit der dort hinterlegten Such-Painpoint-Map ab. Bestaetige oder ergaenze die Liste mit neuen gefundenen Painpoints.
+
 ## 5. Self-Check
 
 - [ ] Top 5 praise + criticism with frequency and quotes
@@ -102,6 +141,8 @@ Positive phrases, pain point descriptions, feature language — real customer vo
 - [ ] Customer vocabulary bank (≥10 phrases)
 - [ ] Objection map with placement recommendations
 - [ ] Buyer personas segmented
+- [ ] Mindestens 5 Such-Painpoints extrahiert (mit Solution-Statements belegt)
+- [ ] Such-Painpoints sind unterschieden von Review-Painpoints (Einwaenden)
 
 ## 6. Write Output
 

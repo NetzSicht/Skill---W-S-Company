@@ -170,6 +170,28 @@ Dieses Skill wird aktiviert wenn der CEO einen **Kategorie-Research** Task erste
 | [z.B. "Sportler"] | [X%] | [Feature] | "[Zitat]" |
 | [z.B. "Geschenk-Kaeufer"] | [X%] | [Preis/Optik] | "[Zitat]" |
 
+### 2.8 Search-Painpoints (was Kaeufer zur Suche getrieben hat)
+
+**Kritische Sektion.** Extrahiere diese aus Solution-Statements in positiven Reviews ("endlich keine X mehr", "nie wieder Y", "genau fuer Z gesucht"). Siehe Review-Analyst HEARTBEAT Step 4f fuer Methode.
+
+| # | Search-Painpoint | Haeufigkeit | Solution-Statement (Zitat) | Vermuteter Such-Kontext | Emotionaler Trigger |
+|---|---|---|---|---|---|
+| 1 | [z.B. "Blasen beim Wandern"] | [X von Y Reviews] | "[exaktes Review-Zitat]" | [Wanderer mit Blasenproblem auf mehrtaegigen Touren] | "Nie wieder mit Pflaster wandern" |
+| 2 | | | | | |
+| 3 | | | | | |
+| 4 | | | | | |
+| 5 | | | | | |
+| ... bis mind. 10 | | | | | |
+
+**Painpoint → Adressierungs-Empfehlung:**
+
+| Painpoint | Empfohlene Slot-Platzierung | Empfohlener Bullet Point | Keyword-Empfehlung |
+|---|---|---|---|
+| [Painpoint 1] | [Slot X: Typ] | [BPn: Thema] | [Keyword-Tier] |
+| ... | | | |
+
+**Minimum:** 10 Search-Painpoints. Jeder mit Frequenz, Zitat und Platzierungs-Empfehlung.
+
 ---
 
 ## 3. Keyword-Landschaft (Keyword Researcher)

@@ -100,6 +100,40 @@ Per keyword: search volume, competition level, purchase intent, relevance.
 ### Step 4e: Placement Plan
 Map every primary/secondary keyword to: Title, Bullet (which one?), Description, Backend, PPC campaign type.
 
+### Step 4f: Painpoint-Klassifikation
+
+**Wichtig:** Keywords sind nicht nur Suchbegriffe — sie sind Ausdruck eines Problems. Klassifiziere jedes Primary und Secondary Keyword nach dem zugrunde liegenden Painpoint.
+
+| Keyword-Muster | Painpoint-Typ | Beispiel |
+|---|---|---|
+| `[Produkt]` allein | Kategorie-Browse (kein spezifischer Pain) | "sportsocken" |
+| `[Produkt] + [Feature]` | Feature-gesucht (latenter Pain) | "sportsocken gepolstert" |
+| `[Produkt] + [Loesungs-Keyword]` | Expliziter Pain | "sportsocken rutschfest", "sportsocken blasenfrei" |
+| `[Produkt] + [Negativ-Wort]` | Frustrations-getrieben | "socken ohne naht", "socken ohne gummi" |
+| `[Produkt] gegen [Problem]` | Expliziter Pain | "socken gegen schweissfuesse", "socken gegen blasen" |
+| `[Problem] + [Loesung]` | Sehr spezifischer Pain | "schwitzige fuesse sommer socken" |
+| `bester/beste [Produkt]` | Vergleichs-Shopping | "beste wandersocken test" |
+| `[Produkt] fuer [Kontext]` | Kontext-spezifischer Pain | "socken fuer lange flugreisen" |
+
+**Pro Keyword ergaenzen:**
+
+```markdown
+| Keyword | Volumen | Intent | Painpoint-Typ | Adressiertes Problem |
+|---|---|---|---|---|
+| "wandersocken blasenfrei" | Hoch | Transactional | Expliziter Pain | Blasen beim Wandern |
+| "merinowolle wandersocken" | Mittel | Navigational | Feature-gesucht | Materialqualitaet (latent: Temperaturregulation) |
+| "socken gegen schweissfuesse" | Mittel | Solution | Frustrations-getrieben | Schwitzende Fuesse |
+```
+
+**Ableitung fuer Content Master:**
+
+Aus den Keywords mit "Expliziter Pain" und "Frustrations-getrieben" ableitbar:
+- **Welche Painpoints treiben die meisten Suchen?**
+- **Welche Painpoints werden oft gesucht, aber selten adressiert?** (= Chance)
+- **Welche Keywords gehoeren zu welchem Bullet Point?** (Keyword-zu-Pain-zu-BP Mapping)
+
+**Regel:** Wenn ein Kategorie-Skill mit Pain-Point-Map aktiv ist (z.B. `kategorie-textil-socken`) → jedem Keyword den passenden Painpoint aus der Map zuordnen. Wenn ein Keyword zu keinem Painpoint passt: Ist es relevant? Oder nur generisches Kategorie-Rauschen?
+
 ## 5. Self-Check
 
 - [ ] All keywords have: volume, competition, intent, relevance
