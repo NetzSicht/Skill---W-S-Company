@@ -23,6 +23,20 @@ Read the product category from `produkt-analyse.md`. If a category-specific skil
 - What the gallery typically covers vs. what A+ must extend
 - Anti-duplication examples for this product type
 
+## 2c. Check: Audit Available? (Optimization Mode)
+
+Look for `listing-audit.md` in `./workspace/{task-id}/`. If it exists:
+
+1. Read Section 9 "Fuer A+ Content Designer" — which modules are KEEP/ENHANCE/REBUILD/MISSING
+2. Read Dimension 7 (A+ Content) and Dimension 8 (Brand Story) from the audit
+3. Respect the status tags — do not redesign modules that already perform
+
+If current A+ Content is REBUILD: ignore it completely, design from scratch
+If current A+ Content is ENHANCE: use as baseline, improve specific modules
+If current A+ Content is KEEP: carry forward as-is, only add MISSING modules
+
+If no audit exists: proceed as normal (new listing mode).
+
 ## 3. Read Input Documents
 
 - `listing-briefing.md` — Gallery content (to avoid duplication). Read the **A+ Uebergabe** section first.

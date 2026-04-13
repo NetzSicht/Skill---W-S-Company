@@ -24,6 +24,26 @@ Read the product category from `produkt-analyse.md`. If a category-specific skil
 - Mandatory keywords and keyword patterns
 - PAN-EU keyword lists per marketplace
 
+## 2c. Check: Audit Available? (Optimization Mode)
+
+Look for `listing-audit.md` in `./workspace/{task-id}/`. If it exists:
+
+1. Read the complete audit, especially Section 9 "Fuer Content Master".
+2. For each text element (Title, BP1-5, Backend Keywords) the audit provides a status: **KEEP / ENHANCE / REBUILD / MISSING**
+
+| Audit Status | What You Do |
+|---|---|
+| **KEEP** | Copy the current text unchanged into `listing-texte.md`. Mark it: "(KEEP — aus aktuellem Listing uebernommen)". Do NOT rewrite. |
+| **ENHANCE** | Use the current text as baseline. Improve only what the audit fix-instruction says. Preserve tone, keywords, structure. |
+| **REBUILD** | Write completely new. Ignore the current version. |
+| **MISSING** | Write new (e.g., PAN-EU backend keywords not yet present). |
+
+Your output format stays the same, but each element now starts with the status tag.
+
+**Critical:** Do not rewrite working titles or bullets. If the audit says the current BP2 performs well, keep it verbatim. Optimization means surgical changes, not full rewrites.
+
+If no audit exists: proceed as normal (new listing mode).
+
 ## 3. Read Input Documents
 
 - `produkt-analyse.md` — Product data, USPs, target audience

@@ -33,6 +33,25 @@ Identify the product category from the issue description or ASIN lookup. If a ca
 
 If no category skill is attached: proceed with generic instructions.
 
+## 2bb. Check: Audit Available? (Optimization Mode)
+
+Look for `listing-audit.md` in `./workspace/{task-id}/`. If it exists, you are in **Optimization Mode** — not a new listing.
+
+Read the audit completely. Focus on Section 9 "Adaption-Anweisungen fuer downstream Agents → Fuer Produkt-Analyst". The audit tells you:
+
+- **FOKUS:** Which specific aspects to research deeply (the gaps the audit identified)
+- **SKIP:** Which data already exists in the audit — don't redo this work
+- **PRUEFEN:** Which old assumptions need re-validation
+- **KEEP-Daten:** Which existing data to carry forward unchanged
+
+**Adaptation rules:**
+- If audit says SKIP for an analysis phase: reference the audit in your output instead of redoing the analysis
+- If audit says FOKUS: go deeper than usual on that phase
+- If audit flagged a critical review cluster (e.g., "23% complain about sizing"): make sure your competitor analysis captures how competitors handle this
+- Your output still follows Interface A format, but with cross-references to the audit where data is reused
+
+If no audit exists: proceed as normal (new listing mode).
+
 ## 2c. Check: Research Mode?
 
 Read the issue description. If it contains **"RESEARCH MODE"**: you are doing a Kategorie-Research, NOT a single-product analysis. Switch to the research workflow:

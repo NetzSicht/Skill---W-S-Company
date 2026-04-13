@@ -1,6 +1,6 @@
 ---
 name: NetzSicht
-description: Amazon Marketing Agency mit 10 spezialisierten AI Agents. Full-Service Listing-Optimierung — von Produktanalyse ueber Bild-Briefings und Listing-Texte bis zu PPC-Kampagnen und A+ Content.
+description: Amazon Marketing Agency mit 11 spezialisierten AI Agents. Full-Service Listing-Optimierung — von Produktanalyse ueber Bild-Briefings und Listing-Texte bis zu PPC-Kampagnen und A+ Content.
 slug: netzsicht
 schema: agentcompanies/v1
 version: 2.0.0
@@ -48,6 +48,7 @@ Full-Service Amazon Listing-Optimierung mit 9 spezialisierten AI Agents, orchest
 | Slug | Title | Reports To | Team | Model |
 |---|---|---|---|---|
 | `ceo` | CEO | — | — | Opus 4.6 |
+| `listing-auditor` | Listing Audit Specialist | CEO | Audit | Opus 4.6 |
 | `produkt-analyst` | Product Research Analyst | CEO | Bild-Pipeline | Sonnet 4.6 |
 | `listing-briefer` | Creative Strategist | CEO | Bild-Pipeline | Opus 4.6 |
 | `quality-reviewer` | Quality Assurance | CEO | Bild-Pipeline | Sonnet 4.6 |

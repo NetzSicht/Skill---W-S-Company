@@ -5,6 +5,13 @@ agents:
     inputs:
       env: {}
 
+  listing-auditor:
+    inputs:
+      env:
+        RAINFOREST_API_KEY:
+          kind: secret
+          requirement: required
+
   produkt-analyst:
     inputs:
       env:

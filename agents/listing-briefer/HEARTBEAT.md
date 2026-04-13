@@ -32,6 +32,31 @@ Read the product category from `produkt-analyse.md` (Section 1: Kategorie). If a
 
 If no category skill is attached: use standard slot sequence from `kategorie-adaptionen` skill.
 
+## 2c. Check: Audit Available? (Optimization Mode)
+
+Look for `listing-audit.md` in `./workspace/{task-id}/`. If it exists:
+
+1. Read the complete audit, especially Section 9 "Fuer Listing-Briefer" — the slot-by-slot status table.
+2. The audit tells you for each of the 7 slots: **KEEP / ENHANCE / REBUILD / MISSING**
+3. Your briefing must respect these statuses:
+
+| Audit Status | What You Do |
+|---|---|
+| **KEEP** | Copy the current slot description unchanged into your new briefing. Mark it clearly: "Slot X: KEEP — uebernehmen wie aktuell auf ASIN [X]". Do NOT redesign. |
+| **ENHANCE** | Use the current slot as the baseline. Improve specific elements named in the audit fix-instruction. Preserve what works. |
+| **REBUILD** | Create a completely new slot briefing from scratch. Ignore the current version. |
+| **MISSING** | Create a new slot briefing for an element that doesn't exist yet. |
+
+This is critical: **do not redo work that already works**. The audit has already validated it. Your job in optimization mode is to fix the broken 30%, not rebuild the 70% that performs.
+
+Your output format stays the same (briefing-template), but each slot block now starts with the audit status:
+```markdown
+## Slot [X]: [Bildtyp] — Audit-Status: [KEEP/ENHANCE/REBUILD/MISSING]
+[Rest of briefing block]
+```
+
+If no audit exists: proceed as normal (new listing mode).
+
 ## 3. Read Product Analysis
 
 Read `./workspace/{task-id}/produkt-analyse.md` thoroughly. Extract:

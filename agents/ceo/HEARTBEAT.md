@@ -18,18 +18,62 @@ Look for:
 
 For each new request, create issues via the Issues API and assign to the right agents:
 
-### Full Listing Optimization
+### Neu-Listing vs. Optimierung entscheiden
 
-**Zuerst pruefen: Gibt es einen Kategorie-Skill fuer dieses Produkt?**
+**Hat der Kunde eine ASIN eines bestehenden Listings?**
 
-Wenn NEIN → Zuerst Kategorie-Research starten (siehe unten), DANN Listing-Projekt.
+- **Ja → OPTIMIERUNG** (mit Audit in Phase 0)
+- **Nein → NEU-LISTING** (direkt Phase 1)
+
+### Zusaetzlich pruefen: Gibt es einen Kategorie-Skill?
+
+Wenn NEIN → Zuerst Kategorie-Research starten, DANN Listing-Projekt.
 Wenn JA → Direkt zum Listing-Projekt.
 
-Create a parent issue, then child issues with dependencies:
+### Optimierung (bestehende ASIN)
 
 ```
-POST /api/companies/{companyId}/issues
+Parent: "Optimierung: [Product] — [Client] — ASIN [X]"
 
+Phase 0 (zuerst — Audit des bestehenden Listings):
+  └── "Listing-Audit — ASIN [X]"  → assigneeAgentId: listing-auditor
+        Description: "Auditiere das bestehende Listing fuer ASIN [X]
+        auf [amazon.de]. Pruefe alle 10 Dimensionen. Erstelle
+        listing-audit.md mit Adaption-Anweisungen fuer alle
+        downstream Agents."
+
+Phase 1 (nach Audit — parallel):
+  ├── "Produktanalyse"         → assigneeAgentId: produkt-analyst
+  │     Description: "OPTIMIERUNG. Lies listing-audit.md und
+  │     arbeite adaptiv — nicht alles neu erforschen, nur was
+  │     im Audit als FOKUS markiert ist."
+  ├── "Keyword Research"       → assigneeAgentId: keyword-researcher
+  └── "Review-Analyse"         → assigneeAgentId: review-analyst
+
+Phase 2 (parallel):
+  ├── "Bild-Briefing"         → assigneeAgentId: listing-briefer
+  │     Description: "OPTIMIERUNG. Respektiere Slot-Status aus
+  │     listing-audit.md: KEEP Slots uebernehmen, ENHANCE
+  │     verbessern, REBUILD neu machen, MISSING ergaenzen."
+  └── "Listing-Texte"         → assigneeAgentId: content-master
+        Description: "OPTIMIERUNG. Respektiere Text-Status aus
+        listing-audit.md: KEEP Elemente unveraendert uebernehmen,
+        ENHANCE nur chirurgisch verbessern, REBUILD neu."
+
+Phase 3:
+  └── "Quality Review"        → assigneeAgentId: quality-reviewer
+
+Phase 4 (nach Approval):
+  ├── "A+ Content Briefing"   → assigneeAgentId: aplus-content-designer
+  └── "PPC Optimierung"       → assigneeAgentId: ppc-specialist
+
+Phase 5:
+  └── "Client Delivery"       → assigneeAgentId: ceo (self)
+```
+
+### Neu-Listing (keine bestehende ASIN)
+
+```
 Parent: "Full Listing: [Product] — [Client]"
 
 Phase 1 (parallel — assign immediately):
