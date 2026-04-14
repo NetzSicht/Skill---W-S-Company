@@ -7,6 +7,7 @@ skills:
   - amazon-compliance
   - listing-content-architektur
   - mobile-first-validation
+  - aplus-content-template
   - kategorie-textil-socken
 ---
 
