@@ -94,12 +94,25 @@ Nach Erstellung des A+ Briefings: Mobile-First Validation (siehe Skill `mobile-f
 
 Write `aplus-briefing.md` to `./workspace/{task-id}/`.
 
-## 9. Complete Task
+## 9. Complete Task — Zwei-Schritt-Protokoll
+
+**PFLICHT: Beide Schritte ausfuehren.**
+
+### 9a. Eigenes Issue done
 
 ```
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "@ceo A+ Briefing abgeschlossen. Format: [Basic/Premium]. [X] Module definiert. Keine Galerie-Duplikate. Output: aplus-briefing.md im Workspace."
+  "comment": "A+ Briefing abgeschlossen. Format: [Basic/Premium]. [X] Module definiert. Keine Galerie-Duplikate. Output: aplus-briefing.md im Workspace."
+}
+```
+
+### 9b. CEO am Parent-Issue pingen
+
+```
+POST /api/issues/{parentIssueId}/comments
+{
+  "body": "@ceo Phase 4 Task abgeschlossen: A+ Content Briefing done. Output: aplus-briefing.md. Alle Phase-4-Tasks pruefen und ggf. Parent als done markieren."
 }
 ```

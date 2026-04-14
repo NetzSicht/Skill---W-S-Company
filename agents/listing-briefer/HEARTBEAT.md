@@ -200,13 +200,26 @@ Per skill **listing-content-architektur**, include at the end of the briefing:
 
 Write `listing-briefing.md` to `./workspace/{task-id}/`.
 
-## 9. Complete Task
+## 9. Complete Task — Zwei-Schritt-Protokoll
+
+**PFLICHT: Beide Schritte ausfuehren, sonst wird der CEO nicht geweckt.**
+
+### 9a. Eigenes Issue done
 
 ```
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "@ceo Bild-Briefing abgeschlossen. Strategie: [Type]. 7 Slots definiert. A+ Uebergabe enthalten. Output: listing-briefing.md im Workspace."
+  "comment": "Bild-Briefing abgeschlossen. Strategie: [Type]. 7 Slots definiert. A+ Uebergabe enthalten. Output: listing-briefing.md im Workspace."
+}
+```
+
+### 9b. CEO am Parent-Issue pingen
+
+```
+POST /api/issues/{parentIssueId}/comments
+{
+  "body": "@ceo Phase 2 Task abgeschlossen: Bild-Briefing done. Output: listing-briefing.md. Alle Phase-2-Tasks pruefen und ggf. Phase 3 (Quality Review) starten."
 }
 ```
 

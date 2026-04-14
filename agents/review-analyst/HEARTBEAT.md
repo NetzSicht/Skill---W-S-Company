@@ -148,12 +148,25 @@ Fuer jede Solution-Statement:
 
 Write `review-insights.md` to `./workspace/{task-id}/`.
 
-## 7. Complete Task
+## 7. Complete Task — Zwei-Schritt-Protokoll
+
+**PFLICHT: Beide Schritte ausfuehren.**
+
+### 7a. Eigenes Issue done
 
 ```
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "@ceo Review-Analyse abgeschlossen. [X] Praise, [X] Kritik, [X] Einwaende identifiziert. Vokabular-Bank mit [X] Phrasen. Output: review-insights.md im Workspace."
+  "comment": "Review-Analyse abgeschlossen. [X] Praise, [X] Kritik, [X] Einwaende identifiziert. Vokabular-Bank mit [X] Phrasen. Output: review-insights.md im Workspace."
+}
+```
+
+### 7b. CEO am Parent-Issue pingen
+
+```
+POST /api/issues/{parentIssueId}/comments
+{
+  "body": "@ceo Phase 1 Task abgeschlossen: Review-Analyse done. Output: review-insights.md. Alle Phase-1-Tasks pruefen und ggf. Phase 2 starten."
 }
 ```

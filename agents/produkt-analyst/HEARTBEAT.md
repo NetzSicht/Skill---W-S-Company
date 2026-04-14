@@ -151,15 +151,31 @@ Write `produkt-analyse.md` to `./workspace/{task-id}/` in the exact Interface A 
 - [ ] Competitor analysis balanced
 - [ ] Strategy recommendation has rationale
 
-## 6. Complete Task
+## 6. Complete Task — Zwei-Schritt-Protokoll
 
-Update issue with results summary and mark done:
+**WICHTIG:** Du MUSST beide Schritte ausfuehren. Der CEO wird NUR durch Schritt 6b zuverlaessig geweckt.
+
+### 6a. Eigenes Issue als done markieren
+
 ```
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "@ceo Produktanalyse abgeschlossen. [Kurze Zusammenfassung: X USPs, Y Wettbewerber analysiert, Strategie-Empfehlung: Z]. Output: produkt-analyse.md im Workspace."
+  "comment": "Produktanalyse abgeschlossen. [Kurze Zusammenfassung: X USPs, Y Wettbewerber analysiert, Strategie-Empfehlung: Z]. Output: produkt-analyse.md im Workspace."
 }
 ```
 
-The CEO will create the next-phase issue (Listing-Briefer) when ready.
+### 6b. CEO am Parent-Issue pingen (PFLICHT)
+
+Lies die `parentId` deines Issues (steht in den Issue-Daten). Poste dann einen Kommentar direkt am Parent-Issue:
+
+```
+POST /api/issues/{parentIssueId}/comments
+{
+  "body": "@ceo Phase 1 Task abgeschlossen: Produktanalyse done. Output: produkt-analyse.md. Alle anderen Phase-1-Tasks pruefen und ggf. Phase 2 starten."
+}
+```
+
+**Dieser Kommentar am Parent-Issue triggert den CEO-Heartbeat zuverlaessig.** Ein Kommentar nur am eigenen Issue reicht nicht aus weil der CEO das Child-Issue nicht direkt ueberwacht.
+
+**Wenn dein Issue keine parentId hat:** Dann wurde es direkt dem CEO zugewiesen (standalone Task) — in diesem Fall reicht Schritt 6a.

@@ -151,12 +151,25 @@ Ergaenze im Output:
 
 Write `listing-texte.md` to `./workspace/{task-id}/`.
 
-## 9. Complete Task
+## 9. Complete Task — Zwei-Schritt-Protokoll
+
+**PFLICHT: Beide Schritte ausfuehren.**
+
+### 9a. Eigenes Issue done
 
 ```
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "@ceo Listing-Texte abgeschlossen. Titel: [X] Zeichen. 5 Bullets. Backend: [X] Bytes. Output: listing-texte.md im Workspace."
+  "comment": "Listing-Texte abgeschlossen. Titel: [X] Zeichen. 5 Bullets. Backend: [X] Bytes. Output: listing-texte.md im Workspace."
+}
+```
+
+### 9b. CEO am Parent-Issue pingen
+
+```
+POST /api/issues/{parentIssueId}/comments
+{
+  "body": "@ceo Phase 2 Task abgeschlossen: Listing-Texte done. Output: listing-texte.md. Alle Phase-2-Tasks pruefen und ggf. Phase 3 starten."
 }
 ```

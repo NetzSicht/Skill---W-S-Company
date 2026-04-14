@@ -92,10 +92,16 @@ Write `review-ergebnis.md` to `./workspace/{task-id}/` in Interface C format (se
 
 ## 7. Route Result
 
-### APPROVED
+### APPROVED — Zwei-Schritt-Protokoll
+
 ```
+# 1. Eigenes Issue done
 PATCH /api/issues/{issueId}
-{ "status": "done", "comment": "@ceo APPROVED. Briefing ist freigegeben fuer den Designer. Review-Ergebnis im Workspace." }
+{ "status": "done", "comment": "APPROVED. Briefing ist freigegeben. Review-Ergebnis im Workspace." }
+
+# 2. CEO am Parent pingen
+POST /api/issues/{parentIssueId}/comments
+{ "body": "@ceo Phase 3 abgeschlossen: APPROVED. Phase 4 (A+ Content + PPC) kann starten." }
 ```
 
 ### REVISION_NOETIG
@@ -111,10 +117,13 @@ POST /api/companies/{companyId}/issues
   "priority": "high"
 }
 ```
-Then mark own issue as done:
+Then mark own issue as done AND ping CEO:
 ```
 PATCH /api/issues/{issueId}
-{ "status": "done", "comment": "@ceo REVISION_NOETIG. Subtask fuer Listing-Briefer erstellt. Review-Ergebnis im Workspace." }
+{ "status": "done", "comment": "REVISION_NOETIG. Subtask fuer Listing-Briefer erstellt. Review-Ergebnis im Workspace." }
+
+POST /api/issues/{parentIssueId}/comments
+{ "body": "@ceo Phase 3: REVISION_NOETIG. Subtask fuer Listing-Briefer erstellt, warte auf Revision." }
 ```
 
 ### ABGELEHNT

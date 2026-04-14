@@ -178,12 +178,23 @@ Write `listing-audit.md` to `./workspace/{task-id}/` per skill `listing-audit-in
 
 ## 9. Complete Task
 
+### 9a. Eigenes Issue done
+
 ```
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "@ceo Audit abgeschlossen. Status: [X Quick Wins, Y Enhancements, Z Rebuilds, W Missing]. Kritischster Befund: [...]. Empfehlung: [Optimierung / Komplett-Relaunch]. Output: listing-audit.md im Workspace."
+  "comment": "Audit abgeschlossen. Status: [X Quick Wins, Y Enhancements, Z Rebuilds, W Missing]. Kritischster Befund: [...]. Empfehlung: [Optimierung / Komplett-Relaunch]. Output: listing-audit.md im Workspace."
 }
 ```
 
-The CEO will then trigger the downstream pipeline (Produkt-Analyst → Briefer → ...) with your audit as input.
+### 9b. CEO am Parent-Issue pingen
+
+```
+POST /api/issues/{parentIssueId}/comments
+{
+  "body": "@ceo Phase 0 abgeschlossen: Audit done. Output: listing-audit.md. Empfehlung: [Optimierung / Komplett-Relaunch]. Phase 1 (Produkt-Analyst + Keyword Researcher + Review-Analyst) jetzt starten."
+}
+```
+
+The CEO will then trigger the downstream pipeline (Phase 1) with your audit as input.

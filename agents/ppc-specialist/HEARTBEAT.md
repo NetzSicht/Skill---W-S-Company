@@ -57,12 +57,25 @@ POST /api/issues/{issueId}/checkout
 
 Write `ppc-strategie.md` or `ppc-optimierung.md` to `./workspace/{task-id}/`.
 
-## 7. Complete Task
+## 7. Complete Task — Zwei-Schritt-Protokoll
+
+**PFLICHT: Beide Schritte ausfuehren.**
+
+### 7a. Eigenes Issue done
 
 ```
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "@ceo PPC-Strategie abgeschlossen. [X] Kampagnen, Break-even ACoS: [X]%, Budget: [X] EUR/Tag. Output: ppc-strategie.md im Workspace."
+  "comment": "PPC-Strategie abgeschlossen. [X] Kampagnen, Break-even ACoS: [X]%, Budget: [X] EUR/Tag. Output: ppc-strategie.md im Workspace."
+}
+```
+
+### 7b. CEO am Parent-Issue pingen
+
+```
+POST /api/issues/{parentIssueId}/comments
+{
+  "body": "@ceo Phase 4 Task abgeschlossen: PPC-Strategie done. Output: ppc-strategie.md."
 }
 ```

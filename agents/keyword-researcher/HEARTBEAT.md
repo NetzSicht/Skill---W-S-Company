@@ -147,12 +147,25 @@ Aus den Keywords mit "Expliziter Pain" und "Frustrations-getrieben" ableitbar:
 
 Write `keyword-strategie.md` to `./workspace/{task-id}/`.
 
-## 7. Complete Task
+## 7. Complete Task — Zwei-Schritt-Protokoll
+
+**PFLICHT: Beide Schritte ausfuehren.**
+
+### 7a. Eigenes Issue done
 
 ```
 PATCH /api/issues/{issueId}
 {
   "status": "done",
-  "comment": "@ceo Keyword-Strategie abgeschlossen. [X] Primary, [X] Secondary, [X] Long-tail Keywords. Placement-Plan enthalten. Output: keyword-strategie.md im Workspace."
+  "comment": "Keyword-Strategie abgeschlossen. [X] Primary, [X] Secondary, [X] Long-tail Keywords. Placement-Plan enthalten. Output: keyword-strategie.md im Workspace."
+}
+```
+
+### 7b. CEO am Parent-Issue pingen
+
+```
+POST /api/issues/{parentIssueId}/comments
+{
+  "body": "@ceo Phase 1 Task abgeschlossen: Keyword-Research done. Output: keyword-strategie.md. Alle Phase-1-Tasks pruefen und ggf. Phase 2 starten."
 }
 ```
