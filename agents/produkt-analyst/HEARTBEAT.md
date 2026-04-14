@@ -99,33 +99,7 @@ After writing your sections: mark issue as done. Skip to Step 6 (Complete Task).
 ### Phase 1: Stammdaten
 Product name, brand, category, price, price level, FBA/FBM, Brand Registry, A+ Content status.
 
-**Wenn Brand Registry = Ja:** Zusaetzlich Phase 1b (CI erheben).
-
-### Phase 1b: Corporate Identity erheben
-
-**Nur wenn Brand Registry aktiv.** Wird fuer A+ Content Briefing benoetigt.
-
-Erhebe:
-- Primaerfarbe (Hex-Code)
-- Sekundaerfarbe (Hex-Code)
-- Akzentfarben (falls vorhanden)
-- Schriftart Primaer (z.B. Montserrat Bold)
-- Schriftart Sekundaer (falls vorhanden)
-- Logo-URL
-- Marken-Ton (z.B. "Professionell-warm")
-
-**Quellen:**
-1. Website des Kunden (CSS-Variablen, CSS-Klassen — Browser Inspector)
-2. Bestehendes A+ Content auf Amazon (Farben im Branding extrahieren)
-3. Logo-Analyse (dominante Farben)
-4. Falls nichts verfuegbar: Als `[BEIM KUNDEN ANFRAGEN]` markieren
-
-Der A+ Content Designer nutzt diese Farben fuer:
-- Karussell-Panel-Farben (5 Panels brauchen unterscheidbare Farben)
-- Badge-Farben in den Slices
-- Headline-Farben
-
-Wenn CI nur 2 Farben hat: Fallback-Regel — Primaer + Sekundaer + 3 abgeleitete Toene (heller/dunkler/grauer).
+**Marken-Ton optional erheben:** Wenn aus Website oder bestehendem Content ableitbar, notiere den Ton (z.B. "Professionell-warm", "Sportlich-direkt") — das hilft dem A+ Content Designer die kreative Richtung zu waehlen. KEINE CI-Farben oder Schriftarten erheben — das macht der Designer pro Kunde selbst.
 
 ### Phase 2: Zielgruppe
 Primary buyer persona: demographics, psychographics, purchase motivation, pain point, price sensitivity. Derive from data — don't guess.

@@ -31,12 +31,12 @@ If no audit exists: proceed as normal (new listing mode).
 
 ## 3. Read Input Documents
 
-- `produkt-analyse.md` — Product data, brand info, **CI-Farben (Sektion 1b)**
+- `produkt-analyse.md` — Product data, brand info, Marken-Ton
 - `listing-briefing.md` — Gallery content (to avoid duplication). Read the **A+ Uebergabe** section first.
 - `listing-texte.md` — Bullet/description content (to avoid duplication)
-- `review-insights.md` — Unanswered questions, painpoints, customer vocabulary
+- `review-insights.md` — Unanswered questions, **Search-Painpoints**, customer vocabulary
 
-**KRITISCH:** Pruefe ob die CI-Farben vollstaendig sind. Wenn `[BEIM KUNDEN ANFRAGEN]` markiert ist, escaliere an CEO — das Briefing kann nicht fertiggestellt werden ohne CI-Farben.
+**Wichtig:** Der Marken-Ton aus der Produkt-Analyse (z.B. "Professionell-warm") ist deine Orientierung fuer die kreative Richtung der Bild-Ideen. KEINE CI-Farben — die waehlt der Designer pro Kunde.
 
 ## 4. Pruefe Brand Registry Status
 
@@ -66,31 +66,32 @@ Das NetzSicht A+ Content Briefing folgt immer der gleichen Struktur (siehe Skill
 
 Starte mit dem Header im aplus-content-template Format:
 
-- Meta-Daten (Produkt, ASIN, Marktplatz, Brand Registry, CI-Farben)
+- Meta-Daten (Produkt, ASIN, Marktplatz, Brand Registry, Marken-Ton)
 - Narrativer Bogen (was erzaehlen die 4 Slices zusammen)
 - Painpoint-Mapping (aus review-insights.md → Slices und Karussell-Panels)
 
+**Wichtig:** Die Meta-Sektion erwaehnt den **Marken-Ton** (aus produkt-analyse.md), damit der Designer die kreative Richtung einordnen kann. KEINE konkreten Farben — das macht der Designer.
+
 ## 7. Baue die 4 Slices
+
+**Regel fuer jede Slice:** Liefere eine **kreative Bild-Idee** — eine Painpoint-Metapher oder konkrete Szene die der Designer als Ausgangspunkt nutzen kann. Beschreibe was zu sehen sein soll, nicht mit welchen Farben oder Schriften.
 
 ### Slice 1: HERO
 
 Lies Slice-1-Template aus `aplus-content-template` skill. Liefere:
 - Ueberschrift (Haupt-Versprechen, 3-5 Woerter)
 - Kernbotschaft, Painpoint, psychologische Funktion
+- **Kreative Bild-Idee:** Welche Szene, welche Atmosphaere, welche Metapher?
 - Desktop-Komposition (1464x600+) mit 3-4 Badges + Positionen
+- Pro Badge: nur Text + Funktion — KEINE Farben (Designer waehlt aus Kunden-CI)
 - Mobile-Komposition (600x450+) mit Anpassungen
-- Text-Spezifikationen (Schriftgroessen, Farben aus CI)
 - Optional: Fliesstext
-
-**Badge-Farbzuordnung aus CI:**
-- Top-USP = Primaerfarbe
-- Zweiter Benefit = Sekundaerfarbe
-- Weitere = abgeleitete Toene
 
 ### Slice 2: BENEFIT-ROUNDEL
 
 - Ueberschrift ("5 Gruende..." oder aehnlich)
 - 5 Icons mit Labels (jedes adressiert einen Painpoint)
+- **Pro Icon: Bild-Idee** — welche visuelle Metapher passt? (z.B. "Tropfen durchgestrichen fuer Anti-Schwitz", "Federn-Kreis fuer kratzfrei")
 - Icon-Stil: Line-Icons, einheitliche Strichstaerke, weisse Kreise
 - Desktop: 5 in einer Reihe / Mobile: 3+2 oder alle 5 kleiner
 - Optional: Trust-Badge im Hintergrund
@@ -100,17 +101,18 @@ Lies Slice-1-Template aus `aplus-content-template` skill. Liefere:
 ### Slice 3: LIFESTYLE + TOP-BENEFIT
 
 - Ueberschrift (emotionale Szene in einem Satz)
+- **Kreative Bild-Idee:** Schlage 2-3 alternative Szenarien vor (z.B. Gipfel-Moment / Huetten-Ankunft / Morgen-Start) und empfiehl welche am besten zur Zielgruppe passt
 - Konkrete Nutzungs-Szene: Wer, Wann, Wo, Wie
 - Echter Mensch (nicht generisches Stock-Foto)
 - Gaze Cueing: Model-Blick auf Produkt oder Moment
-- Warme Lichtstimmung passend zur CI
 - Optional: subtiler Top-Benefit-Banner
 
-**Wichtig:** Diese Slice ist der **Desire-Trigger** — hier entscheidet sich ob der Kaeufer sich mit dem Produkt identifiziert. Nicht langweilig machen.
+**Wichtig:** Diese Slice ist der **Desire-Trigger**. Die Bild-Idee muss emotional und konkret sein — kein generisches Lifestyle-Bild.
 
 ### Slice 4: QUALITAET + TRUST
 
 - Ueberschrift (konkrete Qualitaets-Aussage)
+- **Kreative Bild-Idee:** Wie visualisieren wir Qualitaet konkret? (z.B. "Extreme Makro der Strickstruktur", "Handkettel-Nadel im Anschnitt", "Socken-Querschnitt zeigt Schichtaufbau")
 - Drei-Zonen-Layout: Material-Makro | Story-Text | Trust-Siegel
 - Alle relevanten Zertifikate konsolidiert (Oeko-Tex, EU, etc.)
 - Material-Story im Fliesstext (Herkunft, Produktion, Warum der Preis gerechtfertigt ist)
@@ -121,20 +123,32 @@ Lies Slice-1-Template aus `aplus-content-template` skill. Liefere:
 Fuer jedes Panel:
 
 1. **Benefit auswaehlen** aus den Top 5 Search-Painpoints oder USPs
-2. **CI-Farbe zuordnen** mit Begruendung ("Primaerfarbe weil wichtigster Benefit")
-3. **Navigationstext** (max 30 chars, klickbares Label)
-4. **Detail-View-Content** (Ueberschrift, Unterueberschrift, Bullets)
-5. **Thumbnail-Komposition** (Panel-Farbe + Produktausschnitt + Text)
-6. **Detail-Bild Desktop** (1464x600+)
-7. **Detail-Bild Mobile** (600x450+)
+2. **Navigationstext** (max 30 chars, klickbares Label)
+3. **Detail-View-Content** (Ueberschrift, Unterueberschrift, Bullets)
+4. **Kreative Bild-Idee (Thumbnail)** — welche Painpoint-Metapher illustriert den Benefit auf der kleinen klickbaren Kachel?
+5. **Kreative Bild-Idee (Detail-View)** — welche tiefere Visualisierung nach Klick? (z.B. Querschnitt-Illustration, Vorher/Nachher-Split, Infografik)
+6. **Detail-Bild Desktop-Komposition** (1464x600+ Layout-Prinzip, kein konkreter Pixelentwurf)
+7. **Detail-Bild Mobile-Komposition** (600x450+)
 
-**CI-Farbzuordnung Regel:**
-- Panel 1 (wichtigster Benefit) → Primaerfarbe
-- Panel 2 → Sekundaerfarbe
-- Panel 3-5 → abgeleitete Toene (heller/dunkler/akzentuiert)
-- Bei nur 2 CI-Farben: Fallback mit Graustufen + Akzent
+**Regel zur visuellen Differenzierung:**
+Die 5 Panels muessen visuell klar unterscheidbar sein. Das erreicht der **Designer** durch:
+- Unterschiedliche Farben aus der Kunden-CI
+- Unterschiedliche Bildmotive (jedes Panel andere Bildkomposition)
+- Konsistente Typografie
 
-**Regel:** Die 5 Panels muessen visuell unterscheidbar sein. Wenn zwei Panels gleich aussehen → verloren.
+Deine Aufgabe als Agent: Sorge dafuer dass jedes Panel eine **eindeutige Bild-Metapher** hat die sich nicht mit anderen Panels ueberschneidet. Der Designer hat dann bereits 5 unterschiedliche visuelle Ausgangspunkte.
+
+**Painpoint-Metaphern-Inspirationen (Beispiele fuer Socken):**
+
+| Painpoint | Bild-Metaphern |
+|---|---|
+| Blasen beim Wandern | Pflasterbox im Abfall / roter Fuss vs. entspannter Fuss / Querschnitt der Verstaerkung / Wanderer mit gluecklichem Gesicht nach 20km |
+| Schwitzende Fuesse | Dampf der aus Socke aufsteigt (Verdunstung) / trockene Wueste als Metapher / Merino vs. Plastik Split-Screen / Feuchtigkeitstransport-Diagramm |
+| Geruch | Blume die aus Socke waechst / durchgestrichene Bakterie / frische Bergluft als Kontrast / Badezimmer-Szene ohne Geruch |
+| Temperaturregulation | Sonne und Schnee nebeneinander / Thermometer ausbalanciert / 4-Jahreszeiten-Split / warmes Licht von innen |
+| Haltbarkeit | Socke-Kalender mit vielen Waschgaengen abgehakt / Vergleich neu vs. nach 2 Jahren / Muellberg-Vergleich / Preis-pro-Tragestunde Infografik |
+
+Diese Beispiele sind fuer Socken. Bei anderen Produkten andere Metaphern finden die zum jeweiligen Painpoint passen.
 
 ## 9. Baue das Comparison-Modul (nur Content)
 
@@ -146,21 +160,25 @@ Fuer jedes Panel:
 
 **Ziel:** Cross-Selling. Der Kaeufer findet das passendere Produkt in unserer Marke oder bestaetigt die Wahl.
 
-## 10. Master-Komposition skizzieren
+## 10. Konzept-Uebersicht skizzieren
 
-Am Anfang des Briefings: Eine kurze Uebersicht wie die 4 Slices + das Karussell **zusammen** aussehen. ASCII-Skizze oder kurze textuelle Beschreibung reicht — der Designer soll den Gesamt-Look verstehen.
+Am Anfang des Briefings: Eine kurze **thematische Uebersicht** wie die 4 Slices + das Karussell **zusammen** wirken. Keine Farben — sondern welche visuellen Themen durchziehen das ganze Briefing.
 
 Beispiel:
 ```
-Slice 1: [Warm-Grau Hintergrund, rotes Hauptmotiv, 4 farbige Badges]
-Slice 2: [Neutraler Hintergrund, 5 weisse Kreise mit Icons]
-Slice 3: [Warmer Indoor-Look, Model mit Produkt]
-Slice 4: [Material-Makro, Trust-Siegel-Leiste rechts]
-Karussell Panel 1: [Rot/Primaer]
-Karussell Panel 2: [Blau/Sekundaer]
-Karussell Panel 3: [Gruen/Abgeleitet]
-Karussell Panel 4: [Orange/Akzent]
-Karussell Panel 5: [Grau/Neutral]
+Thematische Klammer: "Vom gewaehlten Weg zum unvergesslichen Tag"
+
+Slice 1: Bergkulisse im goldenen Morgenlicht, Wanderstiefel + Socken im Vordergrund
+Slice 2: Holz-/Stein-Hintergrund mit 5 klaren Icon-Metaphern
+Slice 3: Gipfel-Moment-Szene mit Wanderer, warme natuerliche Lichtstimmung
+Slice 4: Material-Makro + Siegel-Konsolidierung
+
+Karussell-Thema: Jedes Panel illustriert einen konkreten Wander-Painpoint durch eine eigene Metapher
+Panel 1: Blasen-Metapher (z.B. Querschnitt der Polsterung)
+Panel 2: Schwitzen-Metapher (z.B. Verdunstungs-Diagramm)
+Panel 3: Geruch-Metapher (z.B. Blume statt Gestank)
+Panel 4: Temperatur-Metapher (z.B. Sommer/Winter-Split)
+Panel 5: Haltbarkeit-Metapher (z.B. Kalender mit Waschgaengen)
 ```
 
 ## 11. Self-Check
@@ -172,8 +190,10 @@ Bevor du das Briefing schreibst:
 - [ ] Slice 3 (Lifestyle) hat konkrete Szene mit Mensch + Emotion
 - [ ] Slice 4 (Trust) konsolidiert alle Zertifikate
 - [ ] Jede Slice hat Desktop UND Mobile-Komposition
+- [ ] Jede Slice hat eine kreative Bild-Idee (Metapher, Szene) — nicht nur Layout
 - [ ] Karussell-Panels decken 5 verschiedene Benefits ab (keine Wiederholung)
-- [ ] CI-Farben pro Panel zugeordnet mit Begruendung
+- [ ] Jedes Karussell-Panel hat eine eigene Painpoint-Metapher (kein Duplikat)
+- [ ] KEINE konkreten Farben vorgegeben (bleibt Designer-Aufgabe aus Kunden-CI)
 - [ ] Kein Bild dupliziert Galerie-Inhalte (Anti-Duplikation siehe listing-content-architektur)
 - [ ] Comparison-Modul hat 5 ASINs + 5+ Vergleichs-Zeilen
 - [ ] Painpoint-Mapping vollstaendig (aus review-insights.md)

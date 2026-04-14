@@ -38,22 +38,6 @@ Dateiname: `produkt-analyse.md`
 | Brand Registry | [Ja / Nein] |
 | A+ Content | [Verfuegbar / Nicht verfuegbar / Bereits vorhanden] |
 
-## 1b. Corporate Identity (CI) des Kunden
-
-**PFLICHT** wenn Brand Registry aktiv ist (brauchen wir fuer A+ Content Briefing).
-
-| Feld | Wert |
-|---|---|
-| Primaerfarbe | [Hex-Code, z.B. #C8102E] |
-| Sekundaerfarbe | [Hex-Code] |
-| Akzentfarben | [ggf. weitere Hex-Codes] |
-| Schriftart Primaer | [z.B. Montserrat Bold] |
-| Schriftart Sekundaer | [falls vorhanden] |
-| Logo-URL | [Link zum offiziellen Logo] |
-| Marken-Ton | [z.B. "Professionell-warm", "Sportlich-direkt"] |
-
-**Wenn CI nicht vollstaendig:** Markiere fehlende Felder mit `[BEIM KUNDEN ANFRAGEN]`. Der A+ Content Designer nutzt dann Fallbacks (Primaerfarbe + abgeleitete Toene).
-
 ## 2. Zielgruppe
 
 | Feld | Wert |

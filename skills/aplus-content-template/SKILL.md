@@ -1,6 +1,6 @@
 ---
 name: aplus-content-template
-description: "A+ Content Briefing-Template fuer NetzSicht Amazon Listings. Definiert die 4-Slice + 5-Karussell-Panel + Comparison Struktur. Jedes Element mit Briefing-Format fuer den Grafiker: Kernbotschaft, Desktop+Mobile-Komposition, Text-Overlays, Farbzuordnung aus CI. Genutzt vom A+ Content Designer."
+description: "A+ Content Briefing-Template fuer NetzSicht Amazon Listings. Definiert die 4-Slice + 5-Karussell-Panel + Comparison Struktur. Jedes Element mit kreativen Bild-Ideen (Painpoint-Metaphern), Desktop+Mobile-Komposition, Text-Overlays und psychologischer Funktion. Farbgebung bleibt dem Designer ueberlassen (CI-abhaengig pro Kunde). Genutzt vom A+ Content Designer."
 ---
 
 # A+ Content Briefing Template (NetzSicht Standard)
@@ -32,6 +32,25 @@ description: "A+ Content Briefing-Template fuer NetzSicht Amazon Listings. Defin
 
 ---
 
+## Rolle der Agents vs. Designer
+
+| Was der A+ Content Designer (Agent) liefert | Was der Designer (Grafiker) macht |
+|---|---|
+| Strategie & Struktur (4 Slices + 5 Panels) | Visuelle Umsetzung |
+| Kernbotschaften + Headlines + Fliesstext | Typografie & Layout |
+| Painpoint pro Element | — |
+| **Kreative Bild-Ideen** (Metaphern, Szenen, Kompositionen) | Finale Bildauswahl + Fotoshoot/KI-Generierung |
+| Desktop/Mobile Komposition (Layout-Prinzipien) | Konkrete Pixel-Umsetzung |
+| — | **Farben aus der Kunden-CI** |
+| — | Schriftarten aus der Kunden-CI |
+| — | Brand-spezifische Details |
+
+**Wichtig:** Der Agent schlaegt KEINE Farben vor. Jeder NetzSicht-Kunde hat eine eigene CI, und der Designer waehlt passend dazu.
+
+Aber: Der Agent schlaegt **kreative Bild-Ideen** vor — Metaphern, Szenen, visuelle Konzepte die den Painpoint illustrieren. Der Designer hat dann einen klaren kreativen Ausgangspunkt.
+
+---
+
 ## Amazon Modul-Spezifikationen
 
 ### Vollstaendiges Premium-Bild (jeweils pro Slice 1-4)
@@ -53,10 +72,10 @@ Ein einziges Modul mit 2-5 Panels (wir nutzen immer 5). Pro Panel:
 - **Bild** — gleiche Anforderungen wie Premium-Bild
 
 Die Panels haben zwei visuelle Layer:
-1. **Thumbnail** (im geschlossenen Zustand, klein + farbig)
+1. **Thumbnail** (im geschlossenen Zustand, klein)
 2. **Detail-Bild** (nach Klick, gross, informativ)
 
-Der Designer muss beide Layer liefern — das Thumbnail ist nicht einfach ein Crop des Detail-Bilds.
+Der Designer muss beide Layer liefern — das Thumbnail ist nicht einfach ein Crop des Detail-Bilds. **Wichtig fuer das Karussell:** Die 5 Panels muessen visuell klar unterscheidbar sein (Aufgabe des Designers via CI-Farben und Bildauswahl).
 
 ---
 
@@ -72,9 +91,9 @@ Der Designer muss beide Layer liefern — das Thumbnail ist nicht einfach ein Cr
 - **ASIN:** [ASIN wenn vorhanden]
 - **Marktplatz:** [amazon.de / PAN-EU]
 - **Brand Registry:** Ja (Premium A+ verfuegbar)
-- **CI-Farben:** [Liste der verfuegbaren Markenfarben]
 - **Zielgruppe:** [aus Produkt-Analyse]
 - **Hauptpersona:** [aus Produkt-Analyse]
+- **Marken-Ton:** [z.B. "Professionell-warm", "Sportlich-direkt"] (fuer den Designer als Orientierung)
 
 ## Narrativer Bogen
 
@@ -113,8 +132,6 @@ Das Karussell vertieft anschliessend:
 **Ueberschrift (Amazon-Feld):**
 > [Exakter Text, max 80 chars — Haupt-Versprechen in 3-5 Woertern]
 
-Beispiel: "Warm, rutschfest & unglaublich kuschelig"
-
 **Kernbotschaft (2-Sekunden-Regel):**
 [Was der Kaeufer in 2 Sekunden verstehen soll]
 
@@ -122,45 +139,51 @@ Beispiel: "Warm, rutschfest & unglaublich kuschelig"
 [Welches Problem spricht die Slice an]
 
 **Psychologische Funktion:**
-Attention — sofortige USP-Erkennung. Der Kaeufer soll erkennen: "Das ist was ich gesucht habe."
+Attention — sofortige USP-Erkennung.
+
+---
+
+### Kreative Bild-Idee
+
+**Visual Concept:**
+[Die Haupt-Bildidee in 2-3 Saetzen beschrieben. Eine Metapher oder Szene die den Painpoint illustriert.]
+
+**Bildstimmung:** [z.B. "Morgendlich-gold, draussen, echt — kein Studio-Look"]
+
+**Mood Reference / Inspiration:** 
+[z.B. "Outdoor-Fotografie im Stil von Patagonia-Marketing", oder "wie ein Filmstill aus Into the Wild"]
 
 ---
 
 ### Desktop-Komposition (1464x600+)
 
-**Hintergrund:** [z.B. "Produktbild im Kontext, nicht Studio-Weiss. Beispiel: Socken auf Teppich, Fuesse angedeutet"]
+**Hintergrund:** [z.B. "Unscharfe Bergkulisse im goldenen Morgenlicht"]
 
-**Hauptelement:**
-[Produkt + Positionierung im Bild — links/mittig/rechts?]
+**Hauptelement:** 
+[Produkt + Positionierung — links/mittig/rechts, Perspektive, Groesse im Bild]
 
 **Badges / Callouts:** 3-4 Stueck, ueber das Bild verteilt
 
-| Position | Badge-Text | Farbe (aus CI) | Funktion |
+| Position | Badge-Text | Bildidee im Badge | Funktion |
 |---|---|---|---|
-| Links oben | [z.B. "Weicher Tragekomfort"] | [Hex aus CI] | Komfort-USP |
-| Rechts oben | [z.B. "Hervorragende Passform"] | [Hex aus CI] | Haupt-USP |
-| Rechts unten | [z.B. "Rutschfeste ABS-Sohle"] | [Hex aus CI] | Funktions-USP |
-| Rund, dezent | [z.B. "Handmade in EU"] | [neutral] | Trust |
+| Links oben | [z.B. "Weicher Tragekomfort"] | [z.B. "Feder-Icon"] | Komfort-USP |
+| Rechts oben | [z.B. "Hervorragende Passform"] | [z.B. "Icon: perfekt eingepasster Fuss"] | Haupt-USP |
+| Rechts unten | [z.B. "Rutschfeste ABS-Sohle"] | [z.B. "Icon: Rutsch-Symbol durchgestrichen"] | Funktions-USP |
+| Rund, dezent | [z.B. "Handmade in EU"] | [z.B. "EU-Flagge-Blatt-Kombi"] | Trust |
 
-**Zentraler Text:** [z.B. "RUTSCHFEST, KUSCHELIG, WARM" — gross, weiss, klar]
+**Farbzuordnung Badges:** [An den Designer — waehle 3-4 visuell unterscheidbare Farben aus der Kunden-CI. Jedes Badge in einer anderen Farbe damit die USPs individuell heraus stechen.]
 
-**Text-Spezifikationen:**
-- Hauptschrift: [Schriftart, Groesse >60pt]
-- Badge-Schrift: [Schriftart, Groesse >30pt]
-- Kontrast: [hoch, lesbar auf Hintergrund]
+**Zentraler Text:** [z.B. "RUTSCHFEST, KUSCHELIG, WARM" — gross, klar, mindestens 60pt]
 
 ### Mobile-Komposition (600x450+)
 
 **Unterschied zum Desktop:**
-[Was muss neu arrangiert werden, damit es auf Mobile funktioniert — oft: weniger Badges, groessere Textgroesse, Hauptmotiv staerker zentriert]
-
-**Anpassungen:**
 - Max. 2-3 Badges (statt 4)
 - Hauptmotiv nimmt mehr Flaeche ein
 - Zentraler Text evtl. auf 2 Zeilen
 
 **Fliesstext (optional):**
-[Kurzer Body-Text unter dem Bild, 2-3 Saetze, unterstreicht die Hauptbotschaft — oft kann dies leer bleiben weil das Bild schon alles sagt]
+[Kurzer Body-Text unter dem Bild, 2-3 Saetze, oder leer]
 ```
 
 ---
@@ -171,43 +194,50 @@ Attention — sofortige USP-Erkennung. Der Kaeufer soll erkennen: "Das ist was i
 ## SLICE 2: BENEFIT-OVERVIEW (Roundel)
 
 **Ueberschrift (Amazon-Feld):**
-> [z.B. "5 Gruende die ueberzeugen" oder "Das macht sie besonders"]
+> [z.B. "5 Gruende die ueberzeugen"]
 
 **Kernbotschaft:**
-Schneller Ueberblick ueber die 5 wichtigsten Benefits. Scanner-Mode — Kaeufer soll in 3 Sekunden alle Vorteile erfasst haben.
+Schneller Ueberblick ueber die 5 wichtigsten Benefits — Scanner-Mode.
 
 **Psychologische Funktion:**
-Interest — kognitive Entlastung. Keine Textwaende, nur Icons + kurze Labels.
+Interest — kognitive Entlastung. Keine Textwaende, nur Icons + Labels.
+
+---
+
+### Kreative Bild-Idee
+
+**Visual Concept:**
+5 runde Icons nebeneinander, jedes illustriert einen Benefit durch eine klare visuelle Metapher. Der Hintergrund soll ruhig sein damit die Icons Hauptfokus bleiben.
+
+**Hintergrund-Idee:** [z.B. "Natuerliche Textur wie Holzmaserung, Stein, oder unscharfer Material-Makro — passt zur Marke, erdrueckt aber nicht die Icons"]
 
 ---
 
 ### Desktop-Komposition (1464x600+)
 
-**Hintergrund:** [Material-Nahaufnahme oder farblich ruhiger Hintergrund, der die Icons nicht erdrueckt]
-
-**Layout:** 5 runde Icons nebeneinander (oder 3+2 auf Mobile)
+**Layout:** 5 runde Icon-Kreise nebeneinander (oder 3+2 auf Mobile)
 
 **Pro Icon:**
-| # | Icon-Motiv | Label (max 3 Woerter) | Painpoint den es loest |
+| # | Icon-Motiv (Bildidee) | Label (max 3 Woerter) | Painpoint den es loest |
 |---|---|---|---|
-| 1 | [z.B. Blatt/Feder] | [z.B. "Kuscheliges Innenfutter"] | [Pain: kalte Fuesse] |
-| 2 | [z.B. Wolke] | [z.B. "Weicher Materialmix"] | [Pain: kratziges Gefuehl] |
-| 3 | [z.B. Tropfen durchgestrichen] | [z.B. "Keine Schweissfuesse"] | [Pain: schwitzige Fuesse] |
-| 4 | [z.B. Kreise] | [z.B. "Kein Kratzen"] | [Pain: Juckreiz] |
-| 5 | [z.B. Thermometer] | [z.B. "Besonders Gut Waermend"] | [Pain: frieren] |
+| 1 | [z.B. "Blatt im Schild — symbolisiert Schutz"] | [z.B. "Kuscheliges Innenfutter"] | [Pain: kalte Fuesse] |
+| 2 | [z.B. "Wolke mit Feder — Weichheit"] | [z.B. "Weicher Materialmix"] | [Pain: kratziges Gefuehl] |
+| 3 | [z.B. "Tropfen durchgestrichen — keine Feuchtigkeit"] | [z.B. "Keine Schweissfuesse"] | [Pain: schwitzige Fuesse] |
+| 4 | [z.B. "Federn-Kreis — null Reibung"] | [z.B. "Kein Kratzen"] | [Pain: Juckreiz] |
+| 5 | [z.B. "Thermometer + Sonne — Waerme"] | [z.B. "Besonders Gut Waermend"] | [Pain: frieren] |
 
-**Icon-Stil:** Line-Icons, einheitliche Strichstaerke, innerhalb weisser Kreise, alle gleich gross
+**Icon-Stil:** Line-Icons, einheitliche Strichstaerke, innerhalb Kreisen, alle gleich gross. 
+
+**Farbe der Icons und Kreise:** [An den Designer — aus Kunden-CI]
 
 **Optional: Trust-Element im Hintergrund:**
 [z.B. "Herstellung in der EU" Badge oben rechts — dezent, nicht dominant]
 
 ### Mobile-Komposition (600x450+)
 
-**Layout-Anpassung:** Icons koennen 3+2 arrangiert werden (3 oben, 2 unten), oder alle 5 in einer Reihe kleiner
+**Layout-Anpassung:** Icons 3+2 arrangiert (3 oben, 2 unten), oder 5 in einer Reihe kleiner.
 
-**Label-Anpassung:** Ggf. auf 2 Woerter verkuerzen damit sie lesbar bleiben
-
-**Fliesstext:** [Optional — kann leer bleiben da das Bild selbsterklaerend ist]
+**Fliesstext:** [Optional]
 ```
 
 ---
@@ -218,45 +248,55 @@ Interest — kognitive Entlastung. Keine Textwaende, nur Icons + kurze Labels.
 ## SLICE 3: LIFESTYLE — Emotionale Anwendungsszene
 
 **Ueberschrift (Amazon-Feld):**
-> [z.B. "So entspannt war ein Feierabend noch nie" oder "Dein Moment der Gemuetlichkeit"]
+> [z.B. "So entspannt war ein Feierabend noch nie"]
 
 **Kernbotschaft:**
 Der Kaeufer sieht sich selbst in der Anwendungsszene. Spiegelneuronen aktivieren.
 
 **Adressierter Painpoint:**
-[Die Lebens-Situation die dem Pain gegenuebersteht — nicht "kalte Fuesse" sondern "der gemuetliche Abend der sonst durch kalte Fuesse ruiniert wird"]
+[Die Lebens-Situation die dem Pain gegenuebersteht]
 
 **Psychologische Funktion:**
-Desire — emotionale Projektion. Der Kaeufer kauft das Gefuehl, nicht das Produkt.
+Desire — emotionale Projektion.
+
+---
+
+### Kreative Bild-Idee
+
+**Visual Concept:**
+Eine konkrete, authentische Nutzungs-Szene. Kein Stock-Foto-Look. Der Kaeufer soll denken: "Das koennte ich sein."
+
+**Szenen-Vorschlag 1:** [z.B. "Gipfel-Moment: Wanderer sitzt auf Stein, Blick ins Tal, Wanderstiefel aus, Fuesse in Socken entspannt zur Seite gestreckt. Goldene Stunde, warmes Licht."]
+
+**Szenen-Vorschlag 2 (Alternative):** [z.B. "Huette-Ankunft: Person betritt Berghuette nach langer Tour, Jacke ausziehend, ein kleiner Moment der Erleichterung. Socken als Detail sichtbar."]
+
+**Szenen-Vorschlag 3 (Alternative):** [z.B. "Morgen auf der Terrasse: fruehes Fruehstueck vor Tour-Start, Karte auf dem Tisch, Socken angezogen, Stiefel daneben bereit."]
+
+**Empfehlung:** [Welcher der Vorschlaege passt am besten zur Marken-Persona + dem staerksten Painpoint]
 
 ---
 
 ### Desktop-Komposition (1464x600+)
 
 **Szenen-Setup:**
-- **Setting:** [z.B. "Wohnzimmer, Sofa, warmer Herbstabend"]
-- **Model:** [z.B. "Frau Mitte 30 mit Tasse Tee, Fuesse hochgelegt, lacht leicht"]
-- **Produkt:** [wie integriert — Fuesse mit Socken klar sichtbar, nicht abgeschnitten]
-- **Licht:** [warmes Licht, weich, nicht hart]
-- **Farbwelt:** [natuerliche warme Toene, passend zu CI]
+- **Setting:** [konkret, nicht generisch]
+- **Model:** [Alter, Typ, Stimmung — passend zur Zielgruppe]
+- **Pose:** [Was macht der Mensch, wo schaut er hin]
+- **Produkt-Integration:** [Wie ist das Produkt im Bild — nicht versteckt, aber auch nicht auf Stock-Photo-Art]
+- **Licht:** [z.B. warmes Morgenlicht, weich, nicht hart]
 
-**Text-Element:**
-[z.B. ein subtiler Top-Benefit-Banner links unten, nicht zu dominant — die Szene traegt die Emotion]
+**Text-Element:** [Wenn vorhanden: subtiler Banner, nicht dominant]
 
-**Gaze Cueing:**
-Blick des Models auf das Produkt oder auf den "Moment" (Tasse, Buch) — nicht in die Kamera.
+**Gaze Cueing:** Blick des Models auf das Produkt oder auf den "Moment" (Tasse, Tal, etc.) — nicht in die Kamera.
 
 ### Mobile-Komposition (600x450+)
 
 **Unterschied:**
-- Szene enger crop — Fokus auf Fuesse + ein Kontext-Element (z.B. Tasse)
-- Weniger weiter Raum
+- Szene enger Crop — Fokus auf Hauptperson + 1 Kontext-Element
 - Text-Element prominenter weil Bild kleiner
 
 **Fliesstext:**
 [2-3 Saetze die die emotionale Szene in Worte fassen. Hier darf es poetisch werden — aber immer mit konkretem Bezug zum Produkt-Benefit]
-
-Beispiel: "Wenn der Tag lang war, die Fuesse muede und die Heizung auf Sparflamme — dann sind es die kleinen Dinge, die den Unterschied machen. Unsere Socken sind eines davon."
 ```
 
 ---
@@ -267,16 +307,27 @@ Beispiel: "Wenn der Tag lang war, die Fuesse muede und die Heizung auf Sparflamm
 ## SLICE 4: QUALITAET + TRUST (der Closer)
 
 **Ueberschrift (Amazon-Feld):**
-> [z.B. "Material das haelt was es verspricht" oder "Qualitaet die du spuerst"]
+> [z.B. "Material das haelt was es verspricht"]
 
 **Kernbotschaft:**
-Der Kaeufer sieht den Beweis fuer die Qualitaet + bekommt die Vertrauens-Elemente kurz vor der Kaufentscheidung.
+Der Kaeufer sieht den Beweis fuer die Qualitaet + bekommt die Vertrauens-Elemente.
 
 **Adressierter Painpoint:**
-"Ist das wirklich hochwertig oder nur schoen praesentiert?"
+"Ist das wirklich hochwertig?"
 
 **Psychologische Funktion:**
-Action-Vorbereitung — Sicherheit + Preis-Rechtfertigung. Letzter Baustein vor dem Kauf.
+Action-Vorbereitung — Sicherheit + Preis-Rechtfertigung.
+
+---
+
+### Kreative Bild-Idee
+
+**Visual Concept:**
+Drei-Zonen-Kombination: Material-Beweis + Qualitaets-Story + Trust-Signale. Der Betrachter soll "sehen, verstehen, vertrauen".
+
+**Material-Makro-Idee:** [z.B. "Extreme Nahaufnahme der Strickstruktur bei seitlichem Licht — jede Faser sichtbar. Oder: Querschnitt der Socke der die Schichtung zeigt."]
+
+**Visualisierungs-Idee fuer Qualitaet:** [z.B. "Handgestrickt-Detail-Foto (Naehnadel im Anschnitt), oder ein Vergleich mit einer Munze fuer Feinheit"]
 
 ---
 
@@ -287,17 +338,17 @@ Action-Vorbereitung — Sicherheit + Preis-Rechtfertigung. Letzter Baustein vor 
 | Zone | Inhalt |
 |---|---|
 | **Links (40%)** | Material-Makro (Strickstruktur, Nahaufnahme) |
-| **Mitte (40%)** | Qualitaets-Story: Text-Headline + 2-3 Bullet-Points zur Material-Herkunft |
-| **Rechts (20%)** | Trust-Siegel-Leiste (vertikal oder quadratisch arrangiert) |
+| **Mitte (40%)** | Qualitaets-Story: Headline + 2-3 Bullet-Points zur Material-Herkunft |
+| **Rechts (20%)** | Trust-Siegel-Leiste |
 
-**Trust-Siegel:** Alle relevanten Zertifikate als Leiste:
+**Trust-Siegel:** Alle relevanten Zertifikate:
 - [z.B. Oeko-Tex 100]
 - [z.B. Made in EU]
 - [z.B. Fair Trade]
 - [z.B. Vegan]
 
 **Material-Headline:**
-[z.B. "80% Merinowolle aus [Herkunft]. Handgekettelte Spitze. Zertifiziert schadstofffrei."]
+[z.B. "80% Merinowolle aus [Herkunft]. Handgekettelte Spitze. Schadstofffrei zertifiziert."]
 
 ### Mobile-Komposition (600x450+)
 
@@ -307,7 +358,7 @@ Action-Vorbereitung — Sicherheit + Preis-Rechtfertigung. Letzter Baustein vor 
 - Unten: Trust-Siegel horizontal
 
 **Fliesstext:**
-[3-4 Saetze die die Qualitaets-Story ausfuehren. Fokus: Material-Herkunft, Produktion, Zertifikate. Warum der Preis gerechtfertigt ist.]
+[3-4 Saetze. Fokus: Material-Herkunft, Produktion, Zertifikate. Warum der Preis gerechtfertigt ist.]
 ```
 
 ---
@@ -320,50 +371,62 @@ Action-Vorbereitung — Sicherheit + Preis-Rechtfertigung. Letzter Baustein vor 
 **Gesamt-Konzept:**
 Jedes Panel vertieft einen Benefit den die 4 Slices nur angerissen haben. Der Kaeufer waehlt selbst welche Panels ihn interessieren.
 
-**Farbsystem (aus CI):**
-Die 5 Panels brauchen visuell unterscheidbare Farben aus der CI des Kunden. Vorschlag pro Panel in der jeweiligen Sektion.
+**Regel fuer den Designer:**
+Die 5 Panels muessen visuell klar unterscheidbar sein. Der Designer waehlt dafuer:
+- Unterschiedliche Farben aus der Kunden-CI (oder abgeleitete Toene)
+- Unterschiedliche Bildmotive (jede Panel anderes Visual)
+- Konsistente Typografie
 
-**Fallback wenn CI nur 2-3 Farben hat:**
-- Primaerfarbe → wichtigster Benefit (Panel 1)
-- Sekundaerfarbe → zweitwichtigster (Panel 2)
-- Abgeleitete Toene (heller/dunkler) fuer Panel 3-5
-- Oder: Grauabstufungen mit Akzentfarbe
+Die Content-Agent liefert pro Panel eine **kreative Bild-Idee** als Ausgangspunkt.
 ```
 
-#### Panel 1: [Haupt-Benefit]
+#### Panel 1-5 Template (pro Panel)
 
 ```markdown
-## KARUSSELL Panel 1: [z.B. "Hervorragende Passform"]
+## KARUSSELL Panel [X]: [Benefit-Name]
 
 **Navigationstext** (Label im Thumbnail, max 30 chars):
-> [z.B. "Durchdachter Materialmix"]
+> [z.B. "Blasenfreier Schutz"]
 
 **Ueberschrift** (Detail-View):
-> [z.B. "Hervorragende Passform"]
+> [z.B. "Nie wieder Pflaster im Rucksack"]
 
 **Unterueberschrift** (optional):
-> [z.B. "Anatomisch geformt, handgekettelt"]
+> [z.B. "Die Physik hinter dem Versprechen"]
 
 **Fliesstext** (Body):
-- [Bullet: z.B. "wohlige Passform"]
-- [Bullet: z.B. "keine Druckstellen"]
-- [Bullet: z.B. "optional weitere"]
+- [Bullet 1]
+- [Bullet 2]
+- [Bullet 3]
 
 ---
 
-### Farbzuordnung
+### Kreative Bild-Idee (Painpoint-Metapher)
 
-**Panel-Farbe:** [Hex aus CI — z.B. Primaerfarbe weil wichtigster Benefit]
-**Begruendung:** [z.B. "Primaer-Rot der Marke, weil Passform der Haupt-USP ist"]
+**Visual Concept Thumbnail (kleine Kachel):**
+[Die Hauptidee fuer die klickbare Kachel. Was sieht der Kaeufer bevor er klickt?]
+
+Beispiele:
+- "Ein gekaemmtes Stueck Wolle im Detail, dazu der Pflaster-Muellhaufen im Hintergrund unscharf — visuelle Metapher: Keine Pflaster mehr noetig"
+- "Ein einzelner Socken-Ausschnitt mit Polster-Detail, Icon eines Schildes eingebettet"
+
+**Visual Concept Detail-Bild (grosse Ansicht):**
+[Die tiefere Visualisierung fuer die Detail-View nach Klick. Was sieht der Kaeufer wenn er mehr wissen will?]
+
+Beispiele:
+- "Querschnitt-Illustration der Sockenstruktur mit Callout-Pfeilen zu den Verstaerkungs-Zonen. Links ein echtes Foto des Wanderstiefels, rechts die technische Zeichnung als Uebergang."
+- "Ein visueller Vorher/Nachher-Split: Links ein Fuss nach langer Wanderung mit roten Druckstellen (angedeutet), rechts der gleiche Fuss in unserer Socke — entspannt."
+
+**Painpoint-Metapher:** [Die kreative Hauptidee in einem Satz]
 
 ---
 
 ### Thumbnail-Komposition (klickbare Kachel, klein)
 
-**Hintergrund:** [Panel-Farbe als Vollflaeche]
-**Produktausschnitt:** [kleiner Close-up, z.B. Socken-Ausschnitt]
-**Text-Overlay:** [Navigationstext — gut lesbar, weisse Schrift auf Panel-Farbe]
-**Icon (optional):** [kleines passendes Icon]
+**Hintergrund:** [Designer-Farbwahl aus CI]
+**Produktausschnitt:** [welches Detail]
+**Text-Overlay:** [Navigationstext, gut lesbar]
+**Icon (optional):** [passendes Icon zur Metapher]
 
 ---
 
@@ -371,19 +434,15 @@ Die 5 Panels brauchen visuell unterscheidbare Farben aus der CI des Kunden. Vors
 
 **Desktop-Komposition (1464x600+):**
 
-**Layout:** [z.B. Zweispaltig — links Headline+Bullets, rechts Produktbild]
-**Hintergrund:** [Panel-Farbe oder Gradient]
-**Hauptmotiv:** [Nahaufnahme oder Detail-Foto das den Benefit beweist]
+**Layout:** [z.B. Zweispaltig — links Headline+Bullets, rechts Produktbild/Infografik]
+**Hauptmotiv:** [konkrete Beschreibung basierend auf Visual Concept]
 **Text-Overlay:** 
-- Headline: [exakter Text, Schriftgroesse, Farbe]
-- Bullets: [mit Check-Icons, Schriftgroesse]
+- Headline: [exakter Text]
+- Bullets: [mit Check-Icons]
 
 **Mobile-Komposition (600x450+):**
 
 **Unterschied:** [z.B. Vertikal gestackt, Hauptmotiv oben, Text unten]
-- Headline kleiner
-- Max 2 Bullets sichtbar
-- Hauptmotiv 60% der Flaeche
 
 ---
 
@@ -391,10 +450,8 @@ Die 5 Panels brauchen visuell unterscheidbare Farben aus der CI des Kunden. Vors
 [Welches Problem loest dieser Benefit]
 
 ### Psychologische Funktion
-[Welcher Trigger — Sicherheit, Komfort, Statuts, etc.]
+[Welcher Trigger — Sicherheit, Komfort, Status, etc.]
 ```
-
-**[Panel 2-5 nach gleichem Schema — jeweils anderer Benefit, andere CI-Farbe]**
 
 ---
 
@@ -403,43 +460,63 @@ Die 5 Panels brauchen visuell unterscheidbare Farben aus der CI des Kunden. Vors
 ```markdown
 ## Comparison-Modul (Amazon-Formular)
 
-**WICHTIG:** Dies ist KEINE Designer-Komposition. Das Comparison-Modul ist ein Amazon-Formular. Der Designer muss nichts gestalten. Der A+ Content Designer liefert nur den Content.
+**WICHTIG:** Dies ist KEINE Designer-Komposition. Amazon-Formular, nur Content.
 
 ### Inhalte
 
 **Produkte zum Vergleich (5 ASINs der eigenen Marke):**
 1. [Dieses Produkt]
-2. [Variante 1, z.B. Sneakersocken]
-3. [Variante 2, z.B. Wandersocken]
-4. [Variante 3, z.B. Businesssocken]
-5. [Variante 4, z.B. Thermosocken]
+2. [Variante 1]
+3. [Variante 2]
+4. [Variante 3]
+5. [Variante 4]
 
-### Vergleichs-Zeilen (die Eigenschaften)
+### Vergleichs-Zeilen
 
 | Zeile | Werte pro ASIN |
 |---|---|
-| **Material** | [Wert 1] / [Wert 2] / [Wert 3] / [Wert 4] / [Wert 5] |
+| **Material** | [Wert 1] / [Wert 2] / ... |
+| **Hauptanwendung** | |
+| **Polsterung** | |
 | **Hoehe** | |
-| **Haupteinsatz** | |
-| **Groessen** | |
-| **Besonderheit** | |
+| **Packung** | |
 | **Preis (geschaetzt)** | |
 
-**Ziel:** Cross-Selling + Retention. Der Kaeufer findet im Vergleich entweder das passendere Produkt innerhalb unserer Marke (Upsell/Cross-Sell) oder bestaetigt seine Wahl (Retention).
+**Ziel:** Cross-Selling + Retention.
 ```
+
+---
+
+## Design-Richtlinien (fuer den Grafiker)
+
+Als Briefing-Anhang, klar kommuniziert:
+
+**Farbgebung:**
+- Nutze die CI-Farben des jeweiligen Kunden
+- Sorge fuer visuelle Differenzierung der 5 Karussell-Panels (unterschiedliche Farbtoene oder abgeleitete Shades wenn CI schlank ist)
+- Hoher Kontrast fuer Text-Lesbarkeit auf Mobile (WCAG AA minimum)
+
+**Typografie:**
+- Kunden-CI Schriften verwenden
+- Minimum 30pt fuer Text-Overlays (Mobile-Lesbarkeit)
+- Konsistenz ueber alle Slices
+
+**Bildsprache:**
+- Authentisch, nicht Stock-Photo-Look
+- Passend zum Marken-Ton (siehe Meta-Header)
+- Die kreativen Bild-Ideen im Briefing sind Ausgangspunkt, nicht Pflicht — der Designer kann alternative Umsetzungen waehlen wenn sie das Konzept besser treffen
 
 ---
 
 ## Master-Komposition (Orientierung fuer den Designer)
 
-Der Designer braucht am Anfang eine Skizze wie die 4 Slices + das Karussell **zusammen** aussehen — so versteht er den Gesamt-Look und kann die Slices konsistent gestalten.
+Der A+ Content Designer erstellt am Anfang des Briefings eine kurze **Konzept-Uebersicht**:
 
-**Empfehlung:** Der A+ Content Designer erstellt eine einfache Master-Uebersicht (kann textuell oder als ASCII-Skizze sein) die zeigt:
-- Welche Hauptfarben in welcher Slice dominieren
-- Wie der Uebergang zwischen Slices aussieht (konsistent oder kontrastierend)
-- Wo die Markenfarben auftauchen
+- Welche narrativen Themen durchziehen die 4 Slices?
+- Welche visuellen Motive wiederholen sich (z.B. Natur-Elemente, Materialtexturen)?
+- Wie sollte der Gesamt-Look wirken? (sportlich/gemuetlich/premium/nahbar)
 
-Diese Master-Uebersicht ist Teil des Briefings.
+Diese Uebersicht gibt dem Designer eine kreative Richtung ohne die konkrete Umsetzung vorzugeben.
 
 ---
 
@@ -448,10 +525,12 @@ Diese Master-Uebersicht ist Teil des Briefings.
 - [ ] Alle 4 Slices haben eine einzigartige Aufgabe (keine Redundanz)
 - [ ] Narrativer Bogen ist schluessig (AIDA erkennbar)
 - [ ] Jede Slice hat Desktop UND Mobile-Komposition
-- [ ] Alle Text-Overlays haben Mindestgroesse 30pt (Mobile)
+- [ ] Jede Slice hat eine kreative Bild-Idee (nicht nur Layout-Beschreibung)
 - [ ] Karussell-Panels decken 5 verschiedene Benefits ab (keine Wiederholung)
-- [ ] CI-Farben sind pro Panel zugeordnet mit Begruendung
-- [ ] Trust-Elemente sind in Slice 4 konsolidiert (nicht verteilt)
-- [ ] Lifestyle-Szene in Slice 3 ist emotional und konkret (nicht generisch)
+- [ ] Jedes Panel hat eigene Bild-Metapher fuer Thumbnail + Detail
+- [ ] Alle Text-Overlays sind min. 30pt (Mobile)
+- [ ] Trust-Elemente sind in Slice 4 konsolidiert
+- [ ] Lifestyle-Szene in Slice 3 ist emotional und konkret
 - [ ] Keine Duplikate zwischen Slices und Galerie-Bildern
 - [ ] Comparison-Modul hat 5 ASINs + mindestens 5 Vergleichs-Zeilen
+- [ ] KEINE konkreten Farben vorgegeben (Designer-Aufgabe)
